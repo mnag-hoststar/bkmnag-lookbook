@@ -1,2 +1,4 @@
-# bkmnag-lookbook
-Basekit Template Lookbook
+LookBook
+====
+
+BaseKit's LookBook Template

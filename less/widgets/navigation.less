@@ -1,0 +1,480 @@
+// ----------------------------------------
+// LookBook: LESS > Widgets > Navigation
+// ----------------------------------------
+//
+// #Logo & Company Name
+// #Navigation
+// #Navigation Toggle Button
+// #Navigation Body
+// #Navigation List
+// #Navigation Items
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Logo & Company Name
+// ------------------------------
+
+.template__company {
+	text-align: center;
+	
+	@media @tablet {
+		.flex(5);
+	}
+	
+	.widget {
+		@media @tablet {
+			display: table-cell;
+			vertical-align: middle;
+			min-width: 50px;
+		}
+	}
+}
+
+.logo {
+	padding-right: 1em;
+    font-size: 1em;
+}
+
+.companyname {
+    line-height: 0;
+
+	&__company-link {
+		margin: 0;
+		font-family: @font__companyname--font-family;
+		font-size: @font__companyname--font-size;
+		font-weight: @font__companyname--font-weight;
+		line-height: @font__companyname--line-height;
+		letter-spacing: @font__companyname--letter-spacing;
+		
+		&, span {
+			color: @color__companyname--text;
+		}
+
+		.make-font-a-little-smaller(@font__companyname--font-size);
+		.make-font-smaller(@font__companyname--font-size);
+		.make-font-a-lot-smaller(@font__companyname--font-size);
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+// ------------------------------
+// #Navigation
+// ------------------------------
+
+
+html.nav-open {
+	overflow: hidden;
+}
+
+.template__navigation {
+	-webkit-flex: 1;
+	-ms-flex: 1; 
+    flex: 1;
+    @media @tablet {
+		-webkit-flex: 1;
+		-ms-flex: 1;   
+		flex: 1;
+    }
+}
+
+.widget[data-widget-type="extendednavigation"] {
+	//padding: 0;
+	//position: static;
+	&.open {
+		
+	}
+	@media @tablet {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 2;
+	}
+}
+
+// ------------------------------
+// #Navigation Toggle Button
+// ------------------------------
+
+// Navigation Toggle Button
+// It only appears on tablet and mobile sizes.
+
+.navigation-toggle {
+	display: none;
+	
+	@media @tablet {
+		// Displays as Icon's Middle Bar
+		z-index: 100;
+		cursor: pointer;
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		background: @color__navigation--text;
+		background-clip: content-box;
+		width: 28px;
+		height: 3px;
+		margin-top: -1.5px;
+		padding: 0;
+		font-size: 26px;
+		text-indent: 10000px;
+		.transition(background, 0s, ease-in, 0.05s);
+
+		.make-font-a-little-smaller(@font__companyname--font-size);
+		.make-font-smaller(@font__companyname--font-size);
+		.make-font-a-lot-smaller(@font__companyname--font-size);
+
+		// Top and Bottom Navigation Item Bar
+
+		&:after,
+		&:before {
+			content: "";
+			height: 3px;
+			width: 28px;
+			position: absolute;
+			display: block;
+			background-color: @color__navigation--text;
+			margin-right: 0;
+			margin-left: 0;
+			.transition-duration-2items(0.05s, 0.05s);
+			.transition-delay-2items(0.05s, 0s);
+
+			@media @mobile {
+				height: 2px;
+			}
+		}
+
+		// Top Bar
+		
+		&:before {
+			top: 0.4em;
+		  	.transition-property-2items(top, transform);
+		}
+
+		// Bottom Bar
+		
+		&:after {
+			bottom: 0.4em;
+			.transition-property-2items(bottom, transform);
+		}
+
+		&:hover {
+			&, &:before, &:after {
+				background-color: @color__navigation--text;
+			}
+		}
+	}
+
+	// Toggle Button Open
+
+	.open & {
+		@media @tablet {
+			
+			// Middle bar
+			
+			background: transparent;
+			
+			// Top and bottom bar
+			
+			&:before,
+			&:after {
+			  .transition-delay-2items(0s, 0.05s);
+			}
+			
+			// Top Bar
+
+			&:before {
+				top: 0;
+				background: @color__navigation--text;
+				.transform-rotate(45deg);
+
+			}
+			
+			// Bottom Bar
+
+			&:after {
+				bottom: 0;
+				background: @color__navigation--text;
+				.transform-rotate(-45deg);
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Navigation Body
+// ------------------------------
+
+// Dark overlay on tablet and mobile.
+
+.navigation-body {
+	border-top: 1px solid fade(@color__container--background, 20%);
+	border-bottom: 1px solid fade(@color__container--background, 20%);
+	.transition(opacity, 0s);
+	margin: 1em 0 1.5em;
+	
+	// This is only shown in Tablet and Mobile
+	
+	@media @tablet {
+		outline: 0;
+		height: 0;
+		width: 0;
+		opacity: 0;
+		
+		// When Navigation is open
+
+		.open & {
+			display: block;
+			opacity: 1;
+			width: auto;
+			width: 100vw;
+			overflow: auto;
+			height: auto;
+			height: 100vh;
+			background-color: fade(@color__body--background, 90%);
+			margin: 0 -5%;
+			.transition(opacity, 0.25s);
+		}
+	}
+}
+
+
+// ------------------------------
+// #Navigation List
+// ------------------------------
+
+.navigation-list {
+	text-align: center;
+	
+    @media @tablet {
+		display: block;
+		height: auto;
+		max-width: 500px;
+		margin: 150px auto 0;
+	}
+}
+
+// ------------------------------
+// #Navigation Items
+// ------------------------------
+
+// Navigation Normal Item
+
+.navigation-item {
+	margin-bottom: 0;
+	padding: 0;
+	
+    @media @tablet {
+		display: block;
+		text-align: center;
+	}
+	
+	.item-name {
+		z-index: 0;
+		position: relative;
+		padding: 0;
+		margin: 0 1em;
+		text-transform: uppercase;
+		font-family: @font__navigation--font-family;
+		font-size: @font__navigation--font-size;
+		font-weight: @font__navigation--font-weight;
+		line-height: @font__navigation--line-height;
+		letter-spacing: @font__navigation--letter-spacing;
+		color: @color__navigation--text;
+		.transition (all, 0.2s, ease-in-out);
+		
+		@media @tablet {
+			display: inline-block;
+			margin: 0.5em 0;
+			font-size: @font__navigation--font-size * 1.2;
+			line-height: @font__navigation--line-height * 1.2;
+		}
+		
+		&:after {
+			z-index: -1;
+			content: "";
+			position: absolute;
+			left: -0.2em;
+			right: -0.2em;
+			bottom: -0.2em;
+			height: 0.2em;
+			background: transparent;
+			.transition (all, 0.2s, ease-in-out);
+		
+			@media @tablet {
+				bottom: 0;
+			}
+		}
+	
+		//.make-font-a-little-smaller(@font__navigation--font-size);
+		//.make-font-smaller(@font__navigation--font-size);
+		//.make-font-a-lot-smaller(@font__navigation--font-size);
+		
+		&:hover {
+			color: @color__navigation--text;
+		
+			&:after {
+				bottom: -0.2em;
+				height: 0.8em;
+				background: @color__navigation--text--hover;
+				.transform-scale(1);
+		
+				@media @tablet {
+					bottom: 0;
+				}
+			}
+		}
+	}
+
+	&.selected > .item-name {
+		&:after {
+			bottom: -0.2em;
+			height: 0.8em;
+			background: @color__navigation--text--selected;
+		
+			@media @tablet {
+				bottom: 0;
+			}
+		}
+	}
+
+	&.selected:hover > .item-name,
+	&.selected:active > .item-name {
+		.box-shadow(none);
+	}
+}
+
+// Navigation Folder Item
+
+.navigation-item.folder {
+	
+	// Folder Icon
+	
+	> .item-name {
+		&:before {
+			float: right;
+			right: 0.5em;
+			width: 1em;
+    		height: 1em;
+			line-height: 1em;
+			content: "\f107";
+			font-family: 'FontAwesome', sans-serif;
+			font-size: 1.2em;
+			text-align: right;
+		
+			@media @tablet {
+				font-size: @font__navigation--font-size * 1.2;
+				line-height: @font__navigation--line-height * 1.2;
+			}
+		}
+	}
+	
+	&.folder-open > .item-name {
+		color: darken(@color__navigation--text, 20%);
+	}
+}
+
+// Navigation Folder Submenu
+
+.navigation-list--children {
+	.navigation-item.folder &,
+	.navigation-item.folder:hover &,
+	.navigation-item.folder:active & {
+		position: absolute;
+		right: 0;
+		left: auto;
+		opacity: 0;
+    	margin: 0.5em 0 0;
+		padding: 0;
+		height: 0;
+		width: auto;
+		background-color: @color__navigation-list--background;
+		overflow: visible;
+		text-align: center;
+		.transition(opacity, 0s);
+		.box-shadow(8px 8px 0 0px fade(@color__button--background, 20%));
+
+		@media @tablet {
+			position: static;
+			margin: 0;
+			padding: 0;
+			.box-shadow(none);
+		}
+	}
+	
+	.navigation-item.folder.folder-open & {
+    	overflow: visible;
+		display: block;
+		opacity: 1;
+		height: auto;
+		.transition(opacity);
+
+		@media @tablet {
+			position: static;
+			margin: 0 0 0.5em;
+			padding: 0;
+		}
+	}
+}
+
+// Navigation Folder Submenu Single Item
+
+.navigation-item--child {
+	white-space: nowrap;
+
+	@media @tablet {
+		display: block;
+		white-space: normal;
+	}
+
+	.item-name {
+		color: @color__navigation--text;
+		line-height: 1.5em;
+		border-bottom: 0;
+		margin: 0;
+		padding: 1em;
+
+		@media @tablet {
+			display: block;
+			padding: 0.5em;
+		}
+		
+		&:hover {
+			border-bottom: 0;
+		}
+		
+		&:after {
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		
+		&:hover:after {
+			bottom: 0;
+			height: 100%;
+			background-color: @color__navigation--text--selected;
+		}
+	}
+
+	// Selected Folder Item
+
+	&.selected .item-name {
+		background-color: @color__navigation--text--selected;
+	}
+}
+
+.navigation-item.folder {
+	
+	// Open Submenu
+	
+	&.folder-open:hover .navigation-list--children,
+	&.folder-open:active .navigation-list--children,
+	&.folder-open .navigation-list--children {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,145 @@
+// ----------------------------------------
+// LookBook: LESS > Main > Theme
+// ----------------------------------------
+// This contains all styles that are not
+// widgets.
+//
+// #Header
+// #Site Styles
+// #Header
+// #Page Styles
+// #Content
+// #Footer
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Site Styles
+// ------------------------------
+
+* {
+	.box-sizing(border-box);
+	margin: 0;
+    padding: 0;
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+html, body {
+    background-color: @color__body--background;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	font-smooth: always;
+	font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: geometricPrecision;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	// iOS fix of VH unit
+    width: -webkit-calc(100% - 0px);
+}
+
+.widget__item {
+	padding: 0;
+}
+
+// HTML5 Semantic Elements
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+	display: block;
+}
+
+// ------------------------------
+// #Header and Content
+// ------------------------------
+
+.template__header,
+.template__content {
+    width: 100%;
+
+    @media @bp-global-above-fullwidth {
+        width: 90%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+// ------------------------------
+// #Header
+// ------------------------------
+
+.template__header {
+	position: relative;
+	background-color: @color__header--background;
+	min-height: 150px;
+	.header-border-removal();
+
+    @media @tablet {
+		.display-flex();
+		.align-items(center, center);
+		margin-bottom: 1em;
+    }
+}
+
+// ------------------------------
+// #Content
+// ------------------------------
+
+// Main
+
+.template__content {
+    border: 3px solid @color__container--background;
+	
+	.page--home & {
+    	border-top: none;
+	}
+}
+
+// Container
+
+.container {
+	@media @mobile {
+		display: block;
+	}
+}
+
+// ------------------------------
+// #Footer
+// ------------------------------
+
+.template__footer {
+    width: 100%;
+    background-color: @color__footer--background;
+    text-align: center;
+    border-top: 10px solid @color__footer--border;
+	.footer-border-removal()
+	.container {
+	}
+	// Widget
+	.widget {
+		width: 80%;
+		max-width: @layout-width-desktop;
+		margin: 2em auto;
+
+		@media @tablet-horizontal {
+		}
+		@media @tablet {
+		}
+	}
+}
+
+.gdpr-footer {
+    background-color: @color__footer--background;
+    padding: 10px 0;
+    
+    a[class] {
+        padding: 0 10px;
+	    font-family: @font__navigation--font-family;
+    	color: @color__navigation--text;
+    }
+}

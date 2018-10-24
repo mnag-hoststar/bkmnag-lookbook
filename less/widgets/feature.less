@@ -1,0 +1,129 @@
+// ----------------------------------------
+// LookBook: LESS > Widgets > Feature
+// ----------------------------------------
+//
+// ----------------------------------------
+
+// Feature
+
+.bk-feature {
+	position: relative;
+	
+    .widget[data-widget-type="feature"] {
+    	overflow: hidden;
+		padding: 0;
+    }
+}
+
+// Background Image
+
+.feature__background-image {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+	min-height: 60vw;
+}
+
+// Content Wrap
+
+.feature__content-wrap {
+    position: relative;
+	background-color: fade(@color__feature-content--background, 70%);
+    height: 100%;
+	min-height: 60vw;
+	width: 50%;
+	margin-left: 50%;
+	padding: 30vw 5% 60px 0;
+	
+    @media @tablet-horizontal {
+		width: auto;
+		margin-left: 0;
+		padding: 30vw 5% 60px 5%;
+		min-height: auto;
+	}
+}
+
+// Content Inner Wrap
+
+.feature__content-inner-wrap {
+    position: relative;
+    text-align: left;
+}
+
+// Headline
+
+.feature__headline {
+    margin: 0;
+    padding: 0 0 0 40px;
+    color: @color__feature-headline--text;
+	font-size: unit(@font__feature-headline--font-size*0.08, vw);
+	line-height: @font__feature-headline--line-height;
+	letter-spacing: @font__feature-headline--letter-spacing;
+	
+	@media @tablet-horizontal {
+    	padding: 0;
+	}
+	
+    @media @tablet {
+        font-size: @font__feature-headline--font-size * 0.8;
+    }
+    @media @mobile {
+        font-size: @font__feature-headline--font-size * 0.5;
+    }
+}
+
+// Strapline
+
+.feature__strapline {
+	position: relative;
+    margin: 60px 0 40px;
+    padding: 0 40px;
+	max-width: 700px;
+    color: @color__feature-strapline--text;
+	font-size: unit(@font__feature-strapline--font-size*0.08, vw);
+	line-height: @font__feature-strapline--line-height * 0.8;
+	letter-spacing: @font__feature-strapline--letter-spacing;
+	
+	@media @tablet-horizontal {
+		max-width: none;
+	}
+	
+    @media @tablet {
+        font-size: @font__feature-strapline--font-size * 0.9;
+        line-height: @font__feature-strapline--line-height * 0.8;
+    }
+    @media @mobile {
+        font-size: @font__feature-strapline--font-size * 0.5;
+        line-height: @font__feature-strapline--line-height * 0.8;
+    }
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: -30px;
+		left: -100%;
+		right: 0;
+		bottom: -170px;
+    	border: solid @color__container--background;
+		border-width: 3px 3px 0;
+	
+		@media @tablet-horizontal {
+			left: 0;
+		}
+	}
+}
+
+// Button
+
+.feature__button {
+    margin: 20px 40px 0 40px;
+    border: 2px solid @color__feature-button--border;
+    color: @color__feature-button--text;
+    background-color: @color__feature-button--background;
+
+    &:hover {
+        color: @color__link--text;
+        background-color: @color__feature-button--background--hover;
+        border: 2px solid @color__feature-button--border;
+    }
+}

@@ -1,0 +1,364 @@
+// ----------------------------------------
+// LookBook: LESS > Main > Typography
+// ----------------------------------------
+//
+// #Content Widget
+// #General Typography
+// #Bold, Italic, Underlined
+// #Label
+// #Span
+// #Link
+// #Small
+// #Pre
+// #Code
+// #Unordered and Ordered List
+// #Block Quote
+// #Highlighted Text
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Content Widget
+// ------------------------------
+
+.content {}
+
+// ------------------------------
+// #General Typography
+// ------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0.5em 0;
+	
+	+ h2, + h3, + h4, + h5, + h6 {
+		padding-top: 0;
+	}
+}
+
+// Break long words.
+h1, h2, h3, h4, h5, h6, p {
+	word-wrap: break-word;
+}
+
+p, a {
+	padding: 0.5em 0;
+    hyphens: auto;
+}
+
+h1, .heading--1 {
+	font-family: @font__h1--font-family;
+	font-weight: @font__h1--font-weight;
+	font-size: @font__h1--font-size;
+	line-height: @font__h1--line-height;
+	letter-spacing: @font__h1--letter-spacing;
+	color: @color__h1--text;
+	
+	.make-font-a-little-smaller(@font__h1--font-size);
+	.make-font-smaller(@font__h1--font-size);
+	.make-font-a-lot-smaller(@font__h1--font-size);
+}
+
+h2, .heading--2 {
+	font-family: @font__h2--font-family;
+	font-weight: @font__h2--font-weight;
+	font-size: @font__h2--font-size;
+	line-height: @font__h2--line-height;
+	letter-spacing: @font__h2--letter-spacing;
+	color: @color__h2--text;
+	
+	.make-font-a-little-smaller(@font__h2--font-size);
+	.make-font-smaller(@font__h2--font-size);
+	.make-font-a-lot-smaller(@font__h2--font-size);
+}
+
+h3, .heading--3 {
+	font-family: @font__h3--font-family;
+	font-size: @font__h3--font-size;
+	font-weight: @font__h3--font-weight;
+	line-height: @font__h3--line-height;
+	letter-spacing: @font__h3--letter-spacing;
+	color: @color__h3--text;
+	
+	.make-font-a-little-smaller(@font__h3--font-size);
+	.make-font-smaller(@font__h3--font-size);
+	.make-font-a-lot-smaller(@font__h3--font-size);
+}
+
+h4, .heading--4 {
+	font-family: @font__h4--font-family;
+	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size;
+	line-height: @font__h4--line-height;
+	letter-spacing: @font__h4--letter-spacing;
+	color: @color__h4--text;
+	
+	.make-font-a-little-smaller(@font__h4--font-size);
+	.make-font-smaller(@font__h4--font-size);
+	.make-font-a-lot-smaller(@font__h4--font-size);
+}
+
+h5, .heading--5 {
+	font-family: @font__h3--font-family;
+	font-weight: @font__h3--font-weight;
+	font-size: @font__h3--font-size*0.75;
+	line-height: @font__h3--line-height*0.75;
+	letter-spacing: @font__h3--letter-spacing*0.75;
+	color: @color__h3--text;
+	
+	.make-font-a-little-smaller(@font__h3--font-size, 0.6);
+	.make-font-smaller(@font__h3--font-size);
+	.make-font-a-lot-smaller(@font__h3--font-size);
+}
+
+h6, .heading--6 {
+	padding-bottom: 0.2em;
+	font-family: @font__p--font-family;
+	font-weight: @font__h3--font-weight;
+	font-size: @font__p--font-size;
+	line-height: @font__p--line-height;
+	letter-spacing: @font__p--letter-spacing;
+	color: @color__p--text;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+}
+
+p, .paragraph, ul, ol, li {
+	font-family: @font__p--font-family;
+	font-weight: @font__p--font-weight;
+	font-size: @font__p--font-size;
+	line-height: @font__p--line-height;
+	letter-spacing: @font__p--letter-spacing;
+	color: @color__p--text;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+}
+
+// ------------------------------
+// #Bold, Italic, Underlined
+// ------------------------------
+
+b, strong {
+	font-weight: 900;
+}
+
+u {
+	text-decoration: none;
+	border-bottom: 1px solid lighten(@color__p--text, 20%);
+}
+
+// ------------------------------
+// #Label
+// ------------------------------
+
+label, .label-text {
+	font-family: @font__h4--font-family;
+	font-size: 0.9em;
+	color: @color-text--faded;
+	word-wrap: normal;
+    hyphens: none;
+}
+
+// ------------------------------
+// #Span
+// ------------------------------
+
+span {
+	background-color: transparent;
+}
+
+// ------------------------------
+// #Link
+// ------------------------------
+
+a {
+	z-index: 0;
+	position: relative;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	color: @color__p--text;
+	line-height: 1.3em;
+	overflow: visible;
+	height: auto;
+	.transition();
+
+    &, &:hover, &:active, &:visited {
+        text-decoration: none;
+    }
+	
+	&:after {
+		content: "";
+		z-index: -1;
+		position: absolute;
+		left: -0.1em;
+		right: -0.1em;
+		bottom: -0.02em;
+		height: 0.6em;
+		background: @color__link--text;
+		.transition();
+	}
+	
+	&:hover:after {
+		height: 1.2em;
+		.transform-scale(1.1);
+	}
+}
+
+a[class] {
+	position: static;
+	color: inherit;
+	color: inherit;
+	
+    &, &:hover {
+		border-bottom: none;
+		background-color: transparent;
+    }
+	
+	&:after {
+		content: none;
+	}
+}
+
+// ------------------------------
+// #Small
+// ------------------------------
+
+small {
+	color: @color__p--text;
+}
+
+// ------------------------------
+// #Preformatted Text and Code
+// ------------------------------
+
+pre, code {
+	display: block;
+	margin: 1em 0;
+	padding: 1em 1.5em;
+	border: none;
+	.border-radius(0);
+	background-color: @color-text--lightest;
+	border: 2px solid @color__button--background;
+	overflow: auto;
+	
+	.paragraph;
+	font-family: monospace;
+}
+
+code {
+	border-left: 10px solid @color__button--background;
+}
+
+// ------------------------------
+// #Unordered and Ordered List
+// ------------------------------
+
+ul, ol {
+	padding: 0;
+	
+	li {
+		margin: 0 0 1em 0;
+		padding: 0;
+	}
+}
+
+ul {
+	margin: 0.5em 0 0.5em 1.2em;
+	
+	li {
+		padding-left: 1em;
+	}
+}
+
+ol {
+	margin: 0.5em 0 0.5em 2.2em;
+	counter-reset: section;
+
+	li {
+		list-style: none;
+		
+		// Custom Numbers
+		&:before {
+			content: counter(section) ".";
+			counter-increment: section;
+			float: left;
+			margin-left: -2em;
+			padding: 0 0.4em 0 0;
+			color: @color__h1--text;
+		}
+	}
+}
+
+// ------------------------------
+// #Block Quote
+// ------------------------------
+
+blockquote {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	padding: 1.5em 50px;
+	width: 70%;
+	font-style: italic;
+	font-family: @font__p--font-family;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	
+	@media @tablet-horizontal {
+		width: 80%;
+	}
+	
+	@media @tablet {
+		width: auto;
+	}
+	
+	&:before {
+		position: absolute;
+		content: "\0201c";
+		top: 0;
+		left: 0;
+		font-family: @font__h4--font-family;
+		font-weight: @font__h4--font-weight;
+		font-size: @font__h4--font-size;
+		line-height: @font__h4--line-height;
+		letter-spacing: @font__h4--letter-spacing;
+		color: @color__h4--text;
+
+		.make-font-a-little-smaller(@font__h4--font-size);
+		.make-font-smaller(@font__h4--font-size);
+		.make-font-a-lot-smaller(@font__h4--font-size);
+	}
+	
+	.responsivecolumns & {
+		width: auto;
+		max-width: none;
+	}
+	
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		padding-right: 0;
+		
+		&:after {
+			display: none;
+		}
+	}
+}
+
+// ------------------------------
+// #Highlighted Text
+// ------------------------------
+
+::-moz-selection {
+    background: @color-highlight--light;
+}
+
+::selection {
+    background: @color-highlight--light;
+}

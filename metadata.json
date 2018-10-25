@@ -34,50 +34,50 @@
             "font-family": "\"Karla\", Tahoma, Verdana, sans-serif",
             "font-size": "64px",
             "font-weight": "400",
-            "line-height": "1.2em",
+            "line-height": "72px",
             "color": "@color-swatch2",
-            "letter-spacing": "-0.04em"
+            "letter-spacing": "-2.5px"
         },
         "font2": {
             "font-family": "\"Karla\", Tahoma, Verdana, sans-serif",
             "font-size": "42px",
             "font-weight": "400",
-            "line-height": "1.2em",
+            "line-height": "50px",
             "color": "@color-swatch2",
-            "letter-spacing": "-0.02em"
+            "letter-spacing": "-0.8px"
         },
         "font3": {
             "font-family": "\"Karla\", Tahoma, Verdana, sans-serif",
             "font-size": "32px",
             "font-weight": "700",
-            "line-height": "1.2em",
+            "line-height": "38px",
             "color": "fade(@color-swatch2, 80%)",
-            "letter-spacing": "-0.0175em"
+            "letter-spacing": "-0.5px"
         },
         "font4": {
             "font-family": "\"Abril Fatface\", Georgia, serif",
-            "font-size": "220px",
+            "font-size": "30px",
             "font-weight": "400",
-            "line-height": "0.8em",
-            "color": "fade(@color-swatch2,10%)",
+            "line-height": "24px",
+            "color": "fade(@color-swatch2, 75%)",
             "letter-spacing": "0"
         },
         "font5": {
             "font-family": "\"Karla\", Tahoma, Verdana, sans-serif",
             "font-size": "20px",
             "font-weight": "400",
-            "line-height": "1.65em",
+            "line-height": "33px",
             "color": "fade(@color-swatch1, 75%)",
-            "letter-spacing": "-0.008em"
+            "letter-spacing": "-0.1px"
         },
         "font6": {
             "font-family": "\"Karla\", Tahoma, Verdana, sans-serif",
             "font-size": "16px",
             "font-weight": "700",
-            "line-height": "1.2em",
+            "line-height": "19px",
             "color": "@color-swatch2",
             "color-hover": "@color-swatch1",
-            "letter-spacing": "0.05em",
+            "letter-spacing": "0.8px",
             "background-color": "@color-swatch2",
             "background-color-hover": "@color-swatch1"
         },
@@ -85,35 +85,35 @@
             "font-family": "\"Karla\", Tahoma, Verdana, sans-serif",
             "font-size": "16px",
             "font-weight": "700",
-            "line-height": "1.1em",
+            "line-height": "18px",
             "color": "@color-swatch7",
-            "letter-spacing": "0.1em",
+            "letter-spacing": "1.5px",
             "background-color": "@color-swatch2",
             "background-color-hover": "@color-swatch1"
         },
         "font8": {
             "font-family": "\"Abril Fatface\", Georgia, serif",
-            "font-size": "220px",
-            "font-weight": "400",
-            "line-height": "0.8em",
-            "color": "fade(@color-swatch2,10%)",
-            "letter-spacing": "0"
-        },
-        "font9": {
-            "font-family": "\"Abril Fatface\", Georgia, serif",
             "font-size": "80px",
             "font-weight": "400",
-            "line-height": "0.9em",
+            "line-height": "72px",
             "color": "@color-swatch2",
             "letter-spacing": "0"
         },
-        "font10": {
+        "font9": {
             "font-family": "\"Karla\", Tahoma, Verdana, sans-serif",
             "font-size": "120px",
             "font-weight": "400",
-            "line-height": "1em",
+            "line-height": "120px",
             "color": "@color-swatch7",
-            "letter-spacing": "-0.075em"
+            "letter-spacing": "-8px"
+        },
+        "font10": {
+            "font-family": "\"Karla\", Tahoma, Verdana, sans-serif",
+            "font-size": "64px",
+            "font-weight": "400",
+            "line-height": "72px",
+            "color": "@color-swatch7",
+            "letter-spacing": "-5px"
         }
     },
     "styles": {
@@ -125,12 +125,12 @@
             "color__body--background": "@color-swatch7",
             "color__container--background": "fade(@color-swatch2, 50%)",
             "color__link--text": "@color-swatch5",
-            "font__companyname--font-family": "@font-swatch9-font-family",
-            "font__companyname--font-size": "@font-swatch9-font-size",
-            "font__companyname--font-weight": "@font-swatch9-font-weight",
-            "font__companyname--line-height": "@font-swatch9-line-height",
-            "font__companyname--letter-spacing": "@font-swatch9-letter-spacing",
-            "color__companyname--text": "@font-swatch9-color"
+            "font__companyname--font-family": "@font-swatch8-font-family",
+            "font__companyname--font-size": "@font-swatch8-font-size",
+            "font__companyname--font-weight": "@font-swatch8-font-weight",
+            "font__companyname--line-height": "@font-swatch8-line-height",
+            "font__companyname--letter-spacing": "@font-swatch8-letter-spacing",
+            "color__companyname--text": "@font-swatch8-color"
         },
         "typography": {
             "font__h1--font-family": "@font-swatch1-font-family",
@@ -168,8 +168,7 @@
             "color__header--background": "@color-swatch7"
         },
         "footer": {
-            "color__footer--background": "@color-swatch7",
-            "color__footer--border": "fade(@color-swatch2, 50%)"
+            "color__footer--background": "@color-swatch7"
         },
         "navigation": {
             "font__navigation--font-family": "@font-swatch6-font-family",
@@ -211,16 +210,16 @@
         },
         "feature": {
             "color__feature-content--background": "@color-swatch3",
-            "font__feature-headline--font-family": "@font-swatch10-font-family",
-            "font__feature-headline--font-size": "@font-swatch10-font-size",
-            "font__feature-headline--font-weight": "@font-swatch10-font-weight",
-            "font__feature-headline--line-height": "@font-swatch10-line-height",
-            "font__feature-headline--letter-spacing": "@font-swatch10-letter-spacing",
-            "color__feature-headline--text": "@font-swatch10-color",
-            "font__feature-strapline--font-family": "@font-swatch1-font-family",
-            "font__feature-strapline--font-size": "@font-swatch1-font-size",
-            "font__feature-strapline--font-weight": "@font-swatch1-font-weight",
-            "font__feature-strapline--line-height": "@font-swatch1-line-height",
+            "font__feature-headline--font-family": "@font-swatch9-font-family",
+            "font__feature-headline--font-size": "@font-swatch9-font-size",
+            "font__feature-headline--font-weight": "@font-swatch9-font-weight",
+            "font__feature-headline--line-height": "@font-swatch9-line-height",
+            "font__feature-headline--letter-spacing": "@font-swatch9-letter-spacing",
+            "color__feature-headline--text": "@font-swatch9-color",
+            "font__feature-strapline--font-family": "@font-swatch10-font-family",
+            "font__feature-strapline--font-size": "@font-swatch10-font-size",
+            "font__feature-strapline--font-weight": "@font-swatch10-font-weight",
+            "font__feature-strapline--line-height": "@font-swatch10-line-height",
             "font__feature-strapline--letter-spacing": "@font-swatch10-letter-spacing",
             "color__feature-strapline--text": "@font-swatch10-color",
             "color__feature-button--text": "@color__button--text",

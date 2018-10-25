@@ -77,7 +77,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	position: relative;
 	background-color: @color__header--background;
 	min-height: 150px;
-	.header-border-removal();
 
     @media @tablet {
 		.display-flex();
@@ -116,20 +115,11 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     width: 100%;
     background-color: @color__footer--background;
     text-align: center;
-    border-top: 10px solid @color__footer--border;
-	.footer-border-removal()
-	.container {
-	}
-	// Widget
+	
 	.widget {
 		width: 80%;
 		max-width: @layout-width-desktop;
 		margin: 2em auto;
-
-		@media @tablet-horizontal {
-		}
-		@media @tablet {
-		}
 	}
 }
 

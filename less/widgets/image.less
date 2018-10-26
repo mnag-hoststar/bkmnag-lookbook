@@ -9,49 +9,40 @@
 // ----------------------------------------
 
 // ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the image background 
-// is not the same as the page background.
-
-.image-widget-background--spacing() when not (@color__image--background = @color__body--background) {
-	padding: 0;
-}
-
-// ------------------------------
 // #Image
 // ------------------------------
 
 .widget[data-name="image"] {
-	.image-widget-background--spacing();
-	background: @color__image--background;
+	margin: 0 -4%;
+	
+	.image {
+		border: 10px solid @color__body--background;
+	}
 }
+
+
 
 // ------------------------------
 // #Caption
 // ------------------------------
 
-// Conditional if the container background 
-// is not the same as the page background.
+.imagewidget {
+	.caption {
+		margin: 1em 4% 2em;
+	}
 
-.image-caption--spacing() when not (@color__image--background = @color__body--background) {
-	margin-bottom: 0;
-}
+	.image-title,
+	.image-description {
+		width: 80%;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 
-.imagewidget__caption {
-	.image-caption--spacing();
-}
+	.image-title {
+		.heading--3;
+	}
 
-// Image Title
-
-.image-title {
-	.heading--4;
-	color: @color__image-title--text;
-}
-
-// Image Description
-
-.image-description {
-	color: @color__image-description--text;
+	.image-description {
+		.paragraph;
+	}
 }

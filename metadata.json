@@ -201,12 +201,12 @@
         "gallery": {
             "color__gallery-caption--background": "@color-swatch3",
             "color__gallery-title--text": "@color-swatch7",
-            "color__gallery-description--text": "@color-swatch7"
+            "color__gallery-description--text": "@color__h1--text"
         },
         "slideshow": {
             "color__slideshow-caption--background": "@color-swatch3",
             "color__slideshow-title--text": "@color-swatch7",
-            "color__slideshow-description--text": "@color-swatch7"
+            "color__slideshow-description--text": "@color__h1--text"
         },
         "feature": {
             "color__feature-content--background": "@color-swatch3",

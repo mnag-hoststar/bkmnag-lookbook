@@ -53,10 +53,21 @@ h1, .heading--1 {
 	line-height: @font__h1--line-height;
 	letter-spacing: @font__h1--letter-spacing;
 	color: @color__h1--text;
+	text-shadow: 0.05em 0 fade(@color__h4--text, 80%);
 	
 	.make-font-a-little-smaller(@font__h1--font-size);
 	.make-font-smaller(@font__h1--font-size);
 	.make-font-a-lot-smaller(@font__h1--font-size);
+	
+	&:after {
+		content: "";
+		height: 0.075em;
+		width: 100px;
+		background-color: @color__h1--text;
+		display: block;
+		margin-top: 0.25em;
+		margin-left: 0.075em;
+	}
 }
 
 h2, .heading--2 {

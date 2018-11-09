@@ -1,22 +1,14 @@
 {% extends "layout.twig" %}
-
 {% block content %}
 
 <section class="page  page--default">
-
-
     {% include "includes/header.twig" %}
-
-
     <div class="page-title">
         {{widget('pagetitle', 'page-title', {})|raw}}
     </div>
-
-
+	
     <!-- Zone Content -->
-    <div class="main-content">
-        <div class="container">
-
+    <div class="template__content">
             {{widget('responsiveslideshow', 'slideshow', {
                 'duration':'4',
                 'transSpeed': '1000',
@@ -46,13 +38,7 @@
                     },
                 ]
             })|raw}}
-
             {{zone('main')|raw}}
-
-        </div>
-    </div>
-
-
+	</div>
 </section>
-
 {% endblock %}

@@ -9,7 +9,7 @@ $(document).ready(function(){
 	$(".widget__extendednavigation").addClass("closed");
 
 	$(".extendednavigation__navigation-toggle").click(function() {
-		$(".widget__extendednavigation").toggleClass("open" ).toggleClass("closed");
+		$(".widget__extendednavigation").toggleClass("open").toggleClass("closed");
 	});
 
 	// Togglse class open to display/hide folders

@@ -1,4 +1,9 @@
+// -------------------------------------
+// LookBook: JS > Custom
+// -------------------------------------
+
 // Makes the whole ecom product tiles clickable
+
 $(document).ready(function() {
 
     $('.product-item').each(function() {

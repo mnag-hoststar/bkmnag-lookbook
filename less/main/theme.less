@@ -55,29 +55,10 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 // ------------------------------
-// #Header and Content
-// ------------------------------
-
-.template__header,
-.template__content {
-    width: 100%;
-
-    @media @bp-global-above-fullwidth {
-        width: 90%;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-}
-
-// ------------------------------
 // #Header
 // ------------------------------
 
 .template__header {
-	position: relative;
-	background-color: @color__header--background;
-	min-height: 150px;
-
     @media @tablet {
 		.display-flex();
 		.align-items(center, center);
@@ -92,18 +73,8 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // Main
 
 .template__content {
-    border: 3px solid @color__container--background;
-	
 	.page--home & {
     	border-top: none;
-	}
-}
-
-// Container
-
-.container {
-	@media @mobile {
-		display: block;
 	}
 }
 

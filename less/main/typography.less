@@ -54,6 +54,7 @@ h1, .heading--1 {
 	letter-spacing: @font__h1--letter-spacing;
 	color: @color__h1--text;
 	text-shadow: 0.05em 0 fade(@color__h4--text, 80%);
+	margin: 0 -5%;
 	
 	.make-font-a-little-smaller(@font__h1--font-size);
 	.make-font-smaller(@font__h1--font-size);
@@ -216,7 +217,6 @@ a {
 	
 	&:hover:after {
 		height: 1.2em;
-		.transform-scale(1.1);
 	}
 }
 
@@ -338,11 +338,11 @@ blockquote {
 		font-size: @font__p--font-size*10;
 		line-height: @font__p--font-size*6;
 		letter-spacing: @font__p--letter-spacing;
-		color: fade(@color__h4--text, 50%);
+		color: fade(@color__h1--text, 50%);
 
-		.make-font-a-little-smaller(@font__h4--font-size);
-		.make-font-smaller(@font__h4--font-size);
-		.make-font-a-lot-smaller(@font__h4--font-size);
+		.make-font-a-little-smaller(@font__h4--font-size*8);
+		.make-font-smaller(@font__h4--font-size*8);
+		.make-font-a-lot-smaller(@font__h4--font-size*8);
 	}
 	
 	.responsivecolumns & {

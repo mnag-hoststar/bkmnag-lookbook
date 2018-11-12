@@ -114,20 +114,20 @@ input[type="password"],
 textarea {
     padding: 0.4em 0.6em;
     background-color: #fff;
-    border: 2px solid @color__form--border;
+    border: 2px solid fade(@color__form--border, 50%);
     color: @color__p--text;
 	.transition();
     .border-radius(0);
     .appearance(none);
 	
 	&:hover {
-    	border: 2px solid darken(@color__form--border, 8%);
+    	border-color: fade(@color__form--border, 50%);
 	}
 	
 	// Focus style for easier keyboard navigation
 	
 	&:focus {
-    	border: 2px solid @color-highlight--light;
+    	border-color: @color__form--border;
 		.box-shadow(none);
 	}
 }
@@ -159,11 +159,11 @@ textarea {
    color: @color-text--faded;
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
    color: @color-text--faded;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {
    color: @color-text--faded;
 }
 
@@ -246,22 +246,27 @@ input:focus {
 		padding: 0 !important;
 		width: 100% !important;
 		height: 100% !important;
+		.transition();
 
 		&:hover + label:before {
 	    	border: 2px solid darken(@color__form--border, 8%);
+			.transition();
 		}
 
 		&:checked + label:before {
-			border: 2px solid @color__button--background;
+			border: 2px solid @color__form--border;
+			.transition();
 		}
 
 		&:checked + label:after {
 			opacity: 1;
+			.transition();
 		}
 
 		&:focus + label:before,
 		&:focus:checked + label:before {
-			border: 2px solid @color-highlight--light;
+			border: 2px solid @color__form--border;
+			.transition();
 		}
 	}
 
@@ -273,7 +278,7 @@ input:focus {
 			&:after {
 				content: " ";
 				.border-radius(1em);
-				background-color: @color__button--background;
+				background-color: @color__form--border;
 				top: 0.7em;
 				left: -2.5em;
 				width: 1.5em;
@@ -289,7 +294,7 @@ input:focus {
 			&:after {
 				content: "\f00c";
 				font-family: 'FontAwesome', sans-serif;
-				color: @color__button--background;
+				color: @color__form--border;
 				top: -2px;
 				left: -2.5em;
 				width: 1.5em;
@@ -344,31 +349,32 @@ input:focus {
     display: block;
 	padding: 0 2em 0 0.6em;
     width: 100%;
-    border: 2px solid @color__form--border;
+    border: 2px solid fade(@color__form--border, 50%);
 	background-color: @color-text--lightest;
     font-size: 1em;
     color: @color__p--text;
     .border-radius(0);
     .appearance(none);
+	.transition();
+
+    &:hover {
+		border-color: @color__form--border;
+		background-color: @color-text--lighter;
+    }
+
+    &:focus {
+		border-color: @color__form--border;
+		background-color: @color-text--lighter;
+	}
+	
+	&:hover:focus {
+		border-color: @color__form--border;
+		background-color: @color-text--lighter;
+	}
 
     @media @mobile {
 		padding: 0 2.7em 0 0.6em;
     }
-
-    &:hover {
-		border: 2px solid darken(@color__form--border, 8%);
-		background-color: @color-text--lightest;
-    }
-
-    &:focus {
-		border: 2px solid @color-highlight--light;
-		background-color: @color-text--lightest;
-	}
-	
-	&:hover:focus {
-		border: 2px solid @color-highlight;
-		background-color: @color-text--lightest;
-	}
 }
 
 .select::-ms-expand {
@@ -401,7 +407,6 @@ input:focus {
 // ------------------------------
 
 .signupform {
-	
 	.form-body {
 		display: table;
 		width: 100%;

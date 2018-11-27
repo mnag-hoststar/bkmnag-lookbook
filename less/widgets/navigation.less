@@ -183,7 +183,7 @@ html.nav-open {
 			
 			&:before,
 			&:after {
-			  .transition-delay-2items(0s, 0.05s);
+			  .transition-delay(0s, 0.05s);
 			}
 			
 			// Top Bar
@@ -277,8 +277,11 @@ html.nav-open {
 	.item-name {
 		z-index: 0;
 		position: relative;
-		padding: 0;
-		margin: 0 1em;
+		margin: -0.2em 1em -0.4em;
+		padding: 0.2em 0.1em 0;
+		line-height: 0.8em;
+		border-bottom: 0.4em solid transparent;
+		text-decoration: none;
 		text-transform: uppercase;
 		font-family: @font__navigation--font-family;
 		font-size: @font__navigation--font-size;
@@ -295,51 +298,23 @@ html.nav-open {
 			line-height: @font__navigation--line-height * 1.2;
 		}
 		
-		&:after {
-			z-index: -1;
-			content: "";
-			position: absolute;
-			left: -0.2em;
-			right: -0.2em;
-			bottom: -0.2em;
-			height: 0.2em;
-			background: transparent;
-			.transition (all, 0.2s, ease-in-out);
-		
-			@media @tablet {
-				bottom: 0;
-			}
-		}
-	
-		//.make-font-a-little-smaller(@font__navigation--font-size);
-		//.make-font-smaller(@font__navigation--font-size);
-		//.make-font-a-lot-smaller(@font__navigation--font-size);
-		
 		&:hover {
+			text-decoration: none;
+			background-color: @color-highlight;
+			border-bottom: 0.4em solid @color-highlight;
 			color: @color__navigation--text;
-		
-			&:after {
-				bottom: -0.2em;
-				height: 1.5em;
-				background: @color__navigation--text--hover;
-				.transform-scale(1);
-		
-				@media @tablet {
-					bottom: 0;
-				}
-			}
 		}
 	}
 
 	&.selected > .item-name {
-		&:after {
-			bottom: -0.2em;
-			height: 0.8em;
-			background: @color__navigation--text--selected;
+		border-bottom: 0.4em solid @color-highlight;
+		color: @color__navigation--text;
 		
-			@media @tablet {
-				bottom: 0;
-			}
+		&:hover {
+			text-decoration: none;
+			background-color: @color-highlight;
+			border-bottom: 0.4em solid @color-highlight;
+			color: @color__navigation--text;
 		}
 	}
 

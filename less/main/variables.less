@@ -43,11 +43,12 @@
 // #Colors
 // ------------------------------
 
-@color-text--faded: fade(@color__p--text, 60%);
-@color-text--light: fade(@color__p--text, 30%);
-@color-text--lighter: fade(@color__p--text, 10%);
-@color-text--lightest: fade(@color__p--text, 5%);
+@color-text--faded: lighten(@color__p--text, 40%);
+@color-text--light: lighten(@color__p--text, 70%);
+@color-text--lighter: lighten(@color__p--text, 90%);
+@color-text--lightest: lighten(@color__p--text, 95%);
 
+@color-highlight-darker: darken(@color__link--text, 5%);
 @color-highlight: @color__link--text;
-@color-highlight--light: fade(@color__link--text, 80%);
-@color-highlight--lighter: fade(@color__link--text, 20%);
+@color-highlight--light: lighten(@color__link--text, 20%);
+@color-highlight--lighter: lighten(@color__link--text, 80%);

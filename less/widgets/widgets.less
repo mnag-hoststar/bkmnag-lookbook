@@ -37,32 +37,29 @@
 // Responsive Column Widgets
 .widget[data-name="responsivecolumns"] {
 	.responsivecolumns {
+
+		.column {
+			@media @mobile {
+				margin-bottom: 2em;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		
 		.column .widget {
 			width: 100%;
 			border: none;
 			padding: 0;
-
-			@media @mobile {
-				margin: 0 0 30px;
-			}
 		}
 
 		.widget[data-name="content"] {
 			@media @mobile {
-				margin-bottom: 20px;
+				margin-bottom: 2em;
 			}
 		}
 	}
-}
-
-.column {
-    @media @mobile {
-        margin-bottom: 30px;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
 }
 
 // -----------------------------
@@ -74,10 +71,12 @@
 	.widget[data-name="gallery"],
 	.widget[data-name="responsiveslideshow"],
 	.widget[data-name="map"],
-	.widget[data-name="youtube"] {
+	.widget[data-name="youtube"],
+	.widget[data-name="blogpost"],
+	.widget[data-name="ecomproduct"] {
 		position: relative;
 		width: 100%;
-		max-width: 100%;
+		max-width: 1600px;
 		border-width: 0;
 		padding: 0;
 		

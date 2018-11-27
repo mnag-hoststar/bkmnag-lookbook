@@ -58,11 +58,15 @@ a.ecomproduct__button {
 .paypalbuynow .button {
 	&:before,
 	&:after {
+		margin: 0;
 		font-size: 1.5em;
 		font-weight: 400;
 	}
+	&:before {
+		margin-right: 0.5em;
+	}
 	&:after {
-		margin-left: 1em;
+		margin-left: 0.5em;
 	}
 }
 
@@ -92,12 +96,8 @@ a.ecomproduct__button {
 
 .clicktocall .phone-number-link {
 	&:before {
-		margin-right: 0.8em;
+		margin-right: 0.5em;
 	}
-}
-
-.clicktocall .label {
-    margin-left: -0.5em;
 }
 
 // -----------------------------
@@ -110,6 +110,7 @@ a.ecomproduct__button {
 	.button {
 		&:before {
 			display: inline;
+			margin-right: 0.5em;
 		}
 	}
 }
@@ -134,6 +135,23 @@ a.ecomproduct__button {
 // #Paypal
 // -----------------------------
 
+.paypalbuynow {
+	.button {
+		&:before {
+			margin-right: 0.5em;
+		}
+	}
+}
+
+// -----------------------------
+// Icons
+// -----------------------------
+
+.icon:before {
+	margin: 0.5em 0.5em 0.5em 0;
+	width: auto;
+}
+
 
 // -----------------------------
 // #Social Icons
@@ -142,7 +160,7 @@ a.ecomproduct__button {
 // The List of Social Icons
 
 .social-list {
-    margin: 0 -1em;
+    margin: 0 -0.8em;
 }
 
 .social-item {

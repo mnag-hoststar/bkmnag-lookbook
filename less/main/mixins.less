@@ -256,7 +256,7 @@
 	width: 100%/2-@item--margin-size*2;
 	margin: @item--margin-size;
 	
-    @media @tablet {
+    @media @mobile {
 		width: 100%;
     }
 	
@@ -285,8 +285,16 @@
 // Mixing for global time-stamp styles.
 
 .timestamp-styles {
-    padding: 0.4em 0.5em;
-	height: 2em;
+    padding: 0;
+	height: 1.2em;
+	letter-spacing: 0;
+	background: transparent; 
+    text-transform: uppercase;
+	font-family: @font__h4--font-family;
+
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
 }
 
 

@@ -46,7 +46,7 @@ p, a {
     hyphens: auto;
 }
 
-h1, .heading--1 {
+h1 {
 	font-family: @font__h1--font-family;
 	font-weight: @font__h1--font-weight;
 	font-size: @font__h1--font-size;
@@ -71,7 +71,7 @@ h1, .heading--1 {
 	}
 }
 
-h2, .heading--2 {
+h2 {
 	font-family: @font__h2--font-family;
 	font-weight: @font__h2--font-weight;
 	font-size: @font__h2--font-size;
@@ -84,7 +84,7 @@ h2, .heading--2 {
 	.make-font-a-lot-smaller(@font__h2--font-size);
 }
 
-h3, .heading--3 {
+h3 {
 	font-family: @font__h3--font-family;
 	font-size: @font__h3--font-size;
 	font-weight: @font__h3--font-weight;
@@ -97,7 +97,7 @@ h3, .heading--3 {
 	.make-font-a-lot-smaller(@font__h3--font-size);
 }
 
-h4, .heading--4 {
+h4 {
 	font-family: @font__h4--font-family;
 	font-weight: @font__h4--font-weight;
 	font-size: @font__h4--font-size;
@@ -123,7 +123,7 @@ h5, .heading--5 {
 	.make-font-a-lot-smaller(@font__h3--font-size);
 }
 
-h6, .heading--6 {
+h6 {
 	padding-bottom: 0.2em;
 	font-family: @font__p--font-family;
 	font-weight: @font__h3--font-weight;
@@ -137,7 +137,7 @@ h6, .heading--6 {
 	.make-font-a-lot-smaller(@font__p--font-size);
 }
 
-p, .paragraph, ul, ol, li {
+p, ul, ol, li {
 	font-family: @font__p--font-family;
 	font-weight: @font__p--font-weight;
 	font-size: @font__p--font-size;
@@ -191,36 +191,26 @@ a {
 	z-index: 0;
 	position: relative;
 	display: inline;
-	margin: 0;
-	padding: 0;
+	margin: -0.2em -0.1em -0.4em;
+	padding: 0.2em 0.1em 0;
+	line-height: 0.8em;
 	color: @color__p--text;
-	line-height: 1.3em;
 	overflow: visible;
 	height: auto;
+	text-decoration: none;
+	border-bottom: 6px solid @color-highlight;
 	.transition();
 
-    &, &:hover, &:active, &:visited {
-        text-decoration: none;
+    &:hover, &:active, &:visited {
+		text-decoration: none;
+		border-bottom: 6px solid @color-highlight-darker;
+		background-color: @color-highlight-darker;
     }
-	
-	&:after {
-		content: "";
-		z-index: -1;
-		position: absolute;
-		left: -0.1em;
-		right: -0.1em;
-		bottom: -0.02em;
-		height: 0.6em;
-		background: @color__link--text;
-		.transition();
-	}
-	
-	&:hover:after {
-		height: 1.2em;
-	}
 }
 
 a[class] {
+	margin: 0;
+	padding: 0;
 	position: static;
 	color: inherit;
 	color: inherit;
@@ -257,7 +247,7 @@ pre, code {
 	border: 2px solid @color__button--background;
 	overflow: auto;
 	
-	.paragraph;
+	p;
 	font-family: monospace;
 }
 

@@ -25,7 +25,7 @@
 .gallery-list {
 	.inline-block-font-hack();
 	margin: 0 auto;
-	max-width: 1800px;
+	max-width: 1600px;
 }
 
 // ------------------------------
@@ -36,22 +36,16 @@
 	position: relative;
 	margin: 0;
 	width: 100%/4;
-	width: 100vw/4;
 	padding-bottom: 100%/4;
-	padding-bottom: 100vw/4;
 	
 	@media @tablet-horizontal {
 		width: 100%/3;
-		width: 100vw/3;
 		padding-bottom: 100%/3;
-		padding-bottom: 100vw/3;
 	}
 	
 	@media @mobile {
 		width: 100%/2;
-		width: 100vw/2;
 		padding-bottom: 100%/2;
-		padding-bottom: 100vw/2;
 	}
 }
 
@@ -293,6 +287,10 @@
 		background-size: cover;
 		background-position: center center;
 	}
+	
+	&:nth-child(n) a.gallery__image-link {
+		border: 10px solid @color__body--background;
+	}
 
 	// Using the background image instead.
 
@@ -362,14 +360,5 @@ a.gallery__image-link,
 	.gallery__gallery-item & {
 		height: auto;
 		width: auto;
-	}
-	.gallery__gallery-item:nth-child(12n+5) & {
-		border-left: none;
-		margin-left: 0;
-		
-		@media @tablet-horizontal {
-			border-left: 10px;
-			margin-left: 10px;
-		}
 	}
 }

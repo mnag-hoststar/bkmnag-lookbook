@@ -1,10 +1,10 @@
 {
     "name":"LookBook",
     "widgetVersion": 2,
-    "thumbnail":"images/lookbook.png",
+    "thumbnail":"lookbook.png",
     "templateType":"standard",
     "pageTypes": [ "home" ],
-    "screenshot":"images/lookbook-screenshot.jpg",
+    "screenshot":"lookbook-screenshot.jpg",
     "images":[
         "images/feature-image.jpg",
         "images/gallery/gallery-image--1.jpg",

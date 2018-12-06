@@ -18,8 +18,13 @@
 
 .category-title,
 .tags-title {
-	label;
-	padding: 0;
+	.paragraph;
+	display: block;
+	vertical-align: middle;
+	margin: 1em 0 0;
+	padding: 0.5em 0;
+	font-weight: bold;
+	line-height: 1em;
 }
 
 .tag-list {
@@ -49,7 +54,7 @@ a.tag-link,
 	display: inline-block;
 	background: @color-highlight;
 	margin: 0.4em;
-	padding: 0.6em;
+	padding: 0.4em 0.6em;
 	line-height: 1em;
 	text-transform: uppercase;
 	letter-spacing: @font__p--letter-spacing;
@@ -62,12 +67,16 @@ a.tag-link,
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
 	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
+	
 	&:hover {
 		background: darken(@color-highlight, 5%);
 	}
 	
 	&:last-child {
-		margin-right: 0;
+		margin-right: 0.4em;
 	}
 }
 
@@ -127,7 +136,6 @@ a.tag-link,
 	}
 
 	a.button--pagination {
-		.link-button;
 		
 		&:before {
 			font-size: 1em;

@@ -49,6 +49,10 @@
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
 // ------------------------------
@@ -76,13 +80,19 @@ a.twitter__account-link {
     display: block;
 	padding: 0.5em 0.5em 0 5.1em;
 	min-height: 5.1em;
-	h4;
+	hyphens: none;
+    overflow-wrap: break-word;
+	line-height: 1.2em;
 	font-size: @font__p--font-size;
 	.twitter__account-link--spacing();
 	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
 // ------------------------------
@@ -90,7 +100,7 @@ a.twitter__account-link {
 // ------------------------------
 
 .tweet-content {
-	padding: 0 0.5em 3.5em;
+	padding: 0 0.5em 5em;
     line-height: 1.5em;
 }
 
@@ -103,12 +113,17 @@ a.twitter__account-link {
     bottom: 0;
     left: 0;
     right: 0;
-	padding: 1.5em 1.5em 1em;
+	padding: 1.5em;
+	line-height: 1.2em;
 	font-size: @font__p--font-size;
 	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
 	
 	// Twitter link at the end.
 	

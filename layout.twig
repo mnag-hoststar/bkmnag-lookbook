@@ -16,7 +16,7 @@
 	</head>
 
 	<body class="{{ page.backgroundClass }}">
-		<!-- Site Container (Required) -->
+		{% include "includes/header.twig" %}
 
 		{% block content %}
 		{% endblock %}
@@ -26,6 +26,8 @@
 
 		<!-- jQuery -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<script src="{{asset('js/smooth-scroll.js')}}"></script>
 		
 		<!-- Parallax -->
 		<script src="{{ asset('js/jquery.paroller.js')}}"></script>

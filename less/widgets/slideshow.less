@@ -59,6 +59,11 @@
 }
 
 .responsiveslideshow .figure {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 	background-color: transparent;
 	background-size: cover;
 	background-position: center;
@@ -109,6 +114,10 @@
 	.make-font-a-little-smaller(@font__p--font-size*1.1);
 	.make-font-smaller(@font__p--font-size*1.1);
 	.make-font-a-lot-smaller(@font__p--font-size*1.1);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height*1.1);
+	.make-line-height-smaller(@font__p--line-height*1.1);
+	.make-line-height-a-lot-smaller(@font__p--line-height*1.1);
 }
 
 .responsiveslideshow__image-description {
@@ -220,10 +229,10 @@
 		display: block;
 		overflow: hidden;
 		border: 2px solid @color__slideshow-pagination-item--background;
-		color: @color__slideshow-pagination-item--background;
 		background-color: @color-text--lightest;
 		width: 18px;
 		height: 18px;
+		min-height: auto;
 		padding: 0;
 		text-indent: -10000px;
 		.border-radius(50%);
@@ -236,7 +245,6 @@
 		
 		&:hover {
 			border: 2px solid @color__slideshow-pagination-item--background--hover;
-			color: @color__slideshow-pagination-item--background--hover;
 			background-color: @color-text--lighter;
 			margin: 0;
 			padding: 0;
@@ -246,8 +254,8 @@
 
 	&.selected .button {
 		top: 1px;
+		border: 2px solid @color__slideshow-pagination-item--background--selected;
 		background: @color__slideshow-pagination-item--background;
-		border-width: 3px;
 		.transform-scale(1.5);
 
 		@media @tablet {

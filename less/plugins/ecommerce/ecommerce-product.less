@@ -16,14 +16,6 @@
 // #Product
 // ------------------------------
 
-.ecomproduct {
-
-}
-
-.ecomproduct__button {
-    
-}
-
 // Product Article
 
 .product-article {
@@ -47,31 +39,15 @@
     -ms-flex: 0 1 50%;
     flex: 0 1 50%;
     padding: 1px 0;
-}
-
-// Product Image
-
-.product-image {
-	.image-link {
-		
-	}
+	background-color: @color__ecomproduct-content--background;
 }
 
 // ------------------------------
 // #Product Image
 // ------------------------------
 
-.product-image {
-    background-color: #fff;
-    padding: 10px;
-	margin: 2em 2em 2em 10em;
-	
-    @media @tablet-horizontal {
-        margin: 40px;
-    }
-    @media @tablet {
-        margin: 20px;
-    }
+.ecomproduct__product-image {
+	position: relative;
 
     body.product-one-image & {
 		margin-left: 70px;
@@ -85,23 +61,36 @@
 
 	.image-link {
 		display: block;
-		width: 100%;
+		width: auto;
+		margin: 5% 5% 0;
 		background-size: contain;
 		background-position: center;
-		background-color: #fff;
-		height: 400px;
+		max-height: 800px;
+		height: 800px;
+		height: 100vw;
+		background-color: @color__ecomproduct-images--background;
+		
+		&:hover, &:active {
+			background-color: @color__ecomproduct-images--background;
+		}
 
 		@media @tablet-horizontal {
-			padding: 20px;
-			height: 350px;
+			margin: 5%;
+			max-height: 700px;
+			height: 700px;
+			height: 100vw;
 		}
+		
 		@media @tablet {
-			padding: 10px;
-			height: 300px;
+			max-height: 600px;
+			height: 600px;
+			height: 100vw;
 		}
+		
 		@media @mobile {
-			padding: 10px;
-			height: 200px;
+			max-height: 500px;
+			height: 500px;
+			height: 100vw;
 		}
 	}
 	
@@ -118,70 +107,44 @@
 
 .product-gallery {
     overflow: hidden;
-	position: absolute;
-	top: 70px;
-	left: 70px;
-	margin: 0;
+	margin: 2.5% 5%;
+	text-align: center;
 	.inline-block-font-hack();
 
-    @media @tablet-horizontal {
-        margin: 0 40px;
-        position: relative;
-        max-width: 390px;
-        overflow: hidden;
-        height: 60px;
-        top: 0;
-        left: 0;
-    }
-
-    @media @tablet, @mobile {
-        margin: 20px;
-        position: relative;
-        max-width: 270px;
-        height: 40px;
-    }
+	@media @tablet-horizontal {
+		margin: 5%;
+	}
 
     // Gallery Item
 
     .gallery-item {
         position: relative;
-        background-color: #fff;
-        display: block;
-        border: 2px solid #fff;
-		float: none;
-		margin-bottom: 16px;
-		line-height: 74px;
-
-        @media @tablet-horizontal, @tablet {
-            float: left;
-        }
+		display: inline-block;
+        background-color: @color__ecomproduct-images--background;
+		width: 80px;
+		height: 80px;
+		margin: 1%;
 
         @media @tablet-horizontal {
             width: 60px;
             height: 60px;
-            line-height: 56px;
-            margin-right: 6px;
-        }
-        @media @tablet {
-            width: 40px;
-            height: 40px;
-            line-height: 36px;
-            margin-right: 6px;
         }
     }
 
     // Image Button
 
     .image-button {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
         display: inline-block;
         line-height: 76px;
+		
         @media @tablet-horizontal {
             line-height: 56px;
             height: 60px;
-        }
-        @media @tablet {
-            line-height: 36px;
-            height: 40px;
         }
 
         // Image
@@ -190,11 +153,9 @@
             line-height: 76px;
             display: inline-block;
             vertical-align: middle;
+			
             @media @tablet-horizontal {
                 line-height: 56px;
-            }
-            @media @tablet {
-                line-height: 36px;
             }
         }
     }
@@ -205,25 +166,17 @@
 // ------------------------------
 
 .product-content {
-    -webkit-flex: 0 1 50%;
-    -ms-flex: 0 1 50%;
-    flex: 0 1 50%;
-    background: @color__container--background;
-    margin: 0 auto;
-    max-width: @layout-width-desktop;
-
-    @media @tablet-horizontal {
-        padding: 40px;
-    }
-    @media @tablet {
-        padding: 0 20px 20px;
-    }
+	width: 90%;
+	max-width: @layout-max-width;
+	margin: 0 auto;
+	padding: 1em 10%;
+	border: solid @color__container--background;
+	border-width: 0 3px;
 }
 
 // Product Title
 
 .product-title {
-    padding-bottom: 0;
     color: @color__ecomproduct-title--text;
 }
 
@@ -239,6 +192,35 @@
     margin: 16px 0 24px;
 }
 
+// Product Buttons
+
+button.ecomproduct__button,
+a.ecomproduct__button {
+	.link-button;
+	
+	@media @tablet {
+		float: none;
+		display: block;
+		margin-top: 1em;
+		width: 100%;
+		line-height: 46px;
+		text-align: center;
+	}
+
+	@media @mobile-small {
+		padding: 0;
+	}
+	
+	&.icon:before {
+		margin: 0 0.5em 0 0;
+		width: auto;
+	
+		@media @tablet {
+			float: none;
+		}
+	}
+}
+
 // ------------------------------
 // #Product Actions
 // ------------------------------
@@ -250,10 +232,7 @@
 
     .select-wrap {
         max-width: 100%;
-
-        &:after {
-            padding-right: 14px;
-        }
+		margin-top: 0;
     }
 	
     // Legend
@@ -276,19 +255,11 @@
         margin: 0 0.6em 0 0;
         float: left;
 		
-        // Label
-
-        .label {
-            padding: 5px 0;
-            font-family: @font__h4--font-family;
-            font-size: 12px;
-            letter-spacing: 2px;
-            line-height: 1;
-            color: lighten(@color__p--text, 20%);
-            display: block;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
+		@media @tablet {
+			float: none;
+			margin: 0;
+			width: 100%;
+		}
     }
 }
 
@@ -302,12 +273,8 @@
     // Attribute Title
 	
     .product-attribute-title {
-        line-height: 2;
-        color: fade(@color__p--text, 80%);
-        padding: 0;
-        display: block;
-        margin: 0 0 0.25em 0;
-        font-size: 13px;
+		margin: 1em 0 0;
+		padding: 0.5em 0;
     }
 	
     // Product Category, Product Tags
@@ -322,28 +289,5 @@
         p {
             line-height: 1;
         }
-    }
-	
-    // Category Link, Tag Link
-
-    .category-link,
-	.tag-link {
-        .underline;
-        font-size: 14px;
-    }
-
-    // Tag List
-
-    .tag-list {
-        display: block;
-        line-height: 1;
-    }
-	
-    // Tag Item
-
-    .tag-item {
-        line-height: 1;
-        margin-right: 1em;
-        margin-bottom: 0.5em;
     }
 }

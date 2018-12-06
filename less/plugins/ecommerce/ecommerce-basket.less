@@ -2,6 +2,77 @@
 // LookBook: LESS > Plugins > Ecommerce > Basket
 // ----------------------------------------
 
+.widget[data-widget-type="ecombasket"] {
+    margin: 0 auto;
+	padding: 1em 0;
+    max-width: 1400px;
+    width: 90%;
+		
+	@media @mobile {
+		padding: 1em 0 0;
+	}
+}
+
 .ecombasket {
+	text-align: right;
 	
+	.icon--basket {
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+		font-size: 0;
+		height: auto;
+		
+		&:before {
+			content: none;
+		}
+		
+		// Cart Count Number
+		.ecombasket__item-count {
+			position: relative;
+			padding: 0.4em 0.6em;
+			line-height: 1em;
+			background-color: @color-highlight;
+			letter-spacing: @font__p--letter-spacing;
+			font-family: @font__p--font-family;
+			font-size: @font__p--font-size;
+			font-weight:@font__p--font-weight;
+			color: @color__p--text;
+	
+			.make-font-a-little-smaller(@font__p--font-size);
+			.make-font-smaller(@font__p--font-size);
+			.make-font-a-lot-smaller(@font__p--font-size);
+	
+			.make-line-height-a-little-smaller(@font__p--line-height);
+			.make-line-height-smaller(@font__p--line-height);
+			.make-line-height-a-lot-smaller(@font__p--line-height);
+			
+			&:hover {
+				background-color: @color-highlight-darker;
+			}
+		
+			// Cart Icon
+			&:after {
+				position: absolute;
+				top: 50%;
+				right: 100%;
+				margin: -0.5em 0.5em 0 0;
+				padding: 0;
+				width: 1em;
+				font-size: @font__button--font-size*1.5;
+				color: @color__button--background;
+				content: "\f07a";
+				font-family: 'FontAwesome', sans-serif;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				text-align: center;
+			}
+
+			&:hover:after {
+				color: @color__button--background--hover;
+			}
+		}
+	}
 }

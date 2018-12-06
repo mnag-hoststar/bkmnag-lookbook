@@ -2,25 +2,26 @@
 // LookBook: LESS > Plugins > Ecommerce > Categories
 // ----------------------------------------
 // 
-// #Title
 // #List
 // #Item
 // 
 // ----------------------------------------
 
 // ------------------------------
-// #Title
-// ------------------------------
-
-.category-list-body h3 {
-}
-
-// ------------------------------
 // #List
 // ------------------------------
 
-.category-list {
-    margin: 0;
+.ecomcategorieslist__category-list {
+    margin: 0 -0.5%;
+    .clearfix();
+	
+    @media @tablet-horizontal {
+    	margin: 0 -0.625%;
+	}
+	
+    @media @tablet {
+    	margin: 0 -1%;
+	}
 }
 
 // ------------------------------
@@ -28,49 +29,52 @@
 // ------------------------------
 
 .ecomcategorieslist__category-item {
+	.paragraph;
+	margin: 0 0.5% 1%;
+	padding: 0;
     float: left;
     list-style: none;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
 
     @media @tablet-horizontal {
-        width: 32.5%;
-        margin: 0 1.25% 1.25% 0;
-        &:nth-child(3n) {
-            margin-right: 0;
-        }
-        &:nth-child(4n) {
-            clear: left;
-        }
+        width: 31.3%;
+		margin: 0 1% 2%;
     }
 
     @media @tablet {
-        width: 49%;
-        margin: 0 2% 2% 0;
-        &:nth-child(2n) {
-            margin-right: 0;
-        }
-        &:nth-child(3n) {
-            clear: left;
-        }
+        width: 48%;
+        margin: 0 1% 2%;
     }
 	
    @media @mobile {
-        width: 100%;
+        margin: 0 0 0.5em;
         height: auto;
-        margin: 0 0 2% 0;
+        width: 100%;
     }
 	
     // Link
 
-    a {
-        .underline;
+    a.category-link {
         display: block;
+		margin: 0;
     }
 	
     // Item Count
 
     .item-count {
-        float: right;
         opacity: 0.5;
+		float: right;
+		margin-left: 0.5em;
+		
+		@media @tablet-horizontal {
+		}
     }
 	
 	.responsivecolumns & {
@@ -92,9 +96,7 @@
 	.columns-three-middle & {
 		width: 49%;
 		margin: 0 2% 2% 0;
-		&:nth-child(2n) {
-			margin-right: 0;
-		}
+		
 		&:nth-child(3n) {
 			clear: left;
 		}

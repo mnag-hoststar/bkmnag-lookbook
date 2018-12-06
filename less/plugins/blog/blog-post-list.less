@@ -2,7 +2,6 @@
 // LookBook: LESS > Plugins > Blog > Blog Posts List
 // ----------------------------------------
 //
-// #Conditional Mixins
 // #All posts
 // #Single Article
 // #Image
@@ -13,31 +12,13 @@
 // ----------------------------------------
 
 // ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the Blog Post List background 
-// is not the same as the Blog Article background.
-
-.blogpostlist-article-background--spacing() when not (@color__blogpostlist--background = @color__blogpostlist-article--background) {
-	padding: 2em 0;
-}
-
-// Conditional if the Blog Post List background 
-// is the same as the page background.
-
-.blogpostlist-widget-background--spacing() when (@color__blogpostlist--background = @color__body--background) {
-	padding: 1em 0;
-}
-
-// ------------------------------
 // #All posts
 // ------------------------------
 
-.widget[data-name="blogpostlist"] {
-	background-color: @color__blogpostlist--background;
-	.blogpostlist-article-background--spacing();
-	.blogpostlist-widget-background--spacing();
+.template__content section > {
+	.widget[data-name="blogpostlist"] {
+		padding-bottom: 2em;
+	}
 }
 
 .blogpostlist__post-items {
@@ -54,11 +35,17 @@
 
 .blogpostlist__post-article {
 	position: relative;
-	.item--margin-size--3to1-cols();
-	background-color: @color__blogpostlist-article--background;
+	border: 2px solid @color__blogpostlist--background;
+	background-color: @color-text--lightest;
+	.item--margin-size--2to1-cols();
 	.clearfix();
 	
 	@media @mobile {
+		.display-flex(flex);
+		.flex-direction(inherit);
+	}
+
+	.responsivecolumns & {
 		.display-flex(flex);
 		.flex-direction(inherit);
 	}
@@ -68,22 +55,27 @@
 // #Image
 // ------------------------------
 
-.blogpostlist {
-    &__post-image {
-        position: relative;
-        overflow: hidden;
-        height: 0;
-		padding-bottom: 56.25%;
+.blogpostlist__post-image {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-bottom: 56.25%;
 		
-		@media @mobile {
-			float: left;
-			height: 100%;
-			width: 25%;
-    		padding-bottom: 0;
-		}
-    }
+	@media @mobile {
+		float: left;
+		height: 100%;
+		width: 20%;
+		padding-bottom: 0;
+	}
+
+	.responsivecolumns & {
+		float: left;
+		height: 100%;
+		width: 20%;
+		padding-bottom: 0;
+	}
 	
-    &__image-link {
+    a.blogpostlist__image-link {
         background-position: center center;
         background-size: cover;
         position: absolute;
@@ -96,7 +88,7 @@
 
     // Using the background image instead.
 
-    &__image {
+    .blogpostlist__image {
         display: none;
     }
 }
@@ -107,17 +99,38 @@
 
 .blogpostlist__post-content {
 	margin: 0;
-	padding: 4em 1.5em 1.5em;
+	padding: 3.2em 1.5em 1.5em;
 	font-size: @font__p--font-size;
 
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
+
+	@media @mobile {
+		padding: 2.5em 1em 0.5em;
+	}
+
+	.responsivecolumns & {
+		padding: 2.5em 1em 0.5em;
+	}
+	
+	.blogpostlist__post-image ~ & {
+		@media @mobile {
+			width: 80%;
+		}
+
+		.responsivecolumns & {
+			width: 80%;
+		}
+	}
 }
 
 .blogpostlist__post-title {
 	.heading--3;
-	padding: 0;
 }
 
 a.blogpostlist__title-link {
@@ -130,7 +143,11 @@ a.blogpostlist__title-link {
 	line-height: 1.5em;
 	color: lighten(@color__p--text, 8%);
 	
-	@media @mobile {
+	@media @tablet {
+		display: none;
+	}
+
+	.responsivecolumns & {
 		display: none;
 	}
 }
@@ -139,14 +156,7 @@ a.blogpostlist__title-link {
 
 a.blogpostlist__read-more {
 	a;
-}
-
-// This style only activates if the article has an image.
-
-.blogpostlist__post-image ~ .blogpostlist__post-content {
-	@media @mobile {
-		width: 75%;
-	}
+	padding: 0 !important;
 }
 
 // ------------------------------
@@ -158,29 +168,43 @@ a.blogpostlist__read-more {
 	top: 0;
     left: 0;
     right: 0;
-	padding: 0 1.5em;
+	padding: 1em 1.5em 0;
 	font-size: @font__p--font-size;
+
+	@media @mobile {
+		padding: 0.7em 1em 0;
+	}
+
+	.responsivecolumns & {
+		padding: 0.7em 1em 0;
+	}
 
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
+
+	// This style only activates if the article has an image.
+
+	.blogpostlist__post-image ~ & {
+		margin-top: 56.25%;
+
+		@media @mobile {
+			margin: 0 0 0 20%;
+		}
+
+		.responsivecolumns & {
+			margin: 0 0 0 20%;
+		}
+	}
 
 	.timestamp {
-		display: inline-block;
-		margin: 1.5em 0 0;
-		background: @color__blogpostlist-title--background;
+		display: block;
+		margin: 0.5em 0 0;
 		.timestamp-styles;
-	}
-}
-
-// This style only activates if the article has an image.
-
-.blogpostlist__post-image ~ .blogpostlist__post-footer {
-	margin-top: 56.25%;
-	
-	@media @mobile {
-		left: 25%;
-		margin-top: 0;
 	}
 }
 

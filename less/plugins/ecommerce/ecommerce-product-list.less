@@ -2,6 +2,7 @@
 // LookBook: LESS > Plugins > Ecommerce > Product List
 // ----------------------------------------
 //
+// #Widget
 // #Title
 // #Product Filters
 // #Product Search
@@ -12,6 +13,17 @@
 // #Featured Product
 // 
 // ----------------------------------------
+
+// ------------------------------
+// #Widget
+// ------------------------------
+
+.template__content section > {
+	.widget[data-name="ecomproductslist"],
+	.widget[data-name="ecomfeaturedproducts"] {
+		padding-bottom: 2em;
+	}
+}
 
 // ------------------------------
 // #Title
@@ -29,9 +41,7 @@
 // #Product Filters
 // ------------------------------
 
-.product-filters {
-	
-	// Legend
+.ecomproductslist__product-filters {
 
 	.legend {
 		display: none;
@@ -50,9 +60,9 @@
 	form {
 		max-width: @layout-width-desktop;
 		margin: 0 auto;
-		margin-bottom: 2em;
+		padding-bottom: 2em;
 
-		@media (max-width: 1024px) {
+		@media @tablet-horizontal {
 			display: block;
 		}
 		
@@ -70,59 +80,28 @@
 // #Product Search
 // ------------------------------
 
-.product-filters {
-	
-}
-
-.product-filters .fieldset--search {
-
-	@media (max-width: 1024px) {
+.ecomproductslist__product-filters .fieldset--search {
+	@media @tablet-horizontal {
 		width: 100%;
-	}
-
-	@media (max-width: 1024px) {
-		padding: 20px 40px 10px;
-	}
-
-	@media @tablet {
-		padding: 14px 20px;
 	}
 	
 	.responsivecolumns & {
 		float: none;
 	}
 	
-	// Label
-	
 	.label {
 		display: none;
 	}
 
-    // Form Body
-
     .form-body {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        -webkit-align-content: stretch;
-        -ms-flex-line-pack: stretch;
-        align-content: stretch;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
+		.display-flex(flex);
+		.flex-direction(row);
+		.flex-wrap(wrap);
+		.justify-content(space-between, justify);
+		.align-content(stretch, stretch);
+		.align-items(stretch, stretch);
         margin-bottom: 1em;
     }
-
-    // Form Group
 
     .form-group {
         margin-bottom: 0;
@@ -132,23 +111,17 @@
         }
     }
 
-    // First Form Group
-
     .form-group:first-of-type {
         -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
         flex: 1 1 auto;
-        padding-right: 0.5em;
+        padding-right: 2%;
     }
-
-    // Last Form Group
 
     .form-group:last-of-type {
         margin: 0;
 
     }
-
-    // Clear Search Group Selector :) Ugly, I know
 
     .form-group + .form-group + .form-group {
         width: 100%;
@@ -163,9 +136,8 @@
     }
 
     .input {
-        height: 45px;
+        height: 50px;
     }
-
 
     .button--submit {
         @media @tablet-horizontal {
@@ -191,10 +163,6 @@
                 margin-left: 0;
             }
         }
-        @media @mobile {
-            &:after {
-            }
-        }
     }
 }
 
@@ -202,37 +170,18 @@
 // #Dropdowns
 // ------------------------------
 
-.product-filters .fieldset--filters {
-
-    @media (max-width: 1024px) {
+.ecomproductslist__product-filters .fieldset--filters {
+    @media @tablet-horizontal {
         width: 100%;
-        padding: 10px 40px;
     }
-    @media @tablet {
-        padding: 10px 20px;
-    }
-	
-	// Form Body
 	
 	.form-body {
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
-		-webkit-flex-direction: row;
-		-ms-flex-direction: row;
-		flex-direction: row;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		-webkit-justify-content: flex-start;
-		-ms-flex-pack: start;
-		justify-content: flex-start;
-		-webkit-align-content: stretch;
-		-ms-flex-line-pack: stretch;
-		align-content: stretch;
-		-webkit-align-items: flex-end;
-		-ms-flex-align: end;
-		align-items: flex-end;
+		.display-flex();
+		.flex-direction();
+		.flex-wrap(wrap);
+		.justify-content();
+		.align-content();
+		.align-items();
 
 		@media @tablet {
 			// Hack for Mobile IE, needs fixed width
@@ -241,44 +190,38 @@
 		}
 	}
 	
-	// Form Group
-	
 	.form-group {
 		min-width: 15%;
 		width: auto;
 		-webkit-flex: 1 1 auto;
 		-ms-flex: 1 1 auto;
 		flex: 1 1 auto;
-		margin-right: 5%;
-		margin-bottom: 0;
+		margin-right: 2%;
+		margin-bottom: 2%;
 
 		&:last-of-type {
 			margin-right: 0;
 		}
+		
+		@media @tablet-horizontal {
+			margin-right: 0;
 
+			&:first-of-type {
+				margin-right: 2%;
+			}
+		}
+		
+		@media @tablet {
+			&:first-of-type {
+				margin-right: 0;
+			}
+		}
 
 		@media @mobile {
 			width: 100%;
 			margin-bottom: 8px;
 			margin-right: 0;
 		}
-
-
-		// Label
-
-		.label {
-			padding: 5px 0;
-			font-family: @font__h4--font-family;
-			font-size: 12px;
-			letter-spacing: 2px;
-			line-height: 1;
-			color: lighten(@color__p--text, 30%);
-			display: block;
-			margin-bottom: 5px;
-			text-transform: uppercase;
-		}
-
-		// Select Wrap
 
 		.select-wrap {
 			margin-top: 0;
@@ -316,39 +259,18 @@
 // #Product List
 // ------------------------------
 
-// Listing Body
-
 .ecomproductslist .listing-body {
     .clearfix();
 }
 
-// Product List
-
 .product-list {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    border-top: 1px solid fade(@color__p--text, 16%);
-	
-	.responsivecolumns & {
-		border-left: 1px solid rgba(66,77,81,0.16);
-		border-top: 1px solid rgba(66,77,81,0.16);
-	}
+    .display-flex();
+    .flex-direction();
+    .flex-wrap(wrap);
+    .justify-content();
+    .align-content();
+    .align-items();
+	margin: 0 -0.5em 1em;
 	
 	.columns-three-left &,
 	.columns-three-right &,
@@ -366,24 +288,16 @@
 // ------------------------------
 
 .product-item {
-    border-right: 1px solid fade(@color__p--text, 16%);
-	.box-shadow(inset 0px -1px 0px 0px fade(@color__p--text, 16%));
-	padding: 40px;
-	width: 100%/4;
+	padding: 0.5em;
+	width: 100%/3;
 	margin: 0;
 
 	@media @tablet-horizontal {
-        padding: 30px;
-		width: 100%/3;
+		width: 100%/2;
 	}
 
-	@media @tablet {
-		width: 100%/2;
-        padding: 20px;
-	}
-	@media @mobile {
+	@media @mobile-small {
 		width: 100%;
-		margin: 0;
 	}
 	
 	.responsivecolumns & {
@@ -401,31 +315,28 @@
 		width: auto;
 		margin: 0;
 	}
-	
-    // Clickable item, class added via JS
 
     &.clickable {
         cursor: pointer;
 		.transition();
-        &:hover {
-			.box-shadow(inset 0px 0px 0px 6px fade(@color__p--text, 16%));
-        }
     }
 }
 
-// Product Item Article
-
 .product-item-article {
+	border: 2px solid @color__ecomproductslist--background;
+	background-color: @color-text--lightest;
+	height: 100%;
+	
 	.responsivecolumns & {
 		padding: 1px 0;
 	}
 }
 
-// Product Item Image
-
 .product-item-image  {
-    background-color: transparent;
+    background-color: @color__ecomproductslist-product-item--background;
     width: auto;
+	font-size: 0;
+	
     @media @mobile {
         line-height: 1;
         height: auto;
@@ -437,10 +348,9 @@
         }
     }
 
-	// Image Link
-
 	.image-link {
 		background-color: transparent;
+		
 		@media @mobile {
 			line-height: 1;
 			height: auto;
@@ -448,9 +358,8 @@
 	}
 }
 
-// Product Item Details
-
 .product-item-details {
+	margin-top: 1em;
     text-align: center;
 
     @media @mobile {
@@ -459,52 +368,59 @@
     }
 }
 
-// Item Title
-
 .product-item-title {
-	h3;
-
-    @media @tablet {
-    }
-     // Title Links
+	margin: 0;
+	padding: 0 0.5em;
 
     .title-link {
         color: @color__ecomproductslist-product-title--text;
     }
 }
 
-// Pagination
+.product-item-price {
+	background: @color-highlight;
+	display: inline-block;
+	margin: 1em 0.5em;
+	padding: 0.2em 0.5em;
 
-.pagination-list {
-	.justify-content(space-between);
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
 // ------------------------------
 // #Featured Product
 // ------------------------------
 
-.ecomfeaturedproducts .listing-title {
-	h2;
-	padding: 26px 70px;
+.ecomfeaturedproducts {
+	.listing-title {
+		
+		// Column styles
 
-    @media @tablet-horizontal {
-        padding: 26px 40px;
-    }
-
-    @media @tablet {
-        padding:  20px;
-    }
-	
-	// Column styles
-	
-    .responsivecolumns & {
-        background-color: transparent;
-        padding: 0 0 1em 0;
-    }
+		.responsivecolumns & {
+			background-color: transparent;
+			padding: 0 0 1em 0;
+		}
+	}
 }
 
 // ------------------------------
 // #Paginatinon
 // ------------------------------
+
+.ecomproductslist .pagination-list {
+	display: block;
+	text-align: center;
+}
+	
+.ecomproductslist pagination-item {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
 
 // For pagination, see less/plugins/plugins.less.

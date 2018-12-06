@@ -14,8 +14,6 @@
 // #Error Messages
 // 
 // #Sign Up Form
-// #Contact Form
-// #Advanced Contact Form
 //
 // ----------------------------------------
 
@@ -54,7 +52,6 @@
 // ------------------------------
 
 .form .legend {
-	//display: none;
 	margin-bottom: 1em;
 	color: @color__form-legend--text;
 	background-color: transparent;
@@ -84,11 +81,6 @@
 	line-height: 1.5em;
 }
 
-label {
-	font-family: @font__p--font-family;
-	font-size: @font__p--font-size * 0.8;
-}
-
 input[type="search"],
 input[type="email"],
 input[type="password"],
@@ -103,8 +95,6 @@ select {
 // ------------------------------
 // #Text Inputs
 // ------------------------------
-
-// All Input Fields
 
 input[type="search"],
 input[type="email"],
@@ -130,25 +120,6 @@ textarea {
     	border-color: @color__form--border;
 		.box-shadow(none);
 	}
-}
-
-// Single Line Inputs
-
-input[type="search"],
-input[type="email"],
-input[type="password"],
-.input--single-line,
-.input--search,
-.product-filters .input--search {
-}
-
-// Multiple Lines Inputs
-
-textarea {
-    display: block;
-
-    @media @mobile {
-    }
 }
 
 // ------------------------------
@@ -193,113 +164,131 @@ input:focus {
 // #Radio Buttons and Checkboxes
 // ------------------------------
 
-.option-list {
-	margin-top: 1em;
-	
-	.label--radio,
-	.label--checkbox {
-		p;
-		line-height: 1.5em;
-	}
+.widget .form {
+	.option-list,
+	[class*="form-group--terms"] {
+		margin-top: 0;
+		margin-left: 0;
 
-	.option-item--radio,
-	.option-item--checkbox {
-		position: relative;
-		width: 100%;
-		margin-bottom: @font__p--line-height / 2;
-		padding: 0;
+		.label--radio,
+		.label--checkbox,
+		label[for*="input--terms"],
+		label[for*="input--terms"] span a.form__link {
+			.paragraph;
+			padding: 0;
+			margin: 0.5em 0;
+			line-height: 1.5em;
+		}
 
-		label {
+		input[type="radio"],
+		input[type="checkbox"] {
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: 0 !important;
+			padding: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+			.transition();
+
+			&:hover + label:before {
+				border: 2px solid darken(@color__form--border, 8%);
+				.transition();
+			}
+
+			&:checked + label:before {
+				border: 2px solid @color__form--border;
+				.transition();
+			}
+
+			&:checked + label:after {
+				opacity: 1;
+				.transition();
+			}
+
+			&:focus + label:before,
+			&:focus:checked + label:before {
+				border: 2px solid @color__form--border;
+				.transition();
+			}
+		}
+
+		.option-item--radio,
+		.option-item--checkbox,
+		&[class*="form-group"] {
 			position: relative;
-			margin-left: 1em * 2.5;
-			.transform-scale(1);
+			width: 100%;
+			margin-bottom: 0;
+			padding: 0;
 
-			&:before {
-				content: " ";
-				position: absolute;
-				top: 0.7em;
-				left: -2.5em;
-				width: 1.5em;
-				height: 1.5em;
-				margin-top: -0.8em;
-				background-color: #fff;
-				border: 2px solid fade(@color__form--border, 50%);
-			}
+			label {
+				position: relative;
+				cursor: pointer;
+				display: block;
+				margin-left: 1em * 2.5;
+				.transform-scale(1);
+				
+				&:before,
+				&:after {
+					cursor: pointer;
+				}
 
-			&:after {
-				opacity: 0;
-				position: absolute;
-				.transition(opacity, 0.1s);
-			}
-		}
-	}
+				&:before {
+					content: " ";
+					position: absolute;
+					top: 50%;
+					left: -2.5em;
+					width: 1.5em;
+					height: 1.5em;
+					min-width: 1.5em;
+					max-height: 1.5em;
+					margin-top: -0.75em;
+					background-color: #fff;
+					border: 2px solid fade(@color__form--border, 50%);
+					.border-radius(0);
+				}
 
-	input[type="radio"],
-	input[type="checkbox"] {
-		opacity: 0;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		margin: 0 !important;
-		padding: 0 !important;
-		width: 100% !important;
-		height: 100% !important;
-		.transition();
-
-		&:hover + label:before {
-	    	border: 2px solid darken(@color__form--border, 8%);
-			.transition();
-		}
-
-		&:checked + label:before {
-			border: 2px solid @color__form--border;
-			.transition();
-		}
-
-		&:checked + label:after {
-			opacity: 1;
-			.transition();
-		}
-
-		&:focus + label:before,
-		&:focus:checked + label:before {
-			border: 2px solid @color__form--border;
-			.transition();
-		}
-	}
-
-	.option-item--radio {
-		label {
-			&:before {
-				.border-radius(1em);
-			}
-			&:after {
-				content: " ";
-				.border-radius(1em);
-				background-color: @color__form--border;
-				top: 0.7em;
-				left: -2.5em;
-				width: 1.5em;
-				height: 1.5em;
-				margin-top: -0.8em;
-				.transform-scale(0.5);
+				&:after {
+					opacity: 0;
+					position: absolute;
+					top: 50%;
+					left: -2.5em;
+					height: 1.5em;
+    				width: 1.5em;
+					.transition(opacity, 0.1s);
+					line-height: 1.5em;
+				}
 			}
 		}
-	}
 
-	.option-item--checkbox {
-		label {
-			&:after {
-				content: "\f00c";
-				font-family: 'FontAwesome', sans-serif;
-				color: @color__form--border;
-				top: -2px;
-				left: -2.5em;
-				width: 1.5em;
-				line-height: 1.5em;
-				text-align: center;
+		.option-item--radio {
+			label {
+				&:before {
+					.border-radius(1em);
+				}
+				&:after {
+					content: " ";
+					margin-top: -0.75em;
+					.border-radius(1em);
+					background-color: @color__form--border;
+					.transform-scale(0.5);
+				}
+			}
+		}
+
+		.option-item--checkbox,
+		&[class*="form-group"] {
+			label {
+				&:after {
+					content: "\f00c";
+					margin-top: -0.7em;
+					font-family: 'FontAwesome', sans-serif;
+					color: @color__form--border;
+					text-align: center;
+				}
 			}
 		}
 	}
@@ -309,8 +298,6 @@ input:focus {
 // #Dropdowns
 // ------------------------------
 
-// Select Wrap
-
 .select-wrap {
     position: relative;
     max-width: 50%;
@@ -319,8 +306,6 @@ input:focus {
     @media @mobile {
         max-width: 100%;
     }
-	
-    // Icon
 
     &:after {
         content: '\f107';
@@ -357,6 +342,10 @@ input:focus {
     .appearance(none);
 	.transition();
 
+    @media @mobile {
+		padding: 0 2.7em 0 0.6em;
+    }
+
     &:hover {
 		border-color: @color__form--border;
 		background-color: @color-text--lighter;
@@ -371,10 +360,6 @@ input:focus {
 		border-color: @color__form--border;
 		background-color: @color-text--lighter;
 	}
-
-    @media @mobile {
-		padding: 0 2.7em 0 0.6em;
-    }
 }
 
 .select::-ms-expand {
@@ -389,12 +374,15 @@ input:focus {
     input.error {
         border: none !important;
     }
+    
     textarea.error {
         border: 1px solid @message-color--error !important;
     }
+    
     .form-group {
         .error {
             border-bottom: 2px solid @message-color--error !important;
+            
             &:focus {
 				.box-shadow(none);
             }
@@ -431,15 +419,3 @@ input:focus {
 		display: none;
 	}
 }
-
-// ------------------------------
-// #Contact Form
-// ------------------------------
-
-.contactform {}
-
-// ------------------------------
-// #Advanced Contact Form
-// ------------------------------
-
-.advancedcontactform {}

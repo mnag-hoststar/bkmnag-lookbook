@@ -11,13 +11,12 @@
 // ------------------------------
 
 table {
-	overflow: auto;
+	.paragraph;
 	width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
 	margin: 1.5em 0;
-	p;
 }
 
 // Table Cell
@@ -35,6 +34,10 @@ td, th {
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.make-line-height-a-little-smaller(@font__p--line-height);
+	.make-line-height-smaller(@font__p--line-height);
+	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
 th {

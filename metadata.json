@@ -101,9 +101,9 @@
         },
         "font9": {
             "font-family": "\"Karla\", Tahoma, Verdana, sans-serif",
-            "font-size": "120px",
+            "font-size": "100px",
             "font-weight": "400",
-            "line-height": "120px",
+            "line-height": "100px",
             "color": "@color-swatch7",
             "letter-spacing": "-8px"
         },
@@ -209,7 +209,7 @@
             "color__slideshow-description--text": "@color__h1--text",
 			"color__slideshow-pagination-item--background": "@color__button--background",
 			"color__slideshow-pagination-item--background--hover": "@color__button--background--hover",
-			"color__slideshow-pagination-item--background--selected": "@color__button--background--hover"
+			"color__slideshow-pagination-item--background--selected": "@color-swatch7"
         },
         "feature": {
             "color__feature-content--background": "@color-swatch3",
@@ -231,15 +231,20 @@
             "color__feature-button--background--hover": "@color__button--background--hover"
         },
         "blog": {
-            "color__blogsearch-legend--background": "fade(@color-swatch2, 5%)",
-            "color__blogsearch-legend--text": "@color-swatch2",
+			"color__blogpostlist--background": "@color-swatch2",
             "color__blogpost-title--background": "@color-swatch7",
             "color__blogpost-title--text": "fade(@color-swatch2, 10%)"
         },
         "ecommerce": {
+			"color__ecomproductslist--background": "@color-swatch2",
             "color__ecomproductslist-product-title--text": "@color__p--text",
+			"color__ecomproductslist-product-item--background": "@color__body--background",
+			"color__ecomproduct-images--background": "@color__body--background",
+			"color__ecomproduct-content--background": "@color__form-legend--background",
             "color__ecomproduct-title--text": "@color__h2--text",
-            "color__ecomproduct-price--text": "@color__p--text"
+            "color__ecomproduct-price--text": "@color__p--text",
+			"color__ecombasket--background": "@color-swatch2",
+			"color__ecombasket-list--background": "@color__body--background"
         },
         "menu": {
             "color__menusections--background": "fade(@color-swatch2, 5%)",

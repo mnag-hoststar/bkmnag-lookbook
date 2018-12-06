@@ -60,6 +60,10 @@
 		.make-font-a-little-smaller(@font__p--font-size);
 		.make-font-smaller(@font__p--font-size);
 		.make-font-a-lot-smaller(@font__p--font-size);
+	
+		.make-line-height-a-little-smaller(@font__p--line-height);
+		.make-line-height-smaller(@font__p--line-height);
+		.make-line-height-a-lot-smaller(@font__p--line-height);
 	}
 
     // Consequetive Paragraphs
@@ -97,9 +101,7 @@
 .message--error {
 	background-color: @message-color--error;
 
-	// Icon
 	&:before {
-		// Exclamation circle
 		content: "\f12a";
 	}
 }
@@ -109,9 +111,7 @@
 .message--warning {
 	background-color: @message-color--warning;
 
-	// Icon
 	&:before {
-		// Exclamation triangle
 		content: "\f071";
 	}
 }
@@ -121,9 +121,7 @@
 .message--information {
 	background-color: @message-color--information;
 
-	// Icon
 	&:before {
-		// Circled i
 		content: "\f129";
 	}
 }
@@ -133,9 +131,7 @@
 .message--success {
 	background-color: @message-color--success;
 
-	// Icon
 	&:before {
-		// Check mark
 		content: "\f00c";
 	}
 }
@@ -145,9 +141,7 @@
 .message--not-found {
 	background-color: @message-color--not-found;
 
-	// Icon
 	&:before {
-		// Magnifying glass
 		content: "\f002";
 	}
 }
@@ -178,10 +172,8 @@
 // ------------------------------
 
 // Basekit specific messages
+
 .bk-message {
-	
-	// If no content is provided, Basekit will provide
-	// an empty message.
 	&--empty {
 		
 	}
@@ -192,7 +184,7 @@
 // ------------------------------
 
 .bk-cookie-container {
-	display: none; // TODO: set to "table" before publishing the template.
+	display: none;
 	text-align: left;
 	border: none;
 	position: fixed;
@@ -208,11 +200,11 @@
 	}
 	
 	p, a {
-		p;
-		color: #fff;
+		.paragraph;
+		color: @color__body--background;
 		
 		&, &:hover {
-			color: #fff;
+			color: @color__body--background;
 		}
 	}
 	

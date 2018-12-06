@@ -14,7 +14,13 @@
 
 .widget[data-name="image"] {
 	.image {
+		margin: -10px;
 		border: 10px solid @color__body--background;
+		
+		@media @mobile {
+			margin: -6px;	
+			border: 6px solid @color__body--background;
+		}
 	}
 }
 
@@ -26,10 +32,10 @@
 
 .imagewidget {
 	.image-title {
-		h3;
+		.heading--3;
 	}
 
 	.image-description {
-		p;
+		.paragraph;
 	}
 }

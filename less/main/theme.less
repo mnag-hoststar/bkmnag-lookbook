@@ -63,6 +63,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // ------------------------------
 
 .template__header {
+	z-index: 100;
 	position: relative;
 	width: 90%;
 	max-width: @layout-max-width;
@@ -79,8 +80,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // ------------------------------
 // #Content
 // ------------------------------
-
-// Main
 
 .template__content {
 	.page--home & {
@@ -100,12 +99,13 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     width: 100%;
     background-color: @color__footer--background;
     text-align: center;
+	margin: 3em 0 0;
 	padding: 1px 0;
 	
 	.widget {
 		width: 80%;
 		max-width: @layout-width-desktop;
-		margin: 2em auto;
+		margin: 1em auto;
 	}
 }
 

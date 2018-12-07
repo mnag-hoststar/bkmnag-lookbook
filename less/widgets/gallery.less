@@ -17,9 +17,8 @@
 .widget[data-name="gallery"] {
 	margin: 0 -3px;
 	padding: 5em 0;
-    border-top: 3px solid @color__container--background;
-    border-bottom: 3px solid @color__container--background;
-	background-color: @color__body--background;
+    border-top: 3px solid @color__navigation--border;
+    border-bottom: 3px solid @color__navigation--border;
 }
 
 .gallery-list {
@@ -39,8 +38,13 @@
 		max-width: 1400px;
 		margin: 0 auto;
 		padding: 1em 10%;
-		border: solid @color__container--background;
+		border: solid @color__navigation--border;
 		border-width: 0 3px;
+		background-color: @color__body--background;
+
+		.responsivecolumns & {
+			content: none;
+		}
 	}
 }
 
@@ -453,7 +457,7 @@
 		// Image Title
 
 		.gallery__image-title {
-			margin-bottom: 0.5em;
+			padding-bottom: 0.5em;
 			font-size: 1.5em;
 			color: @color__gallery-title--text;
 		}

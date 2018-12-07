@@ -52,7 +52,9 @@
 // ------------------------------
 
 .form .legend {
-	margin-bottom: 1em;
+	.paragraph;
+	padding: 0 0 0.5em;
+	margin-bottom: 0;
 	color: @color__form-legend--text;
 	background-color: transparent;
 }
@@ -60,9 +62,6 @@
 // ------------------------------
 // #Form
 // ------------------------------
-
-.form .form-body {
-}
 
 .form .form-group {
 	margin-bottom: 1em;
@@ -300,7 +299,6 @@ input:focus {
 
 .select-wrap {
     position: relative;
-    max-width: 50%;
 	margin-top: 1em;
 
     @media @mobile {
@@ -337,6 +335,7 @@ input:focus {
     border: 2px solid fade(@color__form--border, 50%);
 	background-color: @color-text--lightest;
     font-size: 1em;
+	letter-spacing: @font__p--letter-spacing;
     color: @color__p--text;
     .border-radius(0);
     .appearance(none);

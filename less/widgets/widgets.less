@@ -14,6 +14,17 @@
 // #Standard Widgets
 // -----------------------------
 
+.template__content {
+	&:after {
+		content: "";
+		display: block;
+		border-bottom: 3px solid @color__navigation--border;
+		width: 90%;
+		margin: 0 auto;
+		padding: 0 10%;
+	}
+}
+
 .template__content,
 .template__content section {
 	> .widget {
@@ -21,7 +32,7 @@
 		max-width: @layout-max-width;
 		margin: 0 auto;
 		padding: 1em 10%;
-		border: solid @color__container--background;
+		border: solid @color__navigation--border;
 		border-width: 0 3px;
 		
 		@media @mobile {
@@ -29,11 +40,7 @@
 		}
 	
 		&:first-child {
-			border-top: 3px solid @color__container--background;
-		}
-
-		&:last-child {
-			border-bottom: 3px solid @color__container--background;
+			border-top: 3px solid @color__navigation--border;
 		}
 	}
 }
@@ -89,7 +96,7 @@
 			position: absolute;
 			content: "";
 			height: 3px;
-			background-color: @color__container--background;
+			background-color: @color__navigation--border;
 		}
 	}
 }
@@ -113,5 +120,5 @@
 
 hr.line__rule {
 	height: 3px;
-	background-color: @color__container--background;
+	background-color: @color__navigation--border;
 }

@@ -109,9 +109,6 @@ html.nav-open {
 }
 
 .widget[data-widget-type="extendednavigation"] {
-	&.open {
-		
-	}
 	@media @tablet {
 		position: absolute;
 		top: 0;
@@ -133,9 +130,8 @@ html.nav-open {
 	display: none;
 	
 	@media @tablet {
-		
 		// Displays as Icon's Middle Bar
-		z-index: 100;
+		z-index: 200;
 		position: absolute;
 		top: 50%;
 		right: 0;
@@ -160,7 +156,6 @@ html.nav-open {
 		.make-line-height-a-lot-smaller(@font__companyname--line-height);
 
 		// Top and Bottom Navigation Item Bar
-
 		&:after,
 		&:before {
 			content: "";
@@ -180,7 +175,6 @@ html.nav-open {
 		}
 
 		// Top Bar
-		
 		&:before {
 			top: 0;
 			margin: 0;
@@ -188,14 +182,12 @@ html.nav-open {
 		}
 
 		// Bottom Bar
-		
 		&:after {
 			bottom: 0;
 			.transition-property(bottom);
 		}
 
 		// Middle Bar
-		
 		span {
 			display: block;
 			font-size: 0;
@@ -215,12 +207,10 @@ html.nav-open {
 	}
 
 	// Toggle Button Open
-
 	.open & {
 		@media @tablet {
 			
-			// Top and bottom bar
-			
+			// Top and bottom Bar
 			&:before,
 			&:after {
 				width: 30px;
@@ -229,7 +219,6 @@ html.nav-open {
 			}
 			
 			// Top Bar
-
 			&:before {
 				top: 50%;
 				margin-top: -1.5px;
@@ -239,7 +228,6 @@ html.nav-open {
 			}
 			
 			// Bottom Bar
-
 			&:after {
 				bottom: 50%;
 				margin-bottom: -1.5px;
@@ -248,7 +236,6 @@ html.nav-open {
 			}
 			
 			// Middle bar
-			
 			span {
 				background: transparent;
 			}
@@ -261,30 +248,32 @@ html.nav-open {
 // ------------------------------
 
 // Dark overlay on tablet and mobile.
-
 .navigation-body {
-	border-top: 1px solid fade(@color__container--background, 20%);
-	border-bottom: 1px solid fade(@color__container--background, 20%);
+	border-top: 1px solid @color__navigation--border;
+	border-bottom: 1px solid @color__navigation--border;
 	.transition(opacity, 0s);
 	margin: 1em 0 1.5em;
 	
 	// This is only shown in Tablet and Mobile
-	
 	@media @tablet {
+		border: none;
 		outline: 0;
 		height: 0;
 		width: 0;
 		opacity: 0;
 		
 		// When Navigation is open
-
 		.open & {
+    		z-index: 150;
+			position: fixed;
+    		top: 0;
 			display: block;
 			opacity: 1;
 			width: auto;
 			width: 100vw;
 			overflow: auto;
 			height: auto;
+			height: 100%;
 			height: 100vh;
 			background-color: fade(@color__body--background, 90%);
 			margin: 0 -5%;
@@ -292,7 +281,6 @@ html.nav-open {
 		}
 	}
 }
-
 
 // ------------------------------
 // #Navigation List
@@ -304,8 +292,7 @@ html.nav-open {
     @media @tablet {
 		display: block;
 		height: auto;
-		max-width: 500px;
-		margin: 150px auto 0;
+		margin: 2em 0;
 	}
 }
 
@@ -316,11 +303,13 @@ html.nav-open {
 // Navigation Normal Item
 
 .navigation-item {
-	margin-bottom: 0;
+	margin: 0;
 	padding: 0;
 	
     @media @tablet {
 		display: block;
+		margin: 0 10%;
+		padding: 0 30px;
 		text-align: center;
 	}
 	
@@ -379,7 +368,6 @@ html.nav-open {
 .navigation-item.folder {
 	
 	// Folder Icon
-	
 	> .item-name {
 		&:before {
 			float: right;
@@ -405,7 +393,6 @@ html.nav-open {
 }
 
 // Navigation Folder Submenu
-
 .navigation-list--children {
 	.navigation-item.folder &,
 	.navigation-item.folder:hover &,
@@ -448,7 +435,6 @@ html.nav-open {
 }
 
 // Navigation Folder Submenu Single Item
-
 .navigation-item--child {
 	white-space: nowrap;
 
@@ -487,7 +473,6 @@ html.nav-open {
 	}
 
 	// Selected Folder Item
-
 	&.selected .item-name {
 		background-color: @color__navigation--text--selected;
 	}
@@ -496,7 +481,6 @@ html.nav-open {
 .navigation-item.folder {
 	
 	// Open Submenu
-	
 	&.folder-open:hover .navigation-list--children,
 	&.folder-open:active .navigation-list--children,
 	&.folder-open .navigation-list--children {

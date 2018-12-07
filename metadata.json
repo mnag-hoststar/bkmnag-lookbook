@@ -123,7 +123,7 @@
         },
         "site": {
             "color__body--background": "@color-swatch7",
-            "color__container--background": "fade(@color-swatch2, 50%)",
+            "color__container--background": "@color-swatch7",
             "color__link--text": "@color-swatch5",
             "font__companyname--font-family": "@font-swatch8-font-family",
             "font__companyname--font-size": "@font-swatch8-font-size",
@@ -177,6 +177,7 @@
             "font__navigation--line-height": "@font-swatch6-line-height",
             "font__navigation--letter-spacing": "@font-swatch6-letter-spacing",
             "color__navigation-list--background": "@color-swatch5",
+			"color__navigation--border": "fade(@color-swatch2, 50%)",
             "color__navigation--text": "@font-swatch6-color",
             "color__navigation--text--hover": "@color-swatch5",
             "color__navigation--text--selected": "darken(@color-swatch5, 5%)"

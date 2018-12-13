@@ -4,11 +4,9 @@
 // This contains all styles that are not
 // widgets.
 //
-// #Header
 // #Site Styles
 // #Header
 // #Page Styles
-// #Content
 // #Footer
 //
 // ----------------------------------------
@@ -65,30 +63,17 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 .template__header {
 	z-index: 100;
 	position: relative;
-	width: 90%;
-	max-width: @layout-max-width;
-	margin: 0 auto;
+	width: 100%;
 	padding: 1px 0;
+	margin-bottom: 2em;
+	background-color: @color__header--background;
+	border-bottom: 3px solid @color__header--border;
 	
     @media @tablet {
 		display: table;
-		margin-top: 0.5em;
-    	margin-bottom: 0.5em;
+		margin-bottom: 1em;
+		padding: 0.5em 5%;
     }
-}
-
-// ------------------------------
-// #Content
-// ------------------------------
-
-.template__content {
-	.page--home & {
-    	border-top: none;
-		
-		> .widget:first-child {
-			border-top: none;
-		}
-	}
 }
 
 // ------------------------------
@@ -98,9 +83,14 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 .template__footer {
     width: 100%;
     background-color: @color__footer--background;
+	border-top: 3px solid @color__footer--border;
     text-align: center;
-	margin: 3em 0 0;
+	margin: 2em 0 0;
 	padding: 1px 0;
+	
+    @media @tablet {
+		margin-top: 1em;
+    }
 	
 	.widget {
 		width: 80%;

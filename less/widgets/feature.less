@@ -2,20 +2,26 @@
 // LookBook: LESS > Widgets > Feature
 // ----------------------------------------
 //
+// #Feature
+// #Background Image
+// #Content Wrap
+// #Content Inner Wrap
+// #Headline
+// #Strapline
+// #Button
+//
 // ----------------------------------------
 
-// Feature
-
-.bk-feature {
-	position: relative;
+// #Feature
 	
-    .widget[data-widget-type="feature"] {
-    	overflow: hidden;
-		padding: 0;
-    }
+.widget[data-widget-type="feature"] {
+	position: relative;
+	overflow: hidden;
+	margin-top: -2em;
+	padding: 0;
 }
 
-// Background Image
+// #Background Image
 
 .feature__background-image {
     position: relative;
@@ -24,7 +30,7 @@
 	min-height: 60vw;
 }
 
-// Content Wrap
+// #Content Wrap
 
 .feature__content-wrap {
     position: relative;
@@ -47,7 +53,7 @@
 	}
 }
 
-// Content Inner Wrap
+// #Content Inner Wrap
 
 .feature__content-inner-wrap {
     position: relative;
@@ -57,7 +63,7 @@
     text-align: left;
 }
 
-// Headline
+// #Headline
 
 .feature__headline {
     margin: 0;
@@ -87,32 +93,35 @@
     }
 }
 
-// Strapline
+// #Strapline
 
 .feature__strapline {
 	position: relative;
     margin: 60px 0 40px;
     padding: 0 40px;
 	max-width: 700px;
-    color: @color__feature-strapline--text;
-	font-size: @font__feature-strapline--font-size;
-	font-size: unit(@font__feature-strapline--font-size*0.08, vw);
-	line-height: @font__feature-strapline--line-height;
-	line-height: unit(@font__feature-strapline--line-height*0.08, vw);
-	letter-spacing: @font__feature-strapline--letter-spacing;
-	letter-spacing: unit(@font__feature-strapline--letter-spacing*0.08, vw);
+	color: @color__feature-strapline--text;
+	
+	@media @layout-width-breakpoint {
+		font-size: @font__feature-strapline--font-size;
+		font-size: unit(@font__feature-strapline--font-size*0.08, vw);
+		line-height: @font__feature-strapline--line-height;
+		line-height: unit(@font__feature-strapline--line-height*0.08, vw);
+		letter-spacing: @font__feature-strapline--letter-spacing;
+		letter-spacing: unit(@font__feature-strapline--letter-spacing*0.08, vw);
+	}
 	
 	@media @tablet-horizontal {
 		max-width: none;
 	}
 	
     @media @tablet {
-        font-size: @font__feature-strapline--font-size * 0.9;
+        font-size: @font__feature-strapline--font-size * 0.8;
         line-height: @font__feature-strapline--line-height * 0.8;
     }
     @media @mobile {
         font-size: @font__feature-strapline--font-size * 0.5;
-        line-height: @font__feature-strapline--line-height * 0.8;
+        line-height: @font__feature-strapline--line-height * 0.5;
     }
 	
 	&:before {
@@ -131,7 +140,7 @@
 	}
 }
 
-// Button
+// #Button
 
 .feature__button {
     margin: 20px 40px 0 40px;

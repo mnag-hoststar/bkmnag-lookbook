@@ -122,8 +122,8 @@
             "color__secondary": "@color-swatch3"
         },
         "site": {
-            "color__body--background": "@color-swatch7",
             "color__container--background": "@color-swatch7",
+            "color__body--background": "@color__container--background",
             "color__link--text": "@color-swatch5",
             "font__companyname--font-family": "@font-swatch8-font-family",
             "font__companyname--font-size": "@font-swatch8-font-size",
@@ -165,10 +165,12 @@
             "color__p--text": "@font-swatch5-color"
         },
         "header": {
-            "color__header--background": "@color-swatch7"
+            "color__header--background": "@color__container--background",
+            "color__header--border": "@color__container--background"
         },
         "footer": {
-            "color__footer--background": "@color-swatch7"
+            "color__footer--background": "@color__container--background",
+            "color__footer--border": "@color__container--background"
         },
         "navigation": {
             "font__navigation--font-family": "@font-swatch6-font-family",
@@ -205,6 +207,7 @@
             "color__gallery-description--text": "@color__h1--text"
         },
         "slideshow": {
+            "color__slideshow--background": "@color-swatch3",
             "color__slideshow-caption--background": "@color-swatch3",
             "color__slideshow-title--text": "@color-swatch7",
             "color__slideshow-description--text": "@color__h1--text",
@@ -239,13 +242,12 @@
         "ecommerce": {
 			"color__ecomproductslist--background": "@color-swatch2",
             "color__ecomproductslist-product-title--text": "@color__p--text",
-			"color__ecomproductslist-product-item--background": "@color__body--background",
-			"color__ecomproduct-images--background": "@color__body--background",
-			"color__ecomproduct-content--background": "@color__form-legend--background",
+			"color__ecomproductslist-product-item--background": "@color__container--background",
+			"color__ecomproduct-images--background": "@color__container--background",
             "color__ecomproduct-title--text": "@color__h2--text",
             "color__ecomproduct-price--text": "@color__p--text",
 			"color__ecombasket--background": "@color-swatch2",
-			"color__ecombasket-list--background": "@color__body--background"
+			"color__ecombasket-list--background": "@color__container--background"
         },
         "menu": {
             "color__menusections--background": "fade(@color-swatch2, 5%)",

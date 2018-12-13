@@ -16,6 +16,9 @@
 // ------------------------------
 
 .template__company {
+	margin: 0 auto;
+	width: 90%;
+	max-width: @layout-max-width;
 	text-align: center;
 	
 	@media @tablet {
@@ -103,6 +106,11 @@
 // #Navigation
 // ------------------------------
 
+.template__navigation {
+	margin: 0 auto;
+	width: 90%;
+	max-width: @layout-max-width;
+}
 
 html.nav-open {
 	overflow: hidden;
@@ -132,20 +140,22 @@ html.nav-open {
 	@media @tablet {
 		// Displays as Icon's Middle Bar
 		z-index: 200;
+		overflow: hidden;
 		position: absolute;
 		top: 50%;
-		right: 0;
+		right: 5%;
 		display: block;
 		cursor: pointer;
 		background-color: transparent;
 		background-clip: content-box;
+		margin: -11px 0;
 		padding: 0;
-		margin: -11px 0 0;
 		width: 30px;
-		height: 22px;
+		height: 26px;
 		font-size: 26px;
 		text-indent: 10000px;
 		.transition(background 0.2s ease-in 0.05s);
+		.border-radius(0);
 
 		.make-font-a-little-smaller(@font__companyname--font-size);
 		.make-font-smaller(@font__companyname--font-size);
@@ -176,14 +186,14 @@ html.nav-open {
 
 		// Top Bar
 		&:before {
-			top: 0;
+			top: 2px;
 			margin: 0;
 		  	.transition-property(top);
 		}
 
 		// Bottom Bar
 		&:after {
-			bottom: 0;
+			bottom: 2px;
 			.transition-property(bottom);
 		}
 
@@ -252,7 +262,7 @@ html.nav-open {
 	border-top: 1px solid @color__navigation--border;
 	border-bottom: 1px solid @color__navigation--border;
 	.transition(opacity, 0s);
-	margin: 1em 0 1.5em;
+	margin: 1em 0 1em;
 	
 	// This is only shown in Tablet and Mobile
 	@media @tablet {
@@ -267,6 +277,9 @@ html.nav-open {
     		z-index: 150;
 			position: fixed;
     		top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			display: block;
 			opacity: 1;
 			width: auto;
@@ -275,8 +288,8 @@ html.nav-open {
 			height: auto;
 			height: 100%;
 			height: 100vh;
-			background-color: fade(@color__body--background, 90%);
-			margin: 0 -5%;
+			background-color: fade(@color__container--background, 90%);
+			margin: 0;
 			.transition(opacity, 0.25s);
 		}
 	}
@@ -309,7 +322,7 @@ html.nav-open {
     @media @tablet {
 		display: block;
 		margin: 0 10%;
-		padding: 0 30px;
+		padding: 0 1em;
 		text-align: center;
 	}
 	
@@ -409,7 +422,6 @@ html.nav-open {
 		overflow: visible;
 		text-align: center;
 		.transition(opacity, 0s);
-		.box-shadow(8px 8px 0 0px fade(@color__button--background, 20%));
 
 		@media @tablet {
 			position: static;

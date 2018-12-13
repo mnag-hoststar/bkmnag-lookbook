@@ -2,7 +2,6 @@
 // LookBook: LESS > Widgets > Image
 // ----------------------------------------
 //
-// #Conditional Mixins
 // #Image
 // #Caption
 //
@@ -13,13 +12,56 @@
 // ------------------------------
 
 .widget[data-name="image"] {
-	.image {
-		margin: -10px;
-		border: 10px solid @color__body--background;
-		
-		@media @mobile {
-			margin: -6px;	
-			border: 6px solid @color__body--background;
+	.paragraph;
+	
+	.responsivecolumns .columns-two-left &,
+	.responsivecolumns .columns-two-right & {
+		.image {
+			max-width: 780px;
+			border: 10px solid @color__container--background;
+			
+			@media @desktop {
+				max-width: 140%;
+			}
+
+			@media @mobile {
+				max-width: 100%;
+				border: none;
+			}
+		}
+	}
+	
+	.responsivecolumns .columns-two-left & {
+		.image {
+			border-right: none;
+		}
+		.image-link {
+		    margin-left: -260px;
+			
+			@media @desktop {
+			    margin-left: -40%;
+			}
+
+			@media @mobile {
+			    margin-left: 0;
+			}
+		}
+	}
+	
+	.responsivecolumns .columns-two-right & {
+		.image {
+			border-left: none;
+		}
+		.image-link {
+			margin-right: -295px;
+			
+			@media @desktop {
+			    margin-right: -40%;
+			}
+
+			@media @mobile {
+			    margin-right: 0;
+			}
 		}
 	}
 }
@@ -31,9 +73,13 @@
 // ------------------------------
 
 .imagewidget {
+	.caption {
+		margin: 1em 0 0;
+	}
+	
 	.image-title {
 		.heading--3;
-		padding: 0.5em 0 1em;
+		padding: 0.5em 0;
 	}
 
 	.image-description {

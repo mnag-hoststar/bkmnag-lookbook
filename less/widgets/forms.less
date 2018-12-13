@@ -2,7 +2,6 @@
 // LookBook: LESS > Widgets > Forms
 // ----------------------------------------
 //
-// #Conditional Mixins
 // #Form Background
 // #Legend
 // #Form
@@ -18,24 +17,12 @@
 // ----------------------------------------
 
 // ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the form background 
-// is not the same as the page background.
-
-.form-widget-background--spacing() when not (@color__form--background = @color__body--background) {
-	padding: 2em 0;
-}
-
-// ------------------------------
 // #Global Form Styles
 // ------------------------------
 
 .widget[data-name="signupform"],
 .widget[data-name="contactform"],
 .widget[data-name="advancedcontactform"] {
-	.form-widget-background--spacing();
 	background: @color__form--background;
 }
 
@@ -104,6 +91,8 @@ textarea {
     padding: 0.4em 0.6em;
     background-color: #fff;
     border: 2px solid fade(@color__form--border, 50%);
+	letter-spacing: @font__p--letter-spacing;
+	font-size: @font__p--font-size;
     color: @color__p--text;
 	.transition();
     .border-radius(0);
@@ -299,7 +288,6 @@ input:focus {
 
 .select-wrap {
     position: relative;
-	margin-top: 1em;
 
     @media @mobile {
         max-width: 100%;
@@ -334,8 +322,8 @@ input:focus {
     width: 100%;
     border: 2px solid fade(@color__form--border, 50%);
 	background-color: @color-text--lightest;
-    font-size: 1em;
 	letter-spacing: @font__p--letter-spacing;
+	font-size: @font__p--font-size;
     color: @color__p--text;
     .border-radius(0);
     .appearance(none);

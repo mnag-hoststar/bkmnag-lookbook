@@ -173,7 +173,7 @@ h6, .heading--6 {
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
-p, .paragraph, ul, ol, li, .content-block span {
+p, .paragraph, ul, ol, li {
 	font-family: @font__p--font-family;
 	font-weight: @font__p--font-weight;
 	font-size: @font__p--font-size;
@@ -181,6 +181,8 @@ p, .paragraph, ul, ol, li, .content-block span {
 	letter-spacing: @font__p--letter-spacing;
 	color: @color__p--text;
 	padding: 0 0 1em;
+	word-wrap: break-word;
+	hyphens: auto;
 	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
@@ -353,7 +355,7 @@ blockquote {
 	position: relative;
 	margin: 0 auto;
 	text-align: center;
-	padding: 1.5em 50px;
+	padding: 3em 1.5em 0.5em;
 	width: 70%;
 	font-style: italic;
 	font-family: @font__p--font-family;
@@ -376,7 +378,7 @@ blockquote {
 		font-family: @font__h4--font-family;
 		font-weight: @font__p--font-weight;
 		font-size: @font__p--font-size*10;
-		line-height: @font__p--font-size*6;
+		line-height: 1em;
 		letter-spacing: @font__p--letter-spacing;
 		color: fade(@color__h1--text, 50%);
 
@@ -395,6 +397,11 @@ blockquote {
 	.columns-four-third &,
 	.columns-four-fourth & {
 		padding-right: 0;
+    	padding-left: 0;
+		
+		&:before {
+			left: -0.2em;
+		}
 		
 		&:after {
 			display: none;

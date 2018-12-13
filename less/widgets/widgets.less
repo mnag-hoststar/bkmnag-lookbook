@@ -14,61 +14,109 @@
 // #Standard Widgets
 // -----------------------------
 
-.template__content {
-	&:after {
-		content: "";
-		display: block;
-		border-bottom: 3px solid @color__navigation--border;
-		width: 90%;
-		margin: 0 auto;
-		padding: 0 10%;
-	}
-}
-
 .template__content,
 .template__content section {
 	> .widget {
 		width: 90%;
 		max-width: @layout-max-width;
 		margin: 0 auto;
-		padding: 1em 10%;
+		padding: 1px 10%;
 		border: solid @color__navigation--border;
 		border-width: 0 3px;
+		background-color: @color__container--background;
 		
 		@media @mobile {
-			padding: 1em 5%;
+			padding: 1px 5%;
 		}
+	}
 	
+	> .widget {
 		&:first-child {
+			padding-top: 2em;
 			border-top: 3px solid @color__navigation--border;
+		}
+	}
+	
+	.widget[data-widget-type="pagetitle"] {
+		padding-top: 0;
+		
+		+ section > .widget {
+			&:first-child {
+				padding-top: 0;
+				border-top: none;
+			}
+		}
+
+		&.bk-tpl-hidden	+ section > .widget {
+			&:first-child {
+				padding-top: 2em;
+				border-top: 3px solid @color__navigation--border;
+			}
+				
+			&[data-name="gallery"],
+			&[data-name="responsiveslideshow"],
+			&[data-name="map"],
+			&[data-name="youtube"],
+			&[data-name="blogpost"],
+			&[data-name="ecomproduct"] {
+				&:first-child {
+					padding-top: 0;
+					border-top: none;
+					
+					> *:first-child {
+						border-top: 3px solid @color__navigation--border;
+					}
+				}
+			}
+		}
+	}
+	
+	.page--home & {
+		&,
+		> .widget:first-child,
+		section > .widget:first-child,
+		.widget[data-widget-type="pagetitle"].bk-tpl-hidden	+ section > .widget:first-child {
+			padding-top: 0;
+			border-top: none;
 		}
 	}
 }
 
-// Responsive Column Widgets
-.widget[data-name="responsivecolumns"] {
-	.responsivecolumns {
-
-		.column {
-			@media @mobile {
-				margin-bottom: 2em;
-
-				&:last-child {
-					margin-bottom: 0;
-				}
+.template__content {
+	&:after {
+		content: "";
+		display: block;
+		margin: 0 auto;
+		padding: 0 10%;
+		width: 90%;
+		max-width: @layout-max-width;
+		border: solid @color__navigation--border;
+		border-width: 0 3px 3px;
+		background-color: @color__container--background;
+		height: 2em;
+		
+		@media @mobile {
+			padding: 0 5%;
+		}
+	}
+	
+	.widget[data-widget-type="feature"].bk-tpl-hidden + section &,
+	.widget[data-widget-type="feature"].bk-tpl-hidden + .page & .widget[data-widget-type="pagetitle"].bk-tpl-hidden + section {
+		> .widget {
+			&:first-child {
+				padding-top: 2em;
+				border-top: 3px solid @color__navigation--border;
 			}
 		}
-		
+	}
+}
+
+.widget[data-name="responsivecolumns"] {
+	.responsivecolumns {
 		.column .widget {
 			width: 100%;
 			border: none;
 			padding: 0;
-		}
-
-		.widget[data-name="content"] {
-			@media @mobile {
-				margin-bottom: 2em;
-			}
 		}
 	}
 }
@@ -90,13 +138,51 @@
 		max-width: 1600px;
 		border-width: 0;
 		padding: 0;
-		
-		&:before,
-		&:after {
-			position: absolute;
+		background-color: transparent;
+	}
+	
+	.widget[data-name="gallery"],
+	.widget[data-name="responsiveslideshow"],
+	.widget[data-name="map"],
+	.widget[data-name="youtube"],
+	.widget[data-name="blogpost"],
+	.widget[data-name="ecomproduct"] {
+		&:before, &:after {
 			content: "";
-			height: 3px;
-			background-color: @color__navigation--border;
+			display: block;
+			margin: 0 auto;
+			padding: 0 10%;
+			width: 90%;
+			max-width: @layout-max-width;
+			border: solid @color__navigation--border;
+			border-width: 0 3px;
+			background-color: @color__container--background;
+			height: 2em;
+		}
+		
+		&:first-child {
+			&:before {
+				content: none;
+			}
+		}
+		
+		&:last-child {
+			&:after {
+				content: none;
+			}
+		}
+	}
+	
+	.responsivecolumns {
+		.widget[data-name="gallery"],
+		.widget[data-name="responsiveslideshow"],
+		.widget[data-name="map"],
+		.widget[data-name="youtube"],
+		.widget[data-name="blogpost"],
+		.widget[data-name="ecomproduct"] {
+			&:before, &:after {
+				content: none;
+			}
 		}
 	}
 }
@@ -108,14 +194,13 @@
 .template__content,
 .template__content section {
 	> .widget[data-name="line"] {
-		padding: 0;
+		padding: 2em 0;
 	}
 }
 
 .line {
     line-height: 0;
 	font-size: 0;
-	
 }
 
 hr.line__rule {

@@ -181,19 +181,41 @@
 	.widget[data-name="gallery"] {
 		z-index: 5;
 		
-		&:before, &:after {
+		&:before {
+			height: 2em;
+		
+			@media @mobile {
+				height: 4em;
+			}
+		}
+		
+		&:after {
 			height: 4em;
+		
+			@media @mobile {
+				height: 6em;
+			}
 		}
 		
 		&:first-child {
 			&:before {
-				height: 4em;
+				content: "";
+				height: 2em;
+		
+				@media @mobile {
+					height: 4em;
+				}
 			}
 		}
 		
 		&:last-child {
 			&:after {
+				content: "";
 				height: 4em;
+		
+				@media @tablet {
+					height: 6em;
+				}
 			}
 		}
 	}

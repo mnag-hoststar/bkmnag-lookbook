@@ -18,7 +18,6 @@
 .widget[data-name="twitter"] {
 	.twitter-body-background--spacing();
 	.twitter-widget-background--spacing();
-	background-color: @color__twitter--background;
 }
 
 // ------------------------------
@@ -45,6 +44,10 @@
 	font-size: @font__p--font-size;
 	.item--margin-size--2to1-cols();
 	.clearfix();
+	
+    .responsivecolumns & {
+		width: 100%;
+    }
 	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);

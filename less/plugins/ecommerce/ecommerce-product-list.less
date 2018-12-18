@@ -60,7 +60,6 @@
 	form {
 		max-width: @layout-width-desktop;
 		margin: 0 auto;
-		padding-bottom: 2em;
 
 		@media @tablet-horizontal {
 			display: block;
@@ -120,6 +119,12 @@
 
 			@media @mobile {
 				padding-right: 0;
+				padding-bottom: 0.5em;
+			}
+
+			.responsivecolumns & {
+				padding-right: 0;
+				padding-bottom: 0.5em;
 			}
 		}
 		
@@ -146,6 +151,8 @@
     }
 
     .button--submit {
+		.button;
+		
         @media @tablet-horizontal {
             width: 50px;
             text-indent: -9999px;
@@ -327,7 +334,7 @@
 
 .product-item-article {
 	border: 2px solid @color__ecomproductslist--background;
-	background-color: @color-text--lightest;
+	background-color: lighten(@color__ecomproductslist-product-item--background, 95%);
 	height: 100%;
 	
 	.responsivecolumns & {
@@ -336,7 +343,7 @@
 }
 
 .product-item-image  {
-    background-color: @color__ecomproductslist-product-item--background;
+    background-color: @color__ecomproduct-images--background;
     width: auto;
 	font-size: 0;
 	
@@ -386,7 +393,7 @@
 }
 
 .product-item-price {
-	background: @color-highlight;
+	background: @color__ecomproduct-price--background;
 	display: inline-block;
 	margin: 1em 0.5em;
 	padding: 0.2em 0.5em;

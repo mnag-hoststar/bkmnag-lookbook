@@ -13,55 +13,31 @@
 
 .widget[data-name="image"] {
 	.paragraph;
+	.imagewidget__image-link {
+	    width: 100%;
+	}
 	
-	.responsivecolumns .columns-two-left &,
-	.responsivecolumns .columns-two-right & {
+	.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-left &,
+	.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-right & {
+		width: 790px;
+		
 		.image {
-			max-width: 780px;
 			border: 10px solid @color__container--background;
-			
-			@media @desktop {
-				max-width: 140%;
-			}
-
-			@media @mobile {
-				max-width: 100%;
-				border: none;
-			}
+			background-color: @color__body--background;
 		}
 	}
 	
 	.responsivecolumns .columns-two-left & {
-		.image {
-			border-right: none;
-		}
-		.image-link {
-		    margin-left: -260px;
-			
-			@media @desktop {
-			    margin-left: -40%;
-			}
-
-			@media @mobile {
-			    margin-left: 0;
-			}
-		}
+		margin-left: -300px;
 	}
 	
 	.responsivecolumns .columns-two-right & {
-		.image {
-			border-left: none;
-		}
-		.image-link {
-			margin-right: -295px;
-			
-			@media @desktop {
-			    margin-right: -40%;
-			}
-
-			@media @mobile {
-			    margin-right: 0;
-			}
+		margin-right: -300px;
+	}
+	
+	.responsivecolumns & {
+		@media @mobile {
+			max-width: 100%;
 		}
 	}
 }

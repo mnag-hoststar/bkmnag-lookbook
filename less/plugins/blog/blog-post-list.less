@@ -36,16 +36,18 @@
 .blogpostlist__post-article {
 	position: relative;
 	border: 2px solid @color__blogpostlist--background;
-	background-color: @color-text--lightest;
+	background-color: lighten(@color__blogpostlist-article--background, 95%);
 	.item--margin-size--2to1-cols();
 	.clearfix();
 	
 	@media @mobile {
+		width: 100%;
 		.display-flex(flex);
 		.flex-direction(inherit);
 	}
 
 	.responsivecolumns & {
+		width: 100%;
 		.display-flex(flex);
 		.flex-direction(inherit);
 	}
@@ -134,21 +136,25 @@
 }
 
 a.blogpostlist__title-link {
-	color: @color__h3--text;
+	color: @color__blogpostlist-title--text;
 }
 
 // Post Excerpt
 	
-.blogpostlist__post-excerpt p {
-	line-height: 1.5em;
-	color: lighten(@color__p--text, 8%);
+.blogpostlist__post-excerpt {
+	display: none;
 	
-	@media @tablet {
-		display: none;
-	}
+	p {
+		line-height: 1.5em;
+		color: lighten(@color__p--text, 8%);
 
-	.responsivecolumns & {
-		display: none;
+		@media @tablet {
+			display: none;
+		}
+
+		.responsivecolumns & {
+			display: none;
+		}
 	}
 }
 

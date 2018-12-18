@@ -354,19 +354,19 @@ html.nav-open {
 			text-decoration: none;
 			background-color: @color-highlight;
 			border-bottom: 0.4em solid @color-highlight;
-			color: @color__navigation--text;
+			color: @color__navigation--text--hover;
 		}
 	}
 
 	&.selected > .item-name {
 		border-bottom: 0.4em solid @color-highlight;
-		color: @color__navigation--text;
+		color: @color__navigation--text--selected;
 		
 		&:hover {
 			text-decoration: none;
 			background-color: @color-highlight;
 			border-bottom: 0.4em solid @color-highlight;
-			color: @color__navigation--text;
+			color: @color__navigation--text--selected;
 		}
 	}
 
@@ -382,9 +382,8 @@ html.nav-open {
 	
 	// Folder Icon
 	> .item-name {
-		&:before {
-			float: right;
-			right: 0.5em;
+		&:after {
+			margin-left: 0.5em;
 			width: 1em;
     		height: 1em;
 			line-height: 1em;
@@ -401,7 +400,7 @@ html.nav-open {
 	}
 	
 	&.folder-open > .item-name {
-		color: darken(@color__navigation--text, 20%);
+		color: @color__navigation--text--selected;
 	}
 }
 
@@ -418,7 +417,7 @@ html.nav-open {
 		padding: 0;
 		height: 0;
 		width: auto;
-		background-color: @color__navigation-list--background;
+		background-color: @color__navigation-item--background;
 		overflow: visible;
 		text-align: center;
 		.transition(opacity, 0s);
@@ -456,11 +455,11 @@ html.nav-open {
 	}
 
 	.item-name {
-		color: @color__navigation--text;
 		line-height: 1.5em;
 		border-bottom: 0;
 		margin: 0;
 		padding: 1em;
+		color: @color__navigation--text;
 
 		@media @tablet {
 			display: block;
@@ -469,6 +468,7 @@ html.nav-open {
 		
 		&:hover {
 			border-bottom: 0;
+			color: @color__navigation--text--hover;
 		}
 		
 		&:after {
@@ -480,18 +480,18 @@ html.nav-open {
 		&:hover:after {
 			bottom: 0;
 			height: 100%;
-			background-color: @color__navigation--text--selected;
+			background-color: @color__navigation-item--background--selected;
 		}
 	}
 
 	// Selected Folder Item
 	&.selected .item-name {
-		background-color: @color__navigation--text--selected;
+		background-color: @color__navigation-item--background--selected;
+		color: @color__navigation--text--selected;
 	}
 }
 
 .navigation-item.folder {
-	
 	// Open Submenu
 	&.folder-open:hover .navigation-list--children,
 	&.folder-open:active .navigation-list--children,

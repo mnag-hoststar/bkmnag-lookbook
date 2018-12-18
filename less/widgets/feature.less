@@ -40,7 +40,7 @@
 	bottom: 0;
 	display: table;
 	table-layout: fixed;
-	background-color: fade(@color__feature-content--background, 70%);
+	background-color: @color__feature-content--background;
     height: 100%;
 	width: 50%;
 	padding: 5% 5% 60px 0;
@@ -68,6 +68,11 @@
 .feature__headline {
     margin: 0;
     padding: 0 0 0 40px;
+	font-family: @font__feature-headline--font-family;
+	font-size: @font__feature-headline--font-size;
+	font-weight: @font__feature-headline--font-weight;
+	line-height: @font__feature-headline--line-height;
+	letter-spacing: @font__feature-headline--letter-spacing;
 	color: @color__feature-headline--text;
 	
 	@media @layout-width-breakpoint {
@@ -100,6 +105,11 @@
     margin: 60px 0 40px;
     padding: 0 40px;
 	max-width: 700px;
+	font-family: @font__feature-strapline--font-family;
+	font-size: @font__feature-strapline--font-size;
+	font-weight: @font__feature-strapline--font-weight;
+	line-height: @font__feature-strapline--line-height;
+	letter-spacing: @font__feature-strapline--letter-spacing;
 	color: @color__feature-strapline--text;
 	
 	@media @layout-width-breakpoint {
@@ -151,6 +161,6 @@
     &:hover {
         color: @color-highlight;
         background-color: @color__feature-button--background--hover;
-        border: 2px solid @color__feature-button--border;
+        border: 2px solid darken(@color__feature-button--border, 5%);
     }
 }

@@ -15,7 +15,8 @@
 
 .responsiveslideshow {
 	position: relative;
-	background-color: @color__slideshow--background;
+	border: 10px solid @color__container--background;
+	background-color: @color__body--background;
 }
 
 .responsiveslideshow__figure,
@@ -23,6 +24,10 @@
 	min-height: 100px;
     max-height: 700px;
     padding-bottom: 60%;
+}
+
+.responsiveslideshow__slides-list {
+	background-color: @color__slideshow--background;
 }
 
 // ------------------------------
@@ -76,9 +81,9 @@
 	display: block;
 	position: absolute;
 	top: 0;
-	bottom: 0;
+	bottom: auto;
 	margin: 0;
-	padding: 4.5em 0 3.5em;
+	padding: 4.5em 0 3em;
 	background-color: fade(@color__slideshow-caption--background, 80%);
 	
 	.columns-four-first &,
@@ -240,14 +245,22 @@
 		.columns-three-left &,
 		.columns-three-right &,
 		.columns-three-middle & {
-			padding: 0 2em 0.5em;
+			padding: 0 1em;
 		}
 	
 		.columns-four-first &,
 		.columns-four-second &,
 		.columns-four-third &,
 		.columns-four-fourth & {
-			padding: 0 2em;
+			padding: 0;
+		}
+
+		@media @tablet {
+			padding: 0 1em;
+		}
+
+		@media @mobile {
+			padding: 0;
 		}
 	}
 }
@@ -257,10 +270,29 @@
     margin: 0 0 25px;
 	padding: 0 4px;
     height: 0;
+		
+	.columns-three-left &,
+	.columns-three-right &,
+	.columns-three-middle & {
+		@media @mobile {
+			margin: 0 0 15px;
+		}
+	}
+	
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		margin: 0 0 15px;
+	}
 
 	@media @tablet {
 		margin: 0 0 35px;
 		padding: 0 4px;
+	}
+
+	@media @mobile {
+		margin: 0 0 15px;
 	}
 
 	.button {
@@ -274,10 +306,35 @@
 		padding: 0;
 		text-indent: -10000px;
 		.transition (all, 0.5s, ease);
+		
+		.columns-three-left &,
+		.columns-three-right &,
+		.columns-three-middle & {
+			width: 16px;
+			height: 16px;
+
+			@media @mobile {
+				width: 12px;
+				height: 12px;
+			}
+		}
+	
+		.columns-four-first &,
+		.columns-four-second &,
+		.columns-four-third &,
+		.columns-four-fourth & {
+			width: 12px;
+			height: 12px;
+		}
 
 		@media @tablet {
 			width: 16px;
 			height: 16px;
+		}
+
+		@media @mobile {
+			width: 12px;
+			height: 12px;
 		}
 		
 		&:hover {

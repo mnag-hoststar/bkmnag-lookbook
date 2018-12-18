@@ -47,10 +47,6 @@
 .ecomproduct__product-image {
 	position: relative;
 
-    body.product-one-image & {
-		margin-left: 70px;
-    }
-
     &.no-image {
         display: none;
     }
@@ -60,12 +56,14 @@
 	.image-link {
 		display: block;
 		width: auto;
-		margin: 5% 5% 0;
+		margin: 0 auto;
+		padding: 0 5%;
 		background-size: contain;
 		background-position: center;
 		max-height: 800px;
-		height: 800px;
-		height: 100vw;
+		max-height: 100vw;
+		max-width: @layout-max-width;
+		.box-sizing(content-box);
 		background-color: @color__ecomproduct-images--background;
 		
 		&:hover, &:active {
@@ -105,8 +103,11 @@
 
 .product-gallery {
     overflow: hidden;
-	margin: 2.5% 5%;
+	margin: 0 auto;
+	padding: 2% 5%;
+	max-width: @layout-max-width;
 	text-align: center;
+	.box-sizing(content-box);
 	.inline-block-font-hack();
 
 	@media @tablet-horizontal {
@@ -163,21 +164,11 @@
 // #Product Content
 // ------------------------------
 
-.product-content {
-	width: 90%;
-	max-width: @layout-max-width;
-	margin: 0 auto;
-	padding: 1em 10%;
-	border: solid @color__navigation--border;
-	border-width: 0 3px;
-	background-color: @color__container--background;
-	border-top-width: 3px;
-}
-
 // Product Title
 
 .product-title {
     color: @color__ecomproduct-title--text;
+	text-shadow: 0.05em 0 @color__ecomproduct-title--background;
 }
 
 // Product Price
@@ -273,8 +264,10 @@ a.ecomproduct__button {
     // Attribute Title
 	
     .product-attribute-title {
+    	display: block;
 		margin: 1em 0 0;
 		padding: 0.5em 0;
+		font-weight: bold;
     }
 	
     // Product Category, Product Tags
@@ -290,4 +283,11 @@ a.ecomproduct__button {
             line-height: 1;
         }
     }
+}
+
+.product-content {
+	.tags-title {
+		margin: 0;
+		padding: 0;
+	}
 }

@@ -11,7 +11,7 @@
 // #Dropdowns
 // #Radio Buttons and Checkboxes
 // #Error Messages
-// 
+// #Form Group Button
 // #Sign Up Form
 //
 // ----------------------------------------
@@ -378,6 +378,20 @@ input:focus {
 }
 
 // ------------------------------
+// #Form Group Button
+// ------------------------------
+
+.form-group {
+	.button {
+		white-space: nowrap;
+
+		@media @mobile {
+			width: 100%;
+		}
+	}
+}
+
+// ------------------------------
 // #Sign Up Form
 // ------------------------------
 
@@ -385,20 +399,39 @@ input:focus {
 	.form-body {
 		display: table;
 		width: 100%;
+
+		.responsivecolumns & {
+			display: block;
+		}
 	}
 
 	.form-group {
 		display: table-cell;
 		vertical-align: middle;
-		height: 3em;
+
+		.responsivecolumns & {
+			display: block;
+		}
 		
 		&:first-child {
 			width: 100%;
 			padding-right: 0.5em;
+
+			.responsivecolumns & {
+				display: block;
+				margin-bottom: 0.5em;
+				padding-right: 0;
+				width: 100%;
+				height: auto;
+			}
 		}
 		
 		.button {
 			white-space: nowrap;
+
+			@media @mobile {
+				width: 100%;
+			}
 		}
 	}
 

@@ -17,11 +17,24 @@
 // -----------------------------
 
 .widget[data-name="map"] .map {
-	background-color: @color__navigation--border;
+	border: 10px solid @color__container--background;
+	background-color: @color__body--background;
 	width: auto;
 	max-width: none;
     line-height: 0;
 	font-size: 0;
+		
+	@media @mobile {
+		border: 6px solid @color__container--background;
+	}
+		
+	.responsivecolumns & {
+		border: 6px solid @color__container--background;
+	}
+	
+	&__embed-wrap {
+		background-color: @color__navigation--border;
+	}
 }
 
 // -----------------------------
@@ -33,9 +46,22 @@
 // -----------------------------
 
 .widget[data-name="youtube"] .youtube {
-	background-color: @color__navigation--border;
+	border: 10px solid @color__container--background;
+	background-color: @color__body--background;
 	width: auto;
 	max-width: none;
+		
+	@media @mobile {
+		border: 6px solid @color__container--background;
+	}
+		
+	.responsivecolumns & {
+		border: 6px solid @color__container--background;
+	}
+	
+	&__embed-wrap {
+		background-color: @color__navigation--border;
+	}
 }
 
 // -----------------------------

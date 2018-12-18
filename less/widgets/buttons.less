@@ -51,7 +51,7 @@ a.ecomproduct__button {
 	&:focus,
 	&:active {
         background-color: @color__button--background--hover;
-		border-color: @color__button--background--hover;
+		border-color: darken(@color__button--border, 5%);
     	color: @color__button--text--hover;
     }
 }
@@ -187,7 +187,7 @@ a.ecomproduct__button {
 	text-align: center;
 	line-height: 36px;
 	border: 2px solid @color__button--border !important;
-	color: @color__button--background !important;
+	color: @color__button--border !important;
 	background-color: @color-text--lightest;
 	.transition (all, 0.5s, ease);
 	

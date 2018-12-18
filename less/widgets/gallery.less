@@ -385,21 +385,8 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		border: 10px solid @color__container--background;
 		background-size: cover;
 		background-position: center center;
-		
-		@media @mobile {
-			border: 6px solid @color__container--background;
-		}
-	}
-	
-	&:nth-child(n) a.gallery__image-link {
-		border: 10px solid @color__container--background;
-		
-		@media @mobile {
-			border: 6px solid @color__container--background;
-		}
 	}
 
 	// Using the background image instead.
@@ -414,6 +401,17 @@
 // ------------------------------
 
 .gallery__gallery-item {
+	border: 10px solid @color__container--background;
+	background-color: @color__body--background;
+
+	@media @mobile {
+		border: 6px solid @color__container--background;
+	}
+
+	.responsivecolumns & {
+		border: 6px solid @color__container--background;
+	}
+	
 	.gallery__caption {
 		opacity: 0;
 		position: absolute;
@@ -427,6 +425,10 @@
 		.transition(opacity);
 		
 		@media @mobile {
+			margin: 6px;
+		}
+		
+		.responsivecolumns & {
 			margin: 6px;
 		}
 

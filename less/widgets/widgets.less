@@ -2,13 +2,12 @@
 // LookBook: LESS > Widgets > Widgets
 // ----------------------------------------
 //
-// #Global Widget Styles
+// #Standard Widgets
+// #Full Width Widgets
 // #Columns
-// #Page Title Widget
 // #Line Widget
 //
 // ----------------------------------------
-
 
 // -----------------------------
 // #Standard Widgets
@@ -57,12 +56,18 @@
 			&[data-name="responsiveslideshow"],
 			&[data-name="map"],
 			&[data-name="youtube"],
-			&[data-name="blogpost"],
-			&[data-name="ecomproduct"] {
+			&[data-name="blogpost"] {
 				&:first-child {
 					padding-top: 0;
 					border-top: none;
-					
+				}
+			}
+				
+			&[data-name="gallery"],
+			&[data-name="responsiveslideshow"],
+			&[data-name="map"],
+			&[data-name="youtube"] {
+				&:first-child {
 					> *:first-child {
 						border-top: 3px solid @color__navigation--border;
 					}
@@ -72,31 +77,44 @@
 	}
 	
 	.page--home & {
-		&,
-		> .widget:first-child,
-		section > .widget:first-child,
-		.widget[data-widget-type="pagetitle"].bk-tpl-hidden	+ section > .widget:first-child {
-			padding-top: 0;
-			border-top: none;
+		.widget[data-widget-type="pagetitle"] + section > .widget {
+		    &:first-child {
+    			padding-top: 0;
+    			border-top: none;
+		    }
 		}
 	}
 }
 
 .template__content {
+    z-index: 0;
+	position: relative;
+	padding-bottom: 2em;
+	
 	&:after {
 		content: "";
+		z-index: 2;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
 		display: block;
-		margin: 0 auto;
-		padding: 0 10%;
+		margin: -2em auto 0;
 		width: 90%;
 		max-width: @layout-max-width;
+		height: 2em;
 		border: solid @color__navigation--border;
 		border-width: 0 3px 3px;
 		background-color: @color__container--background;
-		height: 2em;
-		
-		@media @mobile {
-			padding: 0 5%;
+	}
+	
+	.widget[data-widget-type="feature"] + section &,
+	.widget[data-widget-type="feature"] + .page & .widget[data-widget-type="pagetitle"].bk-tpl-hidden + section {
+		> .widget {
+			&:first-child {
+				padding-top: 0;
+				border-top: none;
+			}
 		}
 	}
 	
@@ -111,16 +129,6 @@
 	}
 }
 
-.widget[data-name="responsivecolumns"] {
-	.responsivecolumns {
-		.column .widget {
-			width: 100%;
-			border: none;
-			padding: 0;
-		}
-	}
-}
-
 // -----------------------------
 // #Full Width Widgets
 // -----------------------------
@@ -131,8 +139,7 @@
 	.widget[data-name="responsiveslideshow"],
 	.widget[data-name="map"],
 	.widget[data-name="youtube"],
-	.widget[data-name="blogpost"],
-	.widget[data-name="ecomproduct"] {
+	.widget[data-name="blogpost"] {
 		position: relative;
 		width: 100%;
 		max-width: 1600px;
@@ -145,13 +152,11 @@
 	.widget[data-name="responsiveslideshow"],
 	.widget[data-name="map"],
 	.widget[data-name="youtube"],
-	.widget[data-name="blogpost"],
-	.widget[data-name="ecomproduct"] {
+	.widget[data-name="blogpost"] {
 		&:before, &:after {
 			content: "";
 			display: block;
 			margin: 0 auto;
-			padding: 0 10%;
 			width: 90%;
 			max-width: @layout-max-width;
 			border: solid @color__navigation--border;
@@ -172,14 +177,16 @@
 			}
 		}
 	}
-	
+}
+
+.template__content,
+.template__content section {
 	.responsivecolumns {
 		.widget[data-name="gallery"],
 		.widget[data-name="responsiveslideshow"],
 		.widget[data-name="map"],
 		.widget[data-name="youtube"],
-		.widget[data-name="blogpost"],
-		.widget[data-name="ecomproduct"] {
+		.widget[data-name="blogpost"] {
 			&:before, &:after {
 				content: none;
 			}
@@ -191,10 +198,11 @@
 // #Line Widget
 // -----------------------------
 
-.template__content,
-.template__content section {
-	> .widget[data-name="line"] {
-		padding: 2em 0;
+.template__content {
+	&, section, .responsivecolumns section.column {
+		> .widget[data-name="line"] {
+			padding: 2em 0;
+		}
 	}
 }
 

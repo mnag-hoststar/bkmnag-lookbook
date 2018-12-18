@@ -177,6 +177,26 @@
 			}
 		}
 	}
+	
+	.widget[data-name="gallery"] {
+		z-index: 5;
+		
+		&:before, &:after {
+			height: 4em;
+		}
+		
+		&:first-child {
+			&:before {
+				height: 4em;
+			}
+		}
+		
+		&:last-child {
+			&:after {
+				height: 4em;
+			}
+		}
+	}
 }
 
 .template__content,

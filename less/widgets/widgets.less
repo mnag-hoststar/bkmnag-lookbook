@@ -4,7 +4,7 @@
 //
 // #Standard Widgets
 // #Full Width Widgets
-// #Columns
+// #Responsive Columns
 // #Line Widget
 //
 // ----------------------------------------
@@ -221,9 +221,22 @@
 	}
 }
 
+// -----------------------------
+// #Responsive Columns
+// -----------------------------
+
 .template__content,
 .template__content section {
 	.responsivecolumns {
+		.widget {
+			width: auto;
+			max-width: none;
+			margin: 0;
+			padding: 0;
+			border: none;
+			background-color: transparent;
+		}
+		
 		.widget[data-name="gallery"],
 		.widget[data-name="responsiveslideshow"],
 		.widget[data-name="map"],
@@ -231,6 +244,30 @@
 		.widget[data-name="blogpost"] {
 			&:before, &:after {
 				content: none;
+			}
+		}
+		
+		.widget[data-name="gallery"] {
+			margin-top: 4em;
+			margin-bottom: 4em;
+
+			@media @mobile {
+				margin-top: 4em;
+				margin-bottom: 4em;
+			}
+
+			&:first-child {
+				margin-top: 2em;
+
+				@media @mobile {
+					margin-top: 2em;
+				}
+			}
+
+			&:last-child {
+				@media @mobile {
+					margin-bottom: 4em;
+				}
 			}
 		}
 	}

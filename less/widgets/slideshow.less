@@ -17,6 +17,14 @@
 	position: relative;
 	border: 10px solid @color__container--background;
 	background-color: @color__body--background;
+		
+	@media @mobile {
+		border: 6px solid @color__container--background;
+	}
+		
+	.responsivecolumns & {
+		border: none;
+	}
 }
 
 .responsiveslideshow__figure,

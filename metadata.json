@@ -3,7 +3,7 @@
     "widgetVersion": 2,
     "thumbnail":"lookbook.png",
     "templateType":"standard",
-    "pageTypes": ["home", "gallery", "404"],
+    "pageTypes": ["home"],
     "screenshot":"lookbook-screenshot.jpg",
     "images":[
         "images/feature-image.jpg",

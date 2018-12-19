@@ -92,8 +92,12 @@
 	top: 0;
 	bottom: auto;
 	margin: 0;
-	padding: 4.5em 0 3em;
+	padding: 4.5em 0 2em;
 	background-color: fade(@color__slideshow-caption--background, 80%);
+
+	@media @mobile {
+		padding: 4em 0 1em;
+	}
 	
 	.columns-four-first &,
 	.columns-four-second &,
@@ -119,7 +123,6 @@
 }
 
 .responsiveslideshow__image-title {
-	margin-bottom: 0.5em;
 	color: @color__slideshow-title--text;
 	font-size: @font__p--font-size*1.2;
 	

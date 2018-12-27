@@ -14,16 +14,70 @@
 .widget[data-name="image"] {
 	.paragraph;
 	.imagewidget__image-link {
-	    width: 100%;
+        max-width: 100%;
 	}
+	
+	.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-left &,
+	.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-right & {
+		width: 790px;
 		
-	.image {
-		border: none;
-		background-color: transparent;
+		@media @desktop-wide {
+			width: 140%;
+		}
+		@media @mobile {
+			width: 100%;
+		}
+
+		.image {
+			border: 10px solid @color__container--background;
+			background-color: @color__body--background;
+		}
+	}
+
+	.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-left & {
+		margin-left: -243px;
+		
+		@media @desktop-wide {
+			margin-left: -40%;
+		}
+		
+		@media @mobile {
+			margin-left: 0;
+		}
+		
+		.widget-align-center .imagewidget__image-link {
+			margin-left: 243px;
+		
+			@media @desktop-wide {
+				margin-left: -40%;
+			}
+		
+			@media @mobile {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-right & {
+		.widget-align-center .imagewidget__image-link {
+			margin-right: 243px;
+		
+			@media @desktop-wide {
+				margin-right: 40%;
+			}
+		
+			@media @mobile {
+				margin-right: 0;
+			}
+		}
+	}
+	
+	.responsivecolumns & {
+		@media @mobile {
+			max-width: 100%;
+		}
 	}
 }
-
-
 
 // ------------------------------
 // #Caption
@@ -32,6 +86,29 @@
 .imagewidget {
 	.caption {
 		margin: 1em 0 0;
+		
+		.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-left & {
+			margin: 1em 0 0 243px;
+		
+			@media @desktop-wide {
+				margin: 1em 0 0 243px;
+			}
+		
+			@media @mobile {
+				margin: 1em 0 0;
+			}
+		}
+		.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-right & {
+			margin: 1em 243px 0 0;
+		
+			@media @desktop-wide {
+				margin: 1em 243px 0 0;
+			}
+		
+			@media @mobile {
+				margin: 1em 0 0;
+			}
+		}
 	}
 	
 	.image-title {

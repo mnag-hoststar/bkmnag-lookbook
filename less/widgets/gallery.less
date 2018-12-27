@@ -37,10 +37,14 @@
 		width: 90%;
 		max-width: 1400px;
 		margin: 0 auto;
-		padding: 1em 10%;
+		padding: 1em 140px;
 		border: solid @color__navigation--border;
 		border-width: 0 3px;
 		background-color: @color__container--background;
+		
+		@media @desktop-wide {
+			padding: 1em 10%;
+		}
 
 		.responsivecolumns & {
 			content: none;

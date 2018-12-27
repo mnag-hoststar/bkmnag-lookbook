@@ -100,9 +100,13 @@
 }
 
 .blogpost__post-content {
-	padding: 1em 10% 8em;
+	padding: 1em 140px 8em;
 	border: 3px solid @color__blogpost--background;
 	background-color: @color__blogpost-article--background;
+		
+	@media @desktop-wide {
+		padding: 1em 10% 8em;
+	}
 	
 	@media @tablet {
 		padding: 1em 10% 5em;

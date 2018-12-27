@@ -111,9 +111,13 @@
 	.ecombasket {
 		.basket-body {
 			margin: 1em 0;
-			padding: 1px 10%;
+			padding: 1px 140px;
 			border: 3px solid @color__navigation--border;
 			background-color: @color__container--background;
+		
+			@media @desktop-wide {
+				padding: 1px 10%;
+			}
 		}
 		
 		// The whole list of the basket.

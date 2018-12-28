@@ -13,69 +13,13 @@
 
 .widget[data-name="image"] {
 	.paragraph;
-	.imagewidget__image-link {
-        max-width: 100%;
+	
+	.imagewidget__figure {
+		margin: 0;
 	}
 	
-	.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-left &,
-	.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-right & {
-		width: 790px;
-		
-		@media @desktop-wide {
-			width: 140%;
-		}
-		@media @mobile {
-			width: 100%;
-		}
-
-		.image {
-			border: 10px solid @color__container--background;
-			background-color: @color__body--background;
-		}
-	}
-
-	.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-left & {
-		margin-left: -243px;
-		
-		@media @desktop-wide {
-			margin-left: -40%;
-		}
-		
-		@media @mobile {
-			margin-left: 0;
-		}
-		
-		.widget-align-center .imagewidget__image-link {
-			margin-left: 243px;
-		
-			@media @desktop-wide {
-				margin-left: -40%;
-			}
-		
-			@media @mobile {
-				margin-left: 0;
-			}
-		}
-	}
-
-	.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-right & {
-		.widget-align-center .imagewidget__image-link {
-			margin-right: 243px;
-		
-			@media @desktop-wide {
-				margin-right: 40%;
-			}
-		
-			@media @mobile {
-				margin-right: 0;
-			}
-		}
-	}
-	
-	.responsivecolumns & {
-		@media @mobile {
-			max-width: 100%;
-		}
+	.image-link {
+		display: block;
 	}
 }
 
@@ -85,38 +29,27 @@
 
 .imagewidget {
 	.caption {
-		margin: 1em 0 0;
-		
-		.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-left & {
-			margin: 1em 0 0 243px;
-		
-			@media @desktop-wide {
-				margin: 1em 0 0 243px;
-			}
-		
-			@media @mobile {
-				margin: 1em 0 0;
-			}
-		}
-		.widget[data-name="responsivecolumns"] .responsivecolumns .columns-two-right & {
-			margin: 1em 243px 0 0;
-		
-			@media @desktop-wide {
-				margin: 1em 243px 0 0;
-			}
-		
-			@media @mobile {
-				margin: 1em 0 0;
-			}
-		}
+		margin: 0;
+		padding: 0.8em 0;
 	}
 	
-	.image-title {
-		.heading--3;
-		padding: 0.5em 0;
-	}
-
+	.image-title,
 	.image-description {
 		.paragraph;
+		line-height: @font__p--line-height*0.75;
+		font-size: @font__p--font-size*0.8;
+		padding: 0;
+
+		.make-line-height-a-little-smaller(@font__p--line-height*0.75);
+		.make-line-height-smaller(@font__p--line-height*0.75);
+		.make-line-height-a-lot-smaller(@font__p--line-height*0.75);
+
+		.make-font-a-little-smaller(@font__p--font-size*0.8);
+		.make-font-smaller(@font__p--font-size*0.8);
+		.make-font-a-lot-smaller(@font__p--font-size*0.8);
+	}
+
+	.image-title {
+		font-weight: bold;
 	}
 }

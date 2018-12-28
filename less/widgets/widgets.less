@@ -256,62 +256,6 @@
 }
 
 // -----------------------------
-// #Columns
-// -----------------------------
-
-.widget[data-name="responsivecolumns"] {
-	.responsivecolumns {
-		margin: 0 -10px;
-
-		.column {
-			margin: 0;
-			padding: 0 10px;
-
-			&.columns-two-left,
-			&.columns-two-right {
-				width: 50%;
-
-				@media @mobile {
-					width: 100%;
-				}
-			}
-
-			&.columns-three-left,
-			&.columns-three-middle,
-			&.columns-three-right {
-				width: 33.333%;
-
-				@media @mobile {
-					width: 100%;
-				}
-			}
-
-			&.columns-four-first,
-			&.columns-four-second,
-			&.columns-four-third,
-			&.columns-four-fourth {
-				width: 25%;
-
-				@media @tablet-horizontal {
-					width: 50%;
-				}
-
-				@media @mobile {
-					width: 100%;
-				}
-			}
-
-			.widget {
-				width: 100%;
-				border: none;
-				padding: 0;
-				background-color: transparent;
-			}
-		}
-	}
-}
-
-// -----------------------------
 // #Line Widget
 // -----------------------------
 

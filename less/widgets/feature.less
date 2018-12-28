@@ -27,7 +27,11 @@
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
-	min-height: 60vw;
+	min-height: 900px;
+	
+	@media @desktop-wide {
+		min-height: 50vw;
+	}
 }
 
 // #Content Wrap
@@ -59,8 +63,12 @@
     position: relative;
 	display: table-cell;
 	vertical-align: bottom;
-	height: 60vw;
+	height: 900px;
     text-align: left;
+	
+	@media @desktop-wide {
+		height: 50vw;
+	}
 }
 
 // #Headline

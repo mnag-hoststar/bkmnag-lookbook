@@ -181,8 +181,8 @@
             "font__navigation--letter-spacing": "@font-swatch6-letter-spacing",
 			"color__navigation--border": "fade(@color-swatch2, 50%)",
             "color__navigation--text": "@font-swatch6-color",
-            "color__navigation--text--hover": "@color-swatch6-color-hover",
-            "color__navigation--text--selected": "@color-swatch6-color-hover",
+            "color__navigation--text--hover": "@font-swatch6-color",
+            "color__navigation--text--selected": "@font-swatch6-color",
             "color__navigation-item--background": "@color-swatch5",
             "color__navigation-item--background--selected": "darken(@color-swatch5, 5%)"
         },

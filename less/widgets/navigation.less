@@ -73,6 +73,11 @@
 		font-weight: @font__companyname--font-weight;
 		line-height: @font__companyname--line-height;
 		letter-spacing: @font__companyname--letter-spacing;
+		word-wrap: anywhere;
+
+		.make-font-a-little-smaller(@font__companyname--font-size);
+		.make-font-smaller(@font__companyname--font-size);
+		.make-font-a-lot-smaller(@font__companyname--font-size);
 		
 		&, span {
 			display: block;
@@ -80,6 +85,7 @@
 			color: @color__companyname--text;
 			
 			@media @tablet {
+				line-height: 1.3em;
 				font-size: 30px;
 			}
 			
@@ -87,14 +93,6 @@
 				font-size: 20px;
 			}
 		}
-
-		.make-font-a-little-smaller(@font__companyname--font-size);
-		.make-font-smaller(@font__companyname--font-size);
-		.make-font-a-lot-smaller(@font__companyname--font-size);
-	
-		.make-line-height-a-little-smaller(@font__companyname--line-height);
-		.make-line-height-smaller(@font__companyname--line-height);
-		.make-line-height-a-lot-smaller(@font__companyname--line-height);
 
 		&:hover {
 			text-decoration: none;

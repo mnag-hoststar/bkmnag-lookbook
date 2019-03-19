@@ -168,32 +168,26 @@
 }
 
 // ------------------------------
-// #Basekit Messages
-// ------------------------------
-
-// Basekit specific messages
-
-.bk-message {
-	&--empty {
-		
-	}
-}
-
-// ------------------------------
 // #Cookie Message
 // ------------------------------
 
 .bk-cookie-container {
-	display: none;
+	display: table;
 	text-align: left;
 	border: none;
 	position: fixed;
-	bottom: unset;
+	top: auto;
+	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: 0;
-	text-align: center;
+	margin: 0 auto;
+	max-width: 1460px;
 	width: 100%;
+
+	@media @mobile {
+		left: 0;
+		width: 100%;
+	}
 	
 	p, a, .bk-cookie-close-button {
 		display: table-cell;
@@ -201,15 +195,20 @@
 	
 	p, a {
 		.paragraph;
-		color: @color__container--background;
+		color: #fff;
 		
 		&, &:hover {
-			color: @color__container--background;
+			color: #fff;
 		}
 	}
 	
 	p {
-		padding: 0.5em 1em 1em 1em;
+		padding: 0.5em 1em;
+	}
+	
+	p a {
+		padding: 0;
+		color: #fff;
 	}
 	
 	.bk-cookie-close-button {
@@ -226,10 +225,11 @@
 		color: @color__button--text;
 		text-transform: uppercase;
 		text-align: center;
+		.transition(all 0.25s ease-in-out 0s);
 		
 		&:hover {
 			padding: 1em 2em;
-			background-color: @color__button--background;
+			background-color: @color__button--background--hover;
 		}
 	}
 }

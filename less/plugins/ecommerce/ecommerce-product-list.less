@@ -114,7 +114,7 @@
 			-webkit-flex: 1 1 auto;
 			-ms-flex: 1 1 auto;
 			flex: 1 1 auto;
-			padding-right: 2%;
+			padding-right: 0.5em;
 
 			@media @mobile {
 				padding-right: 0;
@@ -130,7 +130,7 @@
 		&:last-of-type {
 			@media @mobile {
 				width: 100%;
-				padding: 2% 0 0;
+				padding: 0.5em 0 0;
 			}
 		}
 		
@@ -194,7 +194,7 @@
 		.justify-content();
 		.align-content();
 		.align-items();
-		margin: 0 -2%;
+		margin: 0 -0.5em;
 
 		@media @mobile {
 			margin: 0;
@@ -202,12 +202,14 @@
 	}
 	
 	.form-group {
-		margin: 0 2% 1em;
+		margin: 0 0.5em 1em;
 		min-width: 15%;
 		width: auto;
-		-webkit-flex: 1 1 auto;
-		-ms-flex: 1 1 auto;
-		flex: 1 1 auto;
+		.flex(1);
+
+		@media @tablet-horizontal {
+			.flex(1 1 auto);
+		}
 
 		@media @mobile {
 			&:first-child,
@@ -352,6 +354,8 @@
     }
 	
     .image {
+		padding: 15px;
+		
         @media @mobile-small {
             max-height: 200px;
         }

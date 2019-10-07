@@ -236,7 +236,7 @@
             "color__feature-button--background--hover": "@color__button--background--hover"
         },
         "blog": {
-			"color__blogpostlist--background": "@color__button--border",
+			"color__blogpostlist--background": "fade(@color__button--border, 50%)",
 			"color__blogpostlist-article--background": "@color__p--text",
             "color__blogpostlist-title--text": "@color__h3--text",
             "color__blogpostlist-title--background": "@color__link--text",
@@ -246,7 +246,7 @@
             "color__blogpost-title--background": "@color__link--text"
         },
         "ecommerce": {
-			"color__ecomproductslist--background": "@color__button--border",
+			"color__ecomproductslist--background": "fade(@color__button--border, 50%)",
 			"color__ecomproductslist-product-item--background": "@color__p--text",
             "color__ecomproductslist-product-title--text": "@color__p--text",
 			"color__ecomproduct-images--background": "@color-swatch7",

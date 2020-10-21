@@ -5,6 +5,7 @@
     "templateType":"standard",
     "pageTypes": ["home", "404"],
     "screenshot":"lookbook-screenshot.jpg",
+    "versionTenCompatible": 1,
     "images":[
         "images/feature-image.jpg",
         "images/gallery/gallery-image--1.jpg",

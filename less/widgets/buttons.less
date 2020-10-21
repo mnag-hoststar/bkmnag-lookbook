@@ -16,13 +16,13 @@
 // #Button
 // -----------------------------
 
-button,
 .button,
 a.button,
 .link-button,
 .tweet .button,
 .clicktocall .phone-number-link,
-a.ecomproduct__button {
+a.ecomproduct__button,
+a.contentgroup__link {
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -48,6 +48,24 @@ a.ecomproduct__button {
 	.make-line-height-a-little-smaller(@font__p--line-height);
 	.make-line-height-smaller(@font__p--line-height);
 	.make-line-height-a-lot-smaller(@font__p--line-height);
+
+	.style--light & {
+	    background-color: @color--accent;
+	    border-color: @color--accent;
+	    color: @contrast--accent;
+	}
+
+	.style--accent & {
+	    background-color: @color--light;
+	    border-color: @color--light;
+	    color: @contrast--light;
+	}
+
+	.style--dark & {
+	    background-color: @color--light;
+	    border-color: @color--light;
+	    color: @contrast--light;
+	}
 	
     &:hover,
 	&:focus,
@@ -55,10 +73,41 @@ a.ecomproduct__button {
         background-color: @color__button--background--hover;
 		border-color: darken(@color__button--border, 5%);
     	color: @color__button--text--hover;
+
+    	.style--light & {
+		    background-color: @color--dark;
+		    border-color: @color--dark;
+		    color: @contrast--dark;
+		}
+
+		.style--accent & {
+		    background-color: @color--light;
+		    border-color: @color--light;
+		    color: @contrast--light;
+		}
+
+		.style--dark & {
+		    background-color: @color--light;
+		    border-color: @color--light;
+		    color: @contrast--light;
+		}
+    }
+
+    .clicktocall__label {
+    	.style--light & {
+		    color: @contrast--accent;
+		}
+
+		.style--accent & {
+		    color: @contrast--light;
+		}
+
+		.style--dark & {
+		    color: @contrast--light;
+		}
     }
 }
 
-button,
 .button,
 a.button,
 .link-button,
@@ -83,8 +132,6 @@ a.button,
 .link-button,
 .tweet .button,
 .clicktocall .phone-number-link {
-    display: table-cell;
-    vertical-align: middle;
 	height: 50px;
 	&:before {
 		float: left;
@@ -116,20 +163,12 @@ a.button,
 // -----------------------------
 
 .dropbox {
-	display: table;
-
 	.button {
 		&:before {
 			display: inline;
 			margin-right: 0.5em;
 		}
 	}
-}
-
-.dropbox__button,
-.dropbox__label {
-	display: table-cell;
-	vertical-align: middle;
 }
 
 .dropbox__label {
@@ -194,13 +233,48 @@ a.button,
 	color: @color__button--border !important;
 	background-color: @color-text--lightest;
 	.transition (all, 0.5s, ease);
-	
+
+	.style--light & {
+	    background-color: @color--light!important;
+	    border-color: @contast--light;
+	    color: @contrast--ligh!importantt;
+	}
+
+	.style--accent & {
+	    background-color: @color--accent!important;
+	    border-color: @contrast--accent!important;
+	    color: @contrast--accent!important;
+	}
+
+	.style--dark & {
+	    background-color: @color--dark!important;
+	    border-color: @contrast--dark!important;
+	    color: @contrast--dark!important;
+	}
 
 	&:hover {
 		text-decoration: none;
 		border: 2px solid @color__button--background--hover !important;
 		color: @color__button--background--hover !important;
 		.transition (all, 0.5s, ease);
+
+		.style--light & {
+		    background-color: @color--light;
+		    border-color: @contast--light!important;
+		    color: @contrast--light!important;
+		}
+
+		.style--accent & {
+		    background-color: @color--accent;
+		    border-color: @contrast--accent!important;
+		    color: @contrast--accent!important;
+		}
+
+		.style--dark & {
+		    background-color: @color--dark;
+		    border-color: @contrast--dark!important;
+		    color: @contrast--dark!important;
+		}
 	}
 
 	// Icon

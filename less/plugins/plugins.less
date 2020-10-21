@@ -74,6 +74,21 @@ a.tag-link,
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+
+	.style--light & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+        background-color: @color--light;
+        color: @contrast--light;
+    }
+
+    .style--dark & {
+        background-color: @color--light;
+        color: @contrast--light;
+    }
 	
 	&:hover {
 		background: darken(@color-highlight, 5%);

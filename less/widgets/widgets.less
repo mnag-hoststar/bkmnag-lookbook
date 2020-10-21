@@ -16,13 +16,18 @@
 .template__content,
 .template__content section {
 	> .widget {
-		width: 90%;
+        width: 90%;
 		max-width: @layout-max-width;
 		margin: 0 auto;
-		padding: 1px 140px;
 		border: solid @color__navigation--border;
 		border-width: 0 3px;
-		background-color: @color__container--background;
+
+		&:first-of-type {
+			border-top: 3px solid @color__navigation--border;
+		}
+    }
+	> .widget:not([data-name="row"]) {
+		padding: 1px 140px;
 		
 		@media @desktop-wide {
 			padding: 1px 10%;
@@ -34,7 +39,6 @@
 		
 		&:first-of-type {
 			padding-top: 2em;
-			border-top: 3px solid @color__navigation--border;
 		}
 	}
 	
@@ -52,6 +56,10 @@
 			&:first-of-type {
 				padding-top: 2em;
 				border-top: 3px solid @color__navigation--border;
+			}
+
+			&[data-name="row"]:first-of-type {
+				padding-top: 0;
 			}
 		}
 	}
@@ -85,6 +93,11 @@
 		border: solid @color__navigation--border;
 		border-width: 0 3px 3px;
 		background-color: @color__container--background;
+
+		#migrated & {
+			margin-top: 0;
+			height: 0;
+		}
 	}
 	
 	.widget[data-widget-type="feature"] + section & {
@@ -93,7 +106,12 @@
 				padding-top: 2em;
 				border-top: none;
 			}
+
+			&[data-name="row"] .widget:first-of-type {
+				padding-top: 0;
+			}
 			
+			&[data-name="row"],
 			&[data-name="gallery"],
 			&[data-name="responsiveslideshow"],
 			&[data-name="map"],
@@ -113,6 +131,7 @@
 				border-top: none;
 			}
 			
+			&[data-name="row"],
 			&[data-name="gallery"],
 			&[data-name="responsiveslideshow"],
 			&[data-name="map"],
@@ -131,6 +150,10 @@
 			&:first-of-type {
 				padding-top: 2em;
 				border-top: 3px solid @color__navigation--border;
+			}
+
+			&[data-name="row"]:first-of-type {
+				padding-top: 0;
 			}
 		}
 	}
@@ -288,6 +311,10 @@
 	&, section, .responsivecolumns section.column {
 		> .widget[data-name="line"] {
 			padding: 2em 0;
+
+			[data-name="row"] & {
+				padding: 0;
+			}
 		}
 	}
 }
@@ -300,4 +327,16 @@
 hr.line__rule {
 	height: 3px;
 	background-color: @color__navigation--border;
+
+	.style--light & {
+		background-color: fade(@contrast--light, 65%);
+	}
+
+	.style--accent & {
+		background-color: fade(@contrast--accent, 65%);
+	}
+
+	.style--dark & {
+		background-color: fade(@contrast--dark, 65%);
+	}
 }

@@ -337,6 +337,21 @@
 	border: 1px solid @color__ecomproductslist--background;
 	background-color: lighten(@color__ecomproductslist-product-item--background, 95%);
 	height: 100%;
+
+    .style--light & {
+        background-color: darken(@color--light, 5%);
+        border-color: fade(@contrast--light, .5);
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 5%);
+        border-color: fade(@contrast--accent, .5);
+    }
+
+    .style--dark & {
+        background-color: darken(@color--dark, 5%);
+        border-color: fade(@contrast--dark, .5);
+    }
 	
 	.responsivecolumns & {
 		padding: 1px 0;
@@ -347,6 +362,18 @@
     background-color: @color__ecomproduct-images--background;
     width: auto;
 	font-size: 0;
+
+    .style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
 	
     @media @mobile-small {
         line-height: 1;
@@ -388,6 +415,18 @@
     .title-link {
         color: @color__ecomproductslist-product-title--text;
 		hyphens: none;
+
+        .style--light & {
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
 		
 		@media @mobile {
 			font-size: 0.8em;
@@ -408,6 +447,18 @@
 	.make-line-height-a-little-smaller(@font__p--line-height);
 	.make-line-height-smaller(@font__p--line-height);
 	.make-line-height-a-lot-smaller(@font__p--line-height);
+
+    .style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
 }
 
 // ------------------------------
@@ -435,7 +486,7 @@
 	text-align: center;
 }
 	
-.ecomproductslist pagination-item {
+.ecomproductslist .pagination-item {
 	display: inline-block;
 	margin: 0;
 	padding: 0;

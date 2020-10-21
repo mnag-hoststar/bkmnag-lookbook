@@ -44,6 +44,21 @@
 	font-size: @font__p--font-size;
 	.item--margin-size--2to1-cols();
 	.clearfix();
+
+	.style--light & {
+        background-color: @color--light;
+        border-color: @color--accent;
+    }
+
+    .style--accent & {
+		background-color: @color--accent;
+		border-color: @color--accent;
+    }
+
+    .style--dark & {
+    	background-color: @color--dark;
+    	border-color: @color--accent;
+    }
 	
     .responsivecolumns & {
 		width: 100%;
@@ -136,11 +151,33 @@ a.twitter__account-link {
 		text-transform: uppercase;
 		font-size: 0.7em;
 		color: fade(@color__p--text, 50%);
-	}
 
-    a {
-        color: fade(@color__p--text, 50%);
-    }
+		.style--light & {
+			color: fade(@contrast--light, 50%);
+		}
+
+		.style--accent & {
+			color: fade(@contrast--accent, 50%);
+		}
+
+    	.style--dark & {
+    		color: fade(@contrast--dark, 50%);
+		}
+
+        &:hover {
+            .style--light & {
+                background-color: darken(@color--light, 8%);
+            }
+
+            .style--accent & {
+                background-color: darken(@color--accent, 8%);
+            }
+
+            .style--dark & {
+                background-color: lighten(@color--dark, 8%);
+            }
+        }
+	}
 }
 
 // Timestamp

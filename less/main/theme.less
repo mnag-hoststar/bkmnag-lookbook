@@ -29,10 +29,6 @@ html, body {
     background-color: @color__body--background;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	font-smooth: always;
-	font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
 	text-rendering: geometricPrecision;
 	
 	.make-font-a-little-smaller(@font__p--font-size);
@@ -67,12 +63,13 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	padding: 1px 0;
 	margin-bottom: 2em;
 	background-color: @color__header--background;
-	border-bottom: 3px solid @color__header--border;
+	border-bottom: 1px solid @color__header--border;
 	
     @media @tablet {
 		display: table;
 		margin-bottom: 1em;
 		padding: 0.5em 5%;
+		min-height: 50px;
     }
 }
 
@@ -83,7 +80,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 .template__footer {
     width: 100%;
     background-color: @color__footer--background;
-	border-top: 3px solid @color__footer--border;
+	border-top: 1px solid @color__footer--border;
     text-align: center;
 	margin: 2em 0 0;
 	padding: 1px 0;

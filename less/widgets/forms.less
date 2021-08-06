@@ -24,6 +24,22 @@
 .widget[data-name="contactform"],
 .widget[data-name="advancedcontactform"] {
 	background: @color__form--background;
+
+    .style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
+
+    .style--background-image & {
+        background-color: transparent;
+    }
 }
 
 .form {
@@ -44,6 +60,18 @@
 	margin-bottom: 0;
 	color: @color__form-legend--text;
 	background-color: transparent;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 // ------------------------------
@@ -98,9 +126,39 @@ textarea {
 	.transition();
     .border-radius(0);
     .appearance(none);
+
+    .style--light & {
+        background-color: @color--light;
+        border-color: fade(@color--accent, 50%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+        border-color: fade(@color--light, 50%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+        border-color: fade(@color--light, 50%);
+        color: @contrast--dark;
+    }
 	
 	&:hover {
     	border-color: fade(@color__form--border, 50%);
+
+        .style--light & {
+            border-color: fade(@color--accent, 50%);
+        }
+
+        .style--accent & {
+            border-color: fade(@color--light, 50%);
+        }
+
+        .style--dark & {
+            border-color: fade(@color--light, 50%);
+        }
 	}
 	
 	// Focus style for easier keyboard navigation
@@ -108,6 +166,18 @@ textarea {
 	&:focus {
     	border-color: @color__form--border;
 		.box-shadow(none);
+
+        .style--light & {
+            border-color: @color--accent;
+        }
+
+        .style--accent & {
+            border-color: @color--light;
+        }
+
+        .style--dark & {
+            border-color: @color--light;
+        }
 	}
 }
 
@@ -117,18 +187,66 @@ textarea {
 
 ::-webkit-input-placeholder {
    color: @color-text--faded;
+
+    .style--light & {
+        color: fade(@contrast--light, 25%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 25%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 25%);
+    }
 }
 
 :-moz-placeholder {
    color: @color-text--faded;
+
+    .style--light & {
+        color: fade(@contrast--light, 25%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 25%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 25%);
+    }
 }
 
 ::-moz-placeholder {
    color: @color-text--faded;
+
+    .style--light & {
+        color: fade(@contrast--light, 25%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 25%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 25%);
+    }
 }
 
 :-ms-input-placeholder {
    color: @color-text--faded;
+
+    .style--light & {
+        color: fade(@contrast--light, 25%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 25%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 25%);
+    }
 }
 
 input:focus {
@@ -163,7 +281,7 @@ input:focus {
 		.label--checkbox,
 		label[for*="input--terms"],
 		label[for*="input--terms"] span a.form__link {
-			.paragraph;
+			p;
 			padding: 0;
 			margin: 0.5em 0;
 			line-height: 1.5em;
@@ -186,11 +304,35 @@ input:focus {
 			&:hover + label:before {
 				border: 2px solid darken(@color__form--border, 8%);
 				.transition();
+
+                .style--light & {
+                    border-color: @color--accent;
+                }
+
+                .style--accent & {
+                    border-color: @contrast--accent;
+                }
+
+                .style--dark & {
+                    border-color: @contrast--dark;
+                }
 			}
 
 			&:checked + label:before {
 				border: 2px solid @color__form--border;
 				.transition();
+
+                .style--light & {
+                    border-color: @color--accent;
+                }
+
+                .style--accent & {
+                    border-color: @contrast--accent;
+                }
+
+                .style--dark & {
+                    border-color: @contrast--dark;
+                }
 			}
 
 			&:checked + label:after {
@@ -202,6 +344,18 @@ input:focus {
 			&:focus:checked + label:before {
 				border: 2px solid @color__form--border;
 				.transition();
+
+                .style--light & {
+                    border-color: @color--accent;
+                }
+
+                .style--accent & {
+                    border-color: @contrast--accent;
+                }
+
+                .style--dark & {
+                    border-color: @contrast--dark;
+                }
 			}
 		}
 
@@ -239,6 +393,21 @@ input:focus {
 					background-color: #fff;
 					border: 2px solid fade(@color__form--border, 50%);
 					.border-radius(0);
+
+                    .style--light & {
+                        background-color: @color--light;
+                        border-color: fade(@color--accent, 50%);
+                    }
+
+                    .style--accent & {
+                        background-color: @color--accent;
+                        border-color: fade(@contrast--accent, 50%);
+                    }
+
+                    .style--dark & {
+                        background-color: @color--dark;
+                        border-color: fade(@contrast--dark, 50%);
+                    }
 				}
 
 				&:after {
@@ -265,6 +434,18 @@ input:focus {
 					.border-radius(1em);
 					background-color: @color__form--border;
 					.transform-scale(0.5);
+
+                    .style--light & {
+                        background-color: @color--accent;
+                    }
+
+                    .style--accent & {
+                        background-color: @contrast--accent;
+                    }
+
+                    .style--dark & {
+                        background-color: @contrast--dark;
+                    }
 				}
 			}
 		}
@@ -273,11 +454,25 @@ input:focus {
 		&[class*="form-group"] {
 			label {
 				&:after {
+                    border: 0;
 					content: "\f00c";
 					margin-top: -0.7em;
 					font-family: 'FontAwesome', sans-serif;
 					color: @color__form--border;
 					text-align: center;
+                    transform: none;
+
+                    .style--light & {
+                        color: @color--accent;
+                    }
+
+                    .style--accent & {
+                        color: @contrast--accent;
+                    }
+
+                    .style--dark & {
+                        color: @contrast--dark;
+                    }
 				}
 			}
 		}
@@ -309,6 +504,18 @@ input:focus {
         top: 50%;
         margin-top: -0.5em;
 
+        .style--light & {
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
+
 		@media @mobile {
 			font-size: 2em;
 		}
@@ -331,24 +538,49 @@ input:focus {
     .appearance(none);
 	.transition();
 
+    .style--light & {
+        background-color: @color--light;
+        border-color: fade(@color--accent, 50%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+        border-color: fade(@contrast--accent, 50%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+        border-color: fade(@contrast--dark, 50%);
+        color: @contrast--dark;
+    }
+
     @media @mobile {
 		padding: 0 2.7em 0 0.6em;
     }
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:hover:focus {
 		border-color: @color__form--border;
 		background-color: @color-text--lighter;
-    }
 
-    &:focus {
-		border-color: @color__form--border;
-		background-color: @color-text--lighter;
-	}
-	
-	&:hover:focus {
-		border-color: @color__form--border;
-		background-color: @color-text--lighter;
-	}
+        .style--light & {
+            background: @color--light;
+            border-color: @color--accent;
+        }
+
+        .style--accent & {
+            background: @color--accent;
+            border-color: @contrast--accent;
+        }
+
+        .style--dark & {
+            background: @color--dark;
+            border-color: @contrast--dark;
+        }
+    }
 }
 
 .select::-ms-expand {

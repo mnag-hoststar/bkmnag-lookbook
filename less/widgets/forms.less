@@ -1,24 +1,6 @@
-// ----------------------------------------
 // LookBook: LESS > Widgets > Forms
-// ----------------------------------------
-//
-// #Form Background
-// #Legend
-// #Form
-// #Label
-// #Text Inputs
-// #Placeholders
-// #Dropdowns
-// #Radio Buttons and Checkboxes
-// #Error Messages
-// #Form Group Button
-// #Sign Up Form
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Global Form Styles
-// ------------------------------
+// Global Form Styles
 
 .widget[data-name="signupform"],
 .widget[data-name="contactform"],
@@ -50,9 +32,7 @@
 	}
 }
 
-// ------------------------------
-// #Legend
-// ------------------------------
+// Legend
 
 .form .legend {
 	.paragraph;
@@ -74,9 +54,7 @@
     }
 }
 
-// ------------------------------
-// #Form
-// ------------------------------
+// Form
 
 .form .form-group {
 	margin-bottom: 1em;
@@ -87,9 +65,7 @@
 	}
 }
 
-// ------------------------------
-// #Label
-// ------------------------------
+// Label
 
 .form label {
 	margin: 0 0 0.3em;
@@ -107,9 +83,7 @@ select {
 	font-size: @font__p--font-size * 0.9;
 }
 
-// ------------------------------
-// #Text Inputs
-// ------------------------------
+// Text Inputs
 
 input[type="search"],
 input[type="email"],
@@ -181,9 +155,7 @@ textarea {
 	}
 }
 
-// ------------------------------
-// #Placeholders
-// ------------------------------
+// Placeholders
 
 ::-webkit-input-placeholder {
    color: @color-text--faded;
@@ -267,9 +239,7 @@ input:focus {
     }
 }
 
-// ------------------------------
-// #Radio Buttons and Checkboxes
-// ------------------------------
+// Radio Buttons and Checkboxes
 
 .widget .form {
 	.option-list,
@@ -428,6 +398,7 @@ input:focus {
 				&:before {
 					.border-radius(1em);
 				}
+                
 				&:after {
 					content: " ";
 					margin-top: -0.75em;
@@ -479,9 +450,7 @@ input:focus {
 	}
 }
 
-// ------------------------------
-// #Dropdowns
-// ------------------------------
+// Dropdowns
 
 .select-wrap {
     position: relative;
@@ -587,9 +556,7 @@ input:focus {
     display: none;
 }
 
-// ------------------------------
-// #Error Messages
-// ------------------------------
+// Error Messages
 
 .form {
     input.error {
@@ -611,9 +578,7 @@ input:focus {
     }
 }
 
-// ------------------------------
-// #Form Group Button
-// ------------------------------
+// Form Group Button
 
 .form-group {
 	.button {
@@ -625,9 +590,7 @@ input:focus {
 	}
 }
 
-// ------------------------------
-// #Sign Up Form
-// ------------------------------
+// Sign Up Form
 
 .signupform {
 	.form-body {

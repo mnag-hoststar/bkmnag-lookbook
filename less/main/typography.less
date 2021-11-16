@@ -1,24 +1,6 @@
-// ----------------------------------------
 // LookBook: LESS > Main > Typography
-// ----------------------------------------
-//
-// #General Typography
-// #Bold, Italic, Underlined
-// #Label
-// #Span
-// #Link
-// #Small
-// #Pre
-// #Code
-// #Unordered and Ordered List
-// #Block Quote
-// #Highlighted Text
-//
-// ----------------------------------------
 
-// ------------------------------
-// #General Typography
-// ------------------------------
+// General Typography
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
@@ -50,8 +32,9 @@ h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
 }
 
 // Break long words.
+
 h1, h2, h3, h4, h5, h6, p {
-	word-wrap: break-word;
+	word-break: break-word;
 }
 
 p, a {
@@ -235,7 +218,7 @@ p, .paragraph, ul, ol, li, .contentgroup__body {
 	letter-spacing: @font__p--letter-spacing;
 	color: @color__p--text;
 	padding: 0 0 1em;
-	word-wrap: break-word;
+	word-break: break-word;
 	hyphens: auto;
 	
 	.make-font-a-little-smaller(@font__p--font-size);
@@ -261,9 +244,7 @@ p, ul, ol, li, .contentgroup__body {
 	}
 }
 
-// ------------------------------
-// #Bold, Italic, Underlined
-// ------------------------------
+// Bold, Italic, Underlined
 
 b, strong {
 	font-weight: 900;
@@ -274,9 +255,7 @@ u {
 	border-bottom: 1px solid lighten(@color__p--text, 20%);
 }
 
-// ------------------------------
-// #Label
-// ------------------------------
+// Label
 
 label:not(.clicktocall__label), .label-text {
 	font-size: 1em;
@@ -296,17 +275,13 @@ label:not(.clicktocall__label), .label-text {
 	}
 }
 
-// ------------------------------
-// #Span
-// ------------------------------
+// Span
 
 span {
 	background-color: transparent;
 }
 
-// ------------------------------
-// #Link
-// ------------------------------
+// Link
 
 a,
 a.vglnk {
@@ -391,9 +366,7 @@ a[class] {
 	text-decoration: none;
 }
 
-// ------------------------------
-// #Small
-// ------------------------------
+// Small
 
 small {
 	color: @color__p--text;
@@ -411,9 +384,7 @@ small {
 	}
 }
 
-// ------------------------------
-// #Preformatted Text and Code
-// ------------------------------
+// Preformatted Text and Code
 
 pre, code {
 	.paragraph;
@@ -476,9 +447,7 @@ code {
 	}
 }
 
-// ------------------------------
-// #Unordered and Ordered List
-// ------------------------------
+// Unordered and Ordered List
 
 ul, ol {
 	padding: 0;
@@ -505,6 +474,7 @@ ol {
 		list-style: none;
 		
 		// Custom Numbers
+		
 		&:before {
 			content: counter(section) ".";
 			counter-increment: section;
@@ -528,9 +498,7 @@ ol {
 	}
 }
 
-// ------------------------------
-// #Block Quote
-// ------------------------------
+// Block Quote
 
 blockquote {
 	position: relative;
@@ -615,9 +583,7 @@ blockquote {
 	}
 }
 
-// ------------------------------
-// #Highlighted Text
-// ------------------------------
+// Highlighted Text
 
 ::-moz-selection {
     background: @color-highlight--light;

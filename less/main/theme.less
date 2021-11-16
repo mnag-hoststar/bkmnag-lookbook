@@ -1,19 +1,6 @@
-// ----------------------------------------
 // LookBook: LESS > Main > Theme
-// ----------------------------------------
-// This contains all styles that are not
-// widgets.
-//
-// #Site Styles
-// #Header
-// #Page Styles
-// #Footer
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Site Styles
-// ------------------------------
+// Site Styles
 
 * {
 	.box-sizing(border-box);
@@ -39,7 +26,6 @@ html, body {
 	.make-line-height-smaller(@font__p--line-height);
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 	
-	// iOS fix of VH unit
     width: -webkit-calc(100% - 0px);
 }
 
@@ -48,13 +34,12 @@ html, body {
 }
 
 // HTML5 Semantic Elements
+
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
 	display: block;
 }
 
-// ------------------------------
-// #Header
-// ------------------------------
+// Header
 
 .template__header {
 	z-index: 100;
@@ -73,9 +58,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     }
 }
 
-// ------------------------------
-// #Footer
-// ------------------------------
+// Footer
 
 .template__footer {
     width: 100%;

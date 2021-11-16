@@ -1,28 +1,13 @@
-// ----------------------------------------
 // LookBook: LESS > Widgets > Twitter Feed
-// ----------------------------------------
-//
-// #Conditional Mixins
-// #Tweet Item
-// #Avatar
-// #Account Link
-// #Content
-// #Tweet Metadata
-//
-// ----------------------------------------
 
-// ------------------------------
-// #Twitter Widget Container
-// ------------------------------
+// Twitter Widget Container
 
 .widget[data-name="twitter"] {
 	.twitter-body-background--spacing();
 	.twitter-widget-background--spacing();
 }
 
-// ------------------------------
-// #Tweet List
-// ------------------------------
+// Tweet List
 
 .twitter__tweet-list {
 	.inline-block-font-hack();
@@ -32,9 +17,7 @@
 	.item--margin-size--border();
 }
 
-// ------------------------------
-// #Tweet Item
-// ------------------------------
+// Tweet Item
 
 .tweet-item {
 	position: relative;
@@ -73,9 +56,7 @@
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
-// ------------------------------
-// #Avatar
-// ------------------------------
+// Avatar
 
 .twitter__avatar {
 	position: static;
@@ -90,9 +71,7 @@
 	height: @font__p--line-height*2;
 }
 
-// ------------------------------
-// #Account Link
-// ------------------------------
+// Account Link
 
 a.twitter__account-link {
     display: block;
@@ -113,18 +92,14 @@ a.twitter__account-link {
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
-// ------------------------------
-// #Content
-// ------------------------------
+// Content
 
 .tweet-content {
 	padding: 0 0.5em 5em;
     line-height: 1.5em;
 }
 
-// ------------------------------
-// #Tweet Metadata
-// ------------------------------
+// Tweet Metadata
 
 .tweet-metadata {
 	position: absolute;

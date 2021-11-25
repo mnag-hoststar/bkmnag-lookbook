@@ -86,6 +86,10 @@
         @media @mobile, @tablet-horizontal {
             display: block;
         }
+	
+		.responsivecolumns & {
+            display: block;
+		}
     }
 
     .form-group {
@@ -111,6 +115,11 @@
 				width: 100%;
 				padding: 0.5em 0 0;
 			}
+
+			.responsivecolumns & {
+				width: 100%;
+				padding: 0.5em 0 0;
+			}
 		}
 		
 		.ecomproductslist__button,
@@ -118,6 +127,11 @@
 			.transition(none);
 			
 			@media @mobile {
+				width: 100%;
+				text-align: center;
+			}
+
+			.responsivecolumns & {
 				width: 100%;
 				text-align: center;
 			}
@@ -164,6 +178,10 @@
         width: 100%;
     }
     
+	.responsivecolumns & {
+		width: 100%;
+	}
+
 	.form-body {
 		.display-flex();
 		.flex-direction();
@@ -174,6 +192,12 @@
 		margin: 0 -0.5em;
 
 		@media @mobile {
+			display: block;
+			margin: 0;
+		}
+    
+		.responsivecolumns & {
+			display: block;
 			margin: 0;
 		}
 	}
@@ -194,21 +218,12 @@
 			margin-right: 0;
 			margin-left: 0;
 		}
-
-		@media @mobile {
-			&:first-child,
-			&:last-child {
-				margin-left: 0;
-			}
-			
-			&:nth-child(2),
-			&:last-child {
-				margin-right: 0;
-			}
-			
-			&:last-child {
-				width: 100%;
-			}
+    
+		.responsivecolumns & {
+			width: 100%;
+			margin-bottom: 8px;
+			margin-right: 0;
+			margin-left: 0;
 		}
 
 		.select-wrap {
@@ -220,6 +235,10 @@
 			}
 
 			@media @mobile {
+				.select.small;
+			}
+    
+			.responsivecolumns & {
 				.select.small;
 			}
 		}

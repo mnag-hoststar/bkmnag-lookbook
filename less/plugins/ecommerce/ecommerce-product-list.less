@@ -1,22 +1,6 @@
-// ----------------------------------------
-// LookBook: LESS > Plugins > Ecommerce > Product List
-// ----------------------------------------
-//
-// #Widget
-// #Title
-// #Product Filters
-// #Product Search
-// #Dropdowns
-// #Listing Order
-// #Product List
-// #Product Item
-// #Featured Product
-// 
-// ----------------------------------------
+// Product List
 
-// ------------------------------
-// #Widget
-// ------------------------------
+// Widget
 
 .template__content section > {
 	.widget[data-name="ecomproductslist"],
@@ -25,9 +9,7 @@
 	}
 }
 
-// ------------------------------
-// #Title
-// ------------------------------
+// Title
 
 .ecomproductslist__listing-title {
     display: none;
@@ -37,9 +19,7 @@
 	}
 }
 
-// ------------------------------
-// #Product Filters
-// ------------------------------
+// Product Filters
 
 .ecomproductslist__product-filters {
 	.legend {
@@ -74,9 +54,7 @@
     }
 }
 
-// ------------------------------
-// #Product Search
-// ------------------------------
+// Product Search
 
 .ecomproductslist__product-filters .fieldset--search {
 	@media @tablet-horizontal {
@@ -85,6 +63,7 @@
 	
 	.responsivecolumns & {
 		float: none;
+		width: 100%;
 	}
 	
 	.label {
@@ -107,6 +86,10 @@
         @media @mobile, @tablet-horizontal {
             display: block;
         }
+	
+		.responsivecolumns & {
+            display: block;
+		}
     }
 
     .form-group {
@@ -132,6 +115,11 @@
 				width: 100%;
 				padding: 0.5em 0 0;
 			}
+
+			.responsivecolumns & {
+				width: 100%;
+				padding: 0.5em 0 0;
+			}
 		}
 		
 		.ecomproductslist__button,
@@ -139,6 +127,11 @@
 			.transition(none);
 			
 			@media @mobile {
+				width: 100%;
+				text-align: center;
+			}
+
+			.responsivecolumns & {
 				width: 100%;
 				text-align: center;
 			}
@@ -178,15 +171,17 @@
     }
 }
 
-// ------------------------------
-// #Dropdowns
-// ------------------------------
+// Dropdowns
 
 .ecomproductslist__product-filters .fieldset--filters {
     @media @tablet-horizontal {
         width: 100%;
     }
-	
+    
+	.responsivecolumns & {
+		width: 100%;
+	}
+
 	.form-body {
 		.display-flex();
 		.flex-direction();
@@ -197,6 +192,12 @@
 		margin: 0 -0.5em;
 
 		@media @mobile {
+			display: block;
+			margin: 0;
+		}
+    
+		.responsivecolumns & {
+			display: block;
 			margin: 0;
 		}
 	}
@@ -212,22 +213,13 @@
 		}
 
 		@media @mobile {
-			&:first-child,
-			&:last-child {
-				margin-left: 0;
-			}
-			
-			&:nth-child(2),
-			&:last-child {
-				margin-right: 0;
-			}
-			
-			&:last-child {
-				width: 100%;
-			}
+			width: 100%;
+			margin-bottom: 8px;
+			margin-right: 0;
+			margin-left: 0;
 		}
-
-		@media @mobile {
+    
+		.responsivecolumns & {
 			width: 100%;
 			margin-bottom: 8px;
 			margin-right: 0;
@@ -237,19 +229,23 @@
 		.select-wrap {
 			margin-top: 0;
 			max-width: none;
+
 			@media @tablet-horizontal {
 				.select.medium;
 			}
+
 			@media @mobile {
+				.select.small;
+			}
+    
+			.responsivecolumns & {
 				.select.small;
 			}
 		}
 	}
 }
 
-// ------------------------------
-// #Listing Order
-// ------------------------------
+// Listing Order
 
 .ecomproductslist .listing-order {
     display: none;
@@ -261,14 +257,13 @@
     @media @tablet-horizontal {
         padding: 16px 40px;
     }
+	
     @media @tablet {
         padding: 12px 20px;
     }
 }
 
-// ------------------------------
-// #Product List
-// ------------------------------
+// Product List
 
 .ecomproductslist .listing-body {
     .clearfix();
@@ -294,9 +289,7 @@
 	}
 }
 
-// ------------------------------
-// #Product Item
-// ------------------------------
+// Product Item
 
 .product-item {
 	padding: 0.5em;
@@ -461,15 +454,10 @@
     }
 }
 
-// ------------------------------
-// #Featured Product
-// ------------------------------
+// Featured Product
 
 .ecomfeaturedproducts {
 	.listing-title {
-		
-		// Column styles
-
 		.responsivecolumns & {
 			background-color: transparent;
 			padding: 0 0 1em 0;
@@ -477,9 +465,7 @@
 	}
 }
 
-// ------------------------------
-// #Paginatinon
-// ------------------------------
+// Paginatinon
 
 .ecomproductslist .pagination-list {
 	display: block;
@@ -491,5 +477,3 @@
 	margin: 0;
 	padding: 0;
 }
-
-// For pagination, see less/plugins/plugins.less.

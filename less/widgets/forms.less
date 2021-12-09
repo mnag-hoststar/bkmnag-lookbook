@@ -1,24 +1,6 @@
-// ----------------------------------------
-// LookBook: LESS > Widgets > Forms
-// ----------------------------------------
-//
-// #Form Background
-// #Legend
-// #Form
-// #Label
-// #Text Inputs
-// #Placeholders
-// #Dropdowns
-// #Radio Buttons and Checkboxes
-// #Error Messages
-// #Form Group Button
-// #Sign Up Form
-//
-// ----------------------------------------
+// Forms
 
-// ------------------------------
-// #Global Form Styles
-// ------------------------------
+// Global Form Styles
 
 .widget[data-name="signupform"],
 .widget[data-name="contactform"],
@@ -50,9 +32,7 @@
 	}
 }
 
-// ------------------------------
-// #Legend
-// ------------------------------
+// Legend
 
 .form .legend {
 	.paragraph;
@@ -74,22 +54,17 @@
     }
 }
 
-// ------------------------------
-// #Form
-// ------------------------------
+// Form
 
 .form .form-group {
 	margin-bottom: 1em;
 
-	&:last-of-type,
 	&.js-recaptcha {
 		margin-bottom: 0;
 	}
 }
 
-// ------------------------------
-// #Label
-// ------------------------------
+// Label
 
 .form label {
 	margin: 0 0 0.3em;
@@ -107,9 +82,7 @@ select {
 	font-size: @font__p--font-size * 0.9;
 }
 
-// ------------------------------
-// #Text Inputs
-// ------------------------------
+// Text Inputs
 
 input[type="search"],
 input[type="email"],
@@ -181,9 +154,7 @@ textarea {
 	}
 }
 
-// ------------------------------
-// #Placeholders
-// ------------------------------
+// Placeholders
 
 ::-webkit-input-placeholder {
    color: @color-text--faded;
@@ -267,9 +238,7 @@ input:focus {
     }
 }
 
-// ------------------------------
-// #Radio Buttons and Checkboxes
-// ------------------------------
+// Radio Buttons and Checkboxes
 
 .widget .form {
 	.option-list,
@@ -373,6 +342,7 @@ input:focus {
 				display: block;
 				margin-left: 1em * 2.5;
 				.transform-scale(1);
+				word-break: break-word;
 				
 				&:before,
 				&:after {
@@ -427,6 +397,7 @@ input:focus {
 				&:before {
 					.border-radius(1em);
 				}
+                
 				&:after {
 					content: " ";
 					margin-top: -0.75em;
@@ -478,9 +449,7 @@ input:focus {
 	}
 }
 
-// ------------------------------
-// #Dropdowns
-// ------------------------------
+// Dropdowns
 
 .select-wrap {
     position: relative;
@@ -586,9 +555,7 @@ input:focus {
     display: none;
 }
 
-// ------------------------------
-// #Error Messages
-// ------------------------------
+// Error Messages
 
 .form {
     input.error {
@@ -610,13 +577,11 @@ input:focus {
     }
 }
 
-// ------------------------------
-// #Form Group Button
-// ------------------------------
+// Form Group Button
 
 .form-group {
 	.button {
-		white-space: nowrap;
+        word-break: break-word;
 
 		@media @mobile {
 			width: 100%;
@@ -624,15 +589,14 @@ input:focus {
 	}
 }
 
-// ------------------------------
-// #Sign Up Form
-// ------------------------------
+// Sign Up Form
 
 .signupform {
 	.form-body {
-		display: table;
-		width: 100%;
-		margin-bottom: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 1em;
 
 		.responsivecolumns & {
 			display: block;
@@ -640,20 +604,11 @@ input:focus {
 	}
 
 	.form-group {
-		display: table-cell;
-		vertical-align: middle;
-
-		.responsivecolumns & {
-			display: block;
-		}
-		
 		&:first-child {
-			width: 100%;
-			padding-right: 0.5em;
+			flex-grow: 1;
 
 			.responsivecolumns & {
 				display: block;
-				margin-bottom: 0.5em;
 				padding-right: 0;
 				width: 100%;
 				height: auto;
@@ -661,8 +616,6 @@ input:focus {
 		}
 		
 		.button {
-			white-space: nowrap;
-
 			@media @mobile {
 				width: 100%;
 			}

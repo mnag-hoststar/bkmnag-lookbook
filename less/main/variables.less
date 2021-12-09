@@ -1,56 +1,36 @@
-// ----------------------------------------
-// LookBook: LESS > Main > Variables
-// ----------------------------------------
-// 
-// #Breakpoints
-// #Layout
-// #Colors
-// 
-// ----------------------------------------
+// Variables
 
-// ------------------------------
-// #Breakpoints
-// ------------------------------
+// Breakpoints
 
-// Breakpoint for the maximal width of the layout.
-// Depends on the template.
 @layout-width-breakpoint: ~"only screen and (max-width: 1400px)";
-
-// Break point for smaller devices.
 @desktop-wide: ~"only screen and (max-width: 1800px)";
 @desktop: ~"only screen and (max-width: 1600px)";
 @tablet-horizontal: ~"only screen and (max-width: 1024px)";
 @tablet: ~"only screen and (max-width: 768px)";
 @mobile: ~"only screen and (max-width: 650px)";
 @mobile-small: ~"only screen and (max-width: 380px)";
-
-// When the colums in the layout break for smaller devices.
 @columns-tablet: ~"only screen and (max-width: 925px)";
 @columns-mobile: ~"only screen and (max-width: 650px)";
 
-// ------------------------------
-// #Layout
-// ------------------------------
+// Layout
 
 @layout-max-width: 1400px;
 @layout-width-desktop: 1200px;
 @layout-width-tablet: 90%;
 
 // Global Widget Spacing
+
 @value__widget--spacing--desktop: 70px;
 @value__widget--spacing--laptop:  60px;
 @value__widget--spacing--tablet:  40px;
 @value__widget--spacing--mobile:  30px;
 
-// ------------------------------
-// #Colors
-// ------------------------------
+// Colors
 
 @color-text--faded: lighten(@color__p--text, 40%);
 @color-text--light: lighten(@color__p--text, 70%);
 @color-text--lighter: lighten(@color__p--text, 90%);
 @color-text--lightest: lighten(@color__p--text, 95%);
-
 @color-highlight-darker: darken(@color__link--text, 5%);
 @color-highlight: @color__link--text;
 @color-highlight--light: lighten(@color__link--text, 5%);

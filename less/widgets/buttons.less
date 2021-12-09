@@ -1,20 +1,4 @@
-// ----------------------------------------
-// LookBook: LESS > Widgets > Buttons
-// ----------------------------------------
-//
-// #Button
-// #Tweet Button
-// #Click to Call
-// #Dropbox
-// #Facebook Like
-// #Paypal
-// #Social Icons
-//
-// ----------------------------------------
-
-// -----------------------------
-// #Button
-// -----------------------------
+// Buttons
 
 .button,
 a.button,
@@ -44,10 +28,14 @@ a.contentgroup__link {
 	.make-font-a-little-smaller(@font__button--font-size);
 	.make-font-smaller(@font__button--font-size);
 	.make-font-a-lot-smaller(@font__button--font-size);
-	
-	.make-line-height-a-little-smaller(@font__p--line-height);
-	.make-line-height-smaller(@font__p--line-height);
-	.make-line-height-a-lot-smaller(@font__p--line-height);
+
+	@media @mobile {
+		width: 100%;
+	}
+
+	.responsivecolumns & {
+		width: 100%;
+	}
 
 	.style--light & {
 	    background-color: @color--accent;
@@ -138,9 +126,7 @@ a.button,
 	}
 }
 
-// -----------------------------
-// #Tweet Button
-// -----------------------------
+// Tweet Button
 
 .tweet .button {
 	&:before {
@@ -148,9 +134,7 @@ a.button,
 	}
 }
 
-// -----------------------------
-// #Click to Call
-// -----------------------------
+// Click to Call
 
 .clicktocall .phone-number-link {
 	&:before {
@@ -158,9 +142,7 @@ a.button,
 	}
 }
 
-// -----------------------------
-// #Dropbox
-// -----------------------------
+// Dropbox
 
 .dropbox {
 	.button {
@@ -176,14 +158,9 @@ a.button,
 	padding-left: 1em;
 }
 
-// -----------------------------
-// #Facebook Like
-// -----------------------------
+// Facebook Like
 
-
-// -----------------------------
-// #Paypal
-// -----------------------------
+// Paypal
 
 .paypalbuynow {
 	.button {
@@ -193,19 +170,14 @@ a.button,
 	}
 }
 
-// -----------------------------
 // Icons
-// -----------------------------
 
 .icon:before {
 	margin: 0.5em 0.5em 0.5em 0;
 	width: auto;
 }
 
-
-// -----------------------------
-// #Social Icons
-// -----------------------------
+// Social Icons
 
 // The List of Social Icons
 
@@ -235,15 +207,15 @@ a.button,
 	.transition (all, 0.5s, ease);
 
 	.style--light & {
-	    background-color: @color--light!important;
+	    background-color: @color--light !important;
 	    border-color: @contast--light;
-	    color: @contrast--ligh!importantt;
+	    color: @contrast--light !important;
 	}
 
 	.style--accent & {
-	    background-color: @color--accent!important;
-	    border-color: @contrast--accent!important;
-	    color: @contrast--accent!important;
+	    background-color: @color--accent !important;
+	    border-color: @contrast--accent !important;
+	    color: @contrast--accent !important;
 	}
 
 	.style--dark & {

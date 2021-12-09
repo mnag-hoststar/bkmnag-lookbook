@@ -1,19 +1,6 @@
-// ----------------------------------------
-// LookBook: LESS > Main > Theme
-// ----------------------------------------
-// This contains all styles that are not
-// widgets.
-//
-// #Site Styles
-// #Header
-// #Page Styles
-// #Footer
-//
-// ----------------------------------------
+// Theme
 
-// ------------------------------
-// #Site Styles
-// ------------------------------
+// Site Styles
 
 * {
 	.box-sizing(border-box);
@@ -29,10 +16,6 @@ html, body {
     background-color: @color__body--background;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	font-smooth: always;
-	font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
 	text-rendering: geometricPrecision;
 	
 	.make-font-a-little-smaller(@font__p--font-size);
@@ -43,7 +26,6 @@ html, body {
 	.make-line-height-smaller(@font__p--line-height);
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 	
-	// iOS fix of VH unit
     width: -webkit-calc(100% - 0px);
 }
 
@@ -52,13 +34,12 @@ html, body {
 }
 
 // HTML5 Semantic Elements
+
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
 	display: block;
 }
 
-// ------------------------------
-// #Header
-// ------------------------------
+// Header
 
 .template__header {
 	z-index: 100;
@@ -67,25 +48,24 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	padding: 1px 0;
 	margin-bottom: 2em;
 	background-color: @color__header--background;
-	border-bottom: 3px solid @color__header--border;
+	border-bottom: 1px solid @color__header--border;
 	
     @media @tablet {
 		display: table;
 		margin-bottom: 1em;
 		padding: 0.5em 5%;
+		min-height: 50px;
     }
 }
 
-// ------------------------------
-// #Footer
-// ------------------------------
+// Footer
 
 .template__footer {
-    width: 100%;
+    width: 90%;
     background-color: @color__footer--background;
-	border-top: 3px solid @color__footer--border;
+	border-top: 1px solid @color__footer--border;
     text-align: center;
-	margin: 2em 0 0;
+	margin: 2em auto 0;
 	padding: 1px 0;
 	
     @media @tablet {
@@ -93,9 +73,13 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     }
 	
 	.widget {
-		width: 80%;
 		max-width: @layout-width-desktop;
 		margin: 1em auto;
+		padding: 0 70px;
+	
+		@media @mobile {
+			padding: 0 5%;
+		}
 	}
 }
 

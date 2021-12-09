@@ -1,23 +1,12 @@
-
-// -------------------------------------------
-//  Migration Styles -
-//
-//  These changes allow rows to work with
-//  existing templates in BK10
-// -------------------------------------------
-
-
+//  Migration Styles
 
 // Template styling resets
-// ------------------------------------
 
 #migrated {
-
     .template__content {
         padding-bottom: 0;
     }
-
-    // Overides the row gallery styles to not use the JS one in the template
+    
     [class*="row--gallery"] {
 
         .gallery-list {
@@ -63,10 +52,7 @@
     }
 }
 
-
-
 // Re-add the reset styles
-// ------------------------------------
 
 [data-name="row"] .row:not(.row--width-no-padding) .row__container {
     margin: 0 auto;

@@ -11,8 +11,6 @@
 
 // General Messages
 
-// Overall message styling
-
 .message {
     position: relative;
     padding: 1.3em;
@@ -20,8 +18,6 @@
     margin: 1em auto;
 	min-height: 3em;
     .clearfix();
-
-    // Message Heading, Paragraph
 
     h3, p {
         margin: 0;
@@ -52,19 +48,13 @@
 		.make-line-height-a-lot-smaller(@font__p--line-height);
 	}
 
-    // Consequetive Paragraphs
-
     p + p {
         margin-top: 0.35em;
     }
 
-    // Strong text
-
     strong {
         font-weight: bold;
     }
-
-    // Icon
 
     &:before {
         font-family: 'FontAwesome', sans-serif;
@@ -82,8 +72,6 @@
     }
 }
 
-// Error
-
 .message--error {
 	background-color: @message-color--error;
 
@@ -91,8 +79,6 @@
 		content: "\f12a";
 	}
 }
-
-// Warning
 
 .message--warning {
 	background-color: @message-color--warning;
@@ -102,8 +88,6 @@
 	}
 }
 
-// Information
-
 .message--information {
 	background-color: @message-color--information;
 
@@ -111,8 +95,6 @@
 		content: "\f129";
 	}
 }
-
-// Success
 
 .message--success {
 	background-color: @message-color--success;
@@ -122,8 +104,6 @@
 	}
 }
 
-// Not Found
-
 .message--not-found {
 	background-color: @message-color--not-found;
 
@@ -131,8 +111,6 @@
 		content: "\f002";
 	}
 }
-
-// Message in Template's Footer
 
 .template__footer .message {
     margin: 0;
@@ -144,7 +122,6 @@
     .message;
     .message--success;
 }
-
 
 .overlay.fail .message-box {
     .message;

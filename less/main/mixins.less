@@ -215,6 +215,7 @@
 	@media @tablet {
 		line-height: @line-height-size*@size-tablet;
 	}
+
 	@media @mobile {
 		line-height: @line-height-size*@size-mobile;
 	}
@@ -231,10 +232,6 @@
 		width: @layout-width-tablet;
 	}
 }
-
-// Item margin size.
-// This is the margin between various items like
-// tweets, blog posts and shop items.
 
 .item--margin-size--border(@item--margin-size: 1%) {
 	margin: -@item--margin-size;
@@ -279,8 +276,6 @@
 	}
 }
 
-// Mixing for global time-stamp styles.
-
 .timestamp-styles {
     padding: 0;
 	height: 1.2em;
@@ -298,9 +293,7 @@
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
-
-
-// Flexbox LESS mixins
+// Flexbox
 
 .display-flex(@display: flex) {
     display: ~"-webkit-@{display}";

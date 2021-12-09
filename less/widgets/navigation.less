@@ -113,14 +113,10 @@ html.nav-open {
 
 // Navigation Toggle Button
 
-// Navigation Toggle Button
-// It only appears on tablet and mobile sizes.
-
 .navigation-toggle {
 	display: none;
 	
 	@media @tablet {
-		// Displays as Icon's Middle Bar
 		z-index: 200;
 		overflow: hidden;
 		position: absolute;
@@ -150,7 +146,6 @@ html.nav-open {
 		.make-line-height-smaller(@font__companyname--line-height);
 		.make-line-height-a-lot-smaller(@font__companyname--line-height);
 
-		// Top and Bottom Navigation Item Bar
 		&:after,
 		&:before {
 			content: "";
@@ -169,20 +164,17 @@ html.nav-open {
 			}
 		}
 
-		// Top Bar
 		&:before {
 			top: 2px;
 			margin: 0;
 		  	.transition-property(top);
 		}
 
-		// Bottom Bar
 		&:after {
 			bottom: 2px;
 			.transition-property(bottom);
 		}
 
-		// Middle Bar
 		span {
 			display: block;
 			font-size: 0;
@@ -201,11 +193,8 @@ html.nav-open {
 		}
 	}
 
-	// Toggle Button Open
 	.open & {
 		@media @tablet {
-			
-			// Top and bottom Bar
 			&:before,
 			&:after {
 				width: 30px;
@@ -213,7 +202,6 @@ html.nav-open {
 		  		.transition-property(transform);
 			}
 			
-			// Top Bar
 			&:before {
 				top: 50%;
 				margin-top: -1.5px;
@@ -222,7 +210,6 @@ html.nav-open {
 
 			}
 			
-			// Bottom Bar
 			&:after {
 				bottom: 50%;
 				margin-bottom: -1.5px;
@@ -230,7 +217,6 @@ html.nav-open {
 				.transform-rotate(-45deg);
 			}
 			
-			// Middle bar
 			span {
 				background: transparent;
 			}
@@ -240,14 +226,12 @@ html.nav-open {
 
 // Navigation Body
 
-// Dark overlay on tablet and mobile.
 .navigation-body {
 	border-top: 1px solid @color__navigation--border;
 	border-bottom: 1px solid @color__navigation--border;
 	.transition(opacity, 0s);
 	margin: 1em 0 1em;
 	
-	// This is only shown in Tablet and Mobile
 	@media @tablet {
 		overflow: hidden;
 		border: none;
@@ -256,7 +240,6 @@ html.nav-open {
 		width: 0;
 		opacity: 0;
 		
-		// When Navigation is open
 		.open & {
     		z-index: 150;
 			position: fixed;
@@ -292,8 +275,6 @@ html.nav-open {
 }
 
 // Navigation Items
-
-// Navigation Normal Item
 
 .navigation-item {
 	margin: 0;
@@ -359,8 +340,6 @@ html.nav-open {
 // Navigation Folder Item
 
 .navigation-item.folder {
-	
-	// Folder Icon
 	> .item-name {
 		&:after {
 			margin-left: 0.5em;
@@ -384,7 +363,6 @@ html.nav-open {
 	}
 }
 
-// Navigation Folder Submenu
 .navigation-list--children {
 	.navigation-item.folder &,
 	.navigation-item.folder:hover &,
@@ -425,7 +403,6 @@ html.nav-open {
 	}
 }
 
-// Navigation Folder Submenu Single Item
 .navigation-item--child {
 	white-space: nowrap;
 
@@ -467,7 +444,6 @@ html.nav-open {
 		}
 	}
 
-	// Selected Folder Item
 	&.selected .item-name {
 		background-color: @color__navigation-item--background--selected;
 		color: @color__navigation--text--selected;
@@ -475,7 +451,6 @@ html.nav-open {
 }
 
 .navigation-item.folder {
-	// Open Submenu
 	&.folder-open:hover .navigation-list--children,
 	&.folder-open:active .navigation-list--children,
 	&.folder-open .navigation-list--children {

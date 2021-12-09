@@ -1,7 +1,5 @@
 // Slideshow
 
-// Slideshow
-
 .responsiveslideshow {
 	position: relative;
 	border: 10px solid @color__container--background;
@@ -71,9 +69,6 @@
 	&.current {
 		opacity: 1;
 	}
-	
-	// Prevents two slides from displaying at the same time
-	// because of slow JS state changes
 	
 	&.current + .slide-item {
 		display: none;
@@ -191,8 +186,6 @@
 		.make-font-smaller(@font__p--font-size*0.8);
 		.make-font-a-lot-smaller(@font__p--font-size*0.8);
 	}
-	
-	// Button
 
 	.button {
 		z-index: 2;
@@ -241,8 +234,6 @@
 		left: 50%;
 		margin-left: -1.25em;
 		padding-left: 0.15em;
-
-		// Play Icon
 
 		&.pause:before {
 			content: '\f04b';

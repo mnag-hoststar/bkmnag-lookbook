@@ -13,7 +13,7 @@
 }
 
 html, body {
-    background-color: @color__body--background;
+	background-color: @color__body--background;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	font-smooth: always;
 	text-rendering: geometricPrecision;
@@ -26,7 +26,7 @@ html, body {
 	.make-line-height-smaller(@font__p--line-height);
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 	
-    width: -webkit-calc(100% - 0px);
+	width: -webkit-calc(100% - 0px);
 }
 
 .widget__item {
@@ -50,27 +50,27 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	background-color: @color__header--background;
 	border-bottom: 1px solid @color__header--border;
 	
-    @media @tablet {
+	@media @tablet {
 		display: table;
 		margin-bottom: 1em;
 		padding: 0.5em 5%;
 		min-height: 50px;
-    }
+	}
 }
 
 // Footer
 
 .template__footer {
-    width: 90%;
-    background-color: @color__footer--background;
+	width: 90%;
+	background-color: @color__footer--background;
 	border-top: 1px solid @color__footer--border;
-    text-align: center;
+	text-align: center;
 	margin: 2em auto 0;
 	padding: 1px 0;
 	
-    @media @tablet {
+	@media @tablet {
 		margin-top: 1em;
-    }
+	}
 	
 	.widget {
 		max-width: @layout-width-desktop;
@@ -84,10 +84,10 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 .gdpr-footer {
-    background-color: @color__footer--background;
-    padding: 10px 0;
-    
-    a[class] {
+	background-color: @color__footer--background;
+	padding: 10px 0;
+	
+	a[class] {
 		z-index: 0;
 		position: relative;
 		margin: -0.2em 1em -0.4em;
@@ -129,5 +129,5 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 				color: @color__navigation--text--selected;
 			}
 		}
-    }
+	}
 }

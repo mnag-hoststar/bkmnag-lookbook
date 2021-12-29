@@ -11,8 +11,8 @@
 .blogpostlist__post-items {
 	.inline-block-font-hack();
 	.display-flex(flex);
-    .flex-wrap(wrap);
-    .align-items(stretch, stretch);
+	.flex-wrap(wrap);
+	.align-items(stretch, stretch);
 	.item--margin-size--border();
 }
 
@@ -26,18 +26,18 @@
 	.clearfix();
 
 	.style--light & {
-	    background-color: darken(@color--light, 5%);
-	    border-color: fade(@contrast--light, .5);
+		background-color: darken(@color--light, 5%);
+		border-color: fade(@contrast--light, .5);
 	}
 
 	.style--accent & {
-	    background-color: darken(@color--accent, 5%);
-	    border-color: fade(@contrast--accent, .5);
+		background-color: darken(@color--accent, 5%);
+		border-color: fade(@contrast--accent, .5);
 	}
 
 	.style--dark & {
-	    background-color: darken(@color--dark, 5%);
-	    border-color: fade(@contrast--dark, .5);
+		background-color: darken(@color--dark, 5%);
+		border-color: fade(@contrast--dark, .5);
 	}
 	
 	@media @mobile {
@@ -75,20 +75,20 @@
 		padding-bottom: 0;
 	}
 	
-    a.blogpostlist__image-link {
-        background-position: center center;
-        background-size: cover;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+	a.blogpostlist__image-link {
+		background-position: center center;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 		.transition(all, 0.3s);
-    }
+	}
 
-    .blogpostlist__image {
-        display: none;
-    }
+	.blogpostlist__image {
+		display: none;
+	}
 }
 
 // Content
@@ -133,15 +133,15 @@ a.blogpostlist__title-link {
 	color: @color__blogpostlist-title--text;
 
 	.style--light & {
-	    color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @contrast--dark;
+		color: @contrast--dark;
 	}
 }
 
@@ -176,8 +176,8 @@ a.blogpostlist__read-more {
 .blogpostlist__post-footer {
 	position: absolute;
 	top: 0;
-    left: 0;
-    right: 0;
+	left: 0;
+	right: 0;
 	padding: 1em 1.5em 0;
 	font-size: @font__p--font-size;
 
@@ -215,15 +215,15 @@ a.blogpostlist__read-more {
 		.timestamp-styles;
 
 		.style--light & {
-		    color: @contrast--light;
+			color: @contrast--light;
 		}
 
 		.style--accent & {
-		    color: @contrast--accent;
+			color: @contrast--accent;
 		}
 
 		.style--dark & {
-		    color: @contrast--dark;
+			color: @contrast--dark;
 		}
 	}
 }

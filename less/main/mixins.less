@@ -5,7 +5,7 @@
 .box-sizing(@attribute) {
 	-webkit-box-sizing: @attribute;
 	-moz-box-sizing: @attribute;
-    -ms-box-sizing: @attribute;
+	-ms-box-sizing: @attribute;
 	-o-box-sizing: @attribute;
 	box-sizing: @attribute;
 }
@@ -13,7 +13,7 @@
 .border-radius(@radius) {
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
-    -ms-border-radius: @radius;
+	-ms-border-radius: @radius;
 	-o-border-radius: @radius;
 	border-radius: @radius;
 }
@@ -25,12 +25,12 @@
 }
 
 .gradient(@origin, @origin@startColor, @endColor) {
-    background-color: @startColor;
-    background: -webkit-linear-gradient(@origin, @startColor, @endColor);
-    background: -moz-linear-gradient(@origin, @startColor, @endColor);
-    background: -ms-linear-gradient(@origin, @startColor, @endColor);
-    background: -o-linear-gradient(@origin, @startColor, @endColor);
-    background: linear-gradient(@origin, @startColor, @endColor);
+	background-color: @startColor;
+	background: -webkit-linear-gradient(@origin, @startColor, @endColor);
+	background: -moz-linear-gradient(@origin, @startColor, @endColor);
+	background: -ms-linear-gradient(@origin, @startColor, @endColor);
+	background: -o-linear-gradient(@origin, @startColor, @endColor);
+	background: linear-gradient(@origin, @startColor, @endColor);
 }
 
 .box-shadow(@shadow) {
@@ -55,7 +55,7 @@
 
 .focus {
 	&:focus {
-        outline: none;
+		outline: none;
 	}
 }
 
@@ -77,7 +77,7 @@
 .transition(@property: all, @duration: 0.15s, @ease: ease-in-out, @delay: 0s) {
 	-webkit-transition: @property @duration @ease @delay;
 	-moz-transition: @property @duration @ease @delay;
-    -ms-transition: @property @duration @ease @delay;
+	-ms-transition: @property @duration @ease @delay;
 	-o-transition: @property @duration @ease @delay;
 	transition: @property @duration @ease @delay;
 }
@@ -85,7 +85,7 @@
 .transition-property(@property...) {
 	-webkit-transition-property: @property;
 	-moz-transition-property: @property;
-    -ms-transition-property: @property;
+	-ms-transition-property: @property;
 	-o-transition-property: @property;
 	transition-property: @property;
 }
@@ -93,7 +93,7 @@
 .transition-duration(@duration...) {
 	-webkit-transition-duration: @duration;
 	-moz-transition-duration: @duration;
-    -ms-transition-duration: @duration;
+	-ms-transition-duration: @duration;
 	-o-transition-duration: @duration;
 	transition-duration: @duration;
 }
@@ -101,7 +101,7 @@
 .transition-delay(@delay...) {
 	-webkit-transition-delay: @delay;
 	-moz-transition-delay: @delay;
-    -ms-transition-delay: @delay;
+	-ms-transition-delay: @delay;
 	-o-transition-delay: @delay;
 	transition-delay: @delay;
 }
@@ -250,9 +250,9 @@
 	width: 100%/2-@item--margin-size*2;
 	margin: @item--margin-size;
 	
-    @media @mobile {
+	@media @mobile {
 		width: 100%;
-    }
+	}
 	
 	&:last-child {
 		margin-bottom: @item--margin-size;
@@ -260,16 +260,16 @@
 }
 
 .item--margin-size--3to1-cols(@item--margin-size: 1%) {
-    width: 100%/3-@item--margin-size*2;
+	width: 100%/3-@item--margin-size*2;
 	margin: @item--margin-size;
 	
-    @media @tablet-horizontal {
+	@media @tablet-horizontal {
 		width: 100%/2-@item--margin-size*2;
-    }
+	}
 	
-    @media @mobile {
+	@media @mobile {
 		width: 100%;
-    }
+	}
 	
 	&:last-child {
 		margin-bottom: @item--margin-size;
@@ -277,11 +277,11 @@
 }
 
 .timestamp-styles {
-    padding: 0;
+	padding: 0;
 	height: 1.2em;
 	letter-spacing: 0;
 	background: transparent; 
-    text-transform: uppercase;
+	text-transform: uppercase;
 	font-family: @font__h4--font-family;
 
 	.make-font-a-little-smaller(@font__p--font-size);
@@ -296,11 +296,11 @@
 // Flexbox
 
 .display-flex(@display: flex) {
-    display: ~"-webkit-@{display}";
-    display: ~"-moz-@{display}";
-    display: ~"-ms-@{display}box";
-    display: ~"-ms-@{display}";
-    display: @display;
+	display: ~"-webkit-@{display}";
+	display: ~"-moz-@{display}";
+	display: ~"-ms-@{display}box";
+	display: ~"-ms-@{display}";
+	display: @display;
 }
 
 .flex(@columns: initial) {

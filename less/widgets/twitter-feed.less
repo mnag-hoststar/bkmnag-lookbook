@@ -10,8 +10,8 @@
 .twitter__tweet-list {
 	.inline-block-font-hack();
 	.display-flex(flex);
-    .flex-wrap(wrap);
-    .align-items(stretch, stretch);
+	.flex-wrap(wrap);
+	.align-items(stretch, stretch);
 	.item--margin-size--border();
 }
 
@@ -27,23 +27,23 @@
 	.clearfix();
 
 	.style--light & {
-        background-color: @color--light;
-        border-color: @color--accent;
-    }
+		background-color: @color--light;
+		border-color: @color--accent;
+	}
 
-    .style--accent & {
+	.style--accent & {
 		background-color: @color--accent;
 		border-color: @color--accent;
-    }
+	}
 
-    .style--dark & {
-    	background-color: @color--dark;
-    	border-color: @color--accent;
-    }
+	.style--dark & {
+		background-color: @color--dark;
+		border-color: @color--accent;
+	}
 	
-    .responsivecolumns & {
+	.responsivecolumns & {
 		width: 100%;
-    }
+	}
 	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
@@ -72,11 +72,11 @@
 // Account Link
 
 a.twitter__account-link {
-    display: block;
+	display: block;
 	padding: 0.5em 0.5em 0 5.1em;
 	min-height: 5.1em;
 	hyphens: none;
-    overflow-wrap: break-word;
+	overflow-wrap: break-word;
 	line-height: 1.2em;
 	font-size: @font__p--font-size;
 	.twitter__account-link--spacing();
@@ -94,16 +94,16 @@ a.twitter__account-link {
 
 .tweet-content {
 	padding: 0 0.5em 5em;
-    line-height: 1.5em;
+	line-height: 1.5em;
 }
 
 // Tweet Metadata
 
 .tweet-metadata {
 	position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	padding: 1.5em;
 	line-height: 1.2em;
 	font-size: @font__p--font-size;
@@ -131,23 +131,23 @@ a.twitter__account-link {
 			color: fade(@contrast--accent, 50%);
 		}
 
-    	.style--dark & {
-    		color: fade(@contrast--dark, 50%);
+		.style--dark & {
+			color: fade(@contrast--dark, 50%);
 		}
 
-        &:hover {
-            .style--light & {
-                background-color: darken(@color--light, 8%);
-            }
+		&:hover {
+			.style--light & {
+				background-color: darken(@color--light, 8%);
+			}
 
-            .style--accent & {
-                background-color: darken(@color--accent, 8%);
-            }
+			.style--accent & {
+				background-color: darken(@color--accent, 8%);
+			}
 
-            .style--dark & {
-                background-color: lighten(@color--dark, 8%);
-            }
-        }
+			.style--dark & {
+				background-color: lighten(@color--dark, 8%);
+			}
+		}
 	}
 }
 

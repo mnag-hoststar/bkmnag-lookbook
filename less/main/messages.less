@@ -12,17 +12,17 @@
 // General Messages
 
 .message {
-    position: relative;
-    padding: 1.3em;
+	position: relative;
+	padding: 1.3em;
 	padding-left: 3.5em;
-    margin: 1em auto;
+	margin: 1em auto;
 	min-height: 3em;
-    .clearfix();
+	.clearfix();
 
-    h3, p {
-        margin: 0;
-        padding: 0;
-    }
+	h3, p {
+		margin: 0;
+		padding: 0;
+	}
 	
 	h3 {
 		font-size: @font__h3--font-size;
@@ -48,28 +48,28 @@
 		.make-line-height-a-lot-smaller(@font__p--line-height);
 	}
 
-    p + p {
-        margin-top: 0.35em;
-    }
+	p + p {
+		margin-top: 0.35em;
+	}
 
-    strong {
-        font-weight: bold;
-    }
+	strong {
+		font-weight: bold;
+	}
 
-    &:before {
-        font-family: 'FontAwesome', sans-serif;
-        display: block;
-        width: 2.5em;
-        position: absolute;
+	&:before {
+		font-family: 'FontAwesome', sans-serif;
+		display: block;
+		width: 2.5em;
+		position: absolute;
 		top: 0.9em;
-        left: 0;
-        bottom: 0;
-        text-align: center;
+		left: 0;
+		bottom: 0;
+		text-align: center;
 		font-size: 1.4em;
 		line-height: 1.4em;
 		.border-radius(50%);
 		color: #fff;
-    }
+	}
 }
 
 .message--error {
@@ -113,19 +113,19 @@
 }
 
 .template__footer .message {
-    margin: 0;
+	margin: 0;
 }
 
 // Form Messages
 
 .overlay.success .message-box {
-    .message;
-    .message--success;
+	.message;
+	.message--success;
 }
 
 .overlay.fail .message-box {
-    .message;
-    .message--warning;
+	.message;
+	.message--warning;
 }
 
 // Cookie Message

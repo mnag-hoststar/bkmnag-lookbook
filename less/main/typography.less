@@ -14,30 +14,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
-    word-break: break-word;
+	word-break: break-word;
 
 	.style--light & {
-	    color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @contrast--dark;
+		color: @contrast--dark;
 	}
 }
 
-// Break long words.
-
 h1, h2, h3, h4, h5, h6, p {
 	word-break: break-word;
-}
-
-p, a {
-	padding: 0;
-    hyphens: auto;
 }
 
 h1, .heading--1, .contentgroup__h1 {
@@ -59,19 +52,19 @@ h1, .heading--1, .contentgroup__h1 {
 	.make-line-height-a-lot-smaller(@font__h1--line-height);
 
 	.style--light & {
-    	text-shadow: 0.05em 0 fade(@contrast--light, 18%);
+		text-shadow: 0.05em 0 fade(@contrast--light, 18%);
 	}
 
 	.style--accent & {
-	    text-shadow: 0.05em 0 fade(@contrast--accent, 25%);
+		text-shadow: 0.05em 0 fade(@contrast--accent, 25%);
 	}
 
 	.style--dark & {
-	    text-shadow: 0.05em 0 fade(@contrast--dark, 25%);
+		text-shadow: 0.05em 0 fade(@contrast--dark, 25%);
 	}
 	
 	.responsivecolumns & {
-    	margin: 0;
+		margin: 0;
 	}
 }
 
@@ -93,15 +86,15 @@ h1, .heading--1 {
 		margin-right: auto;
 
 		.style--light & {
-	    	background-color: @color--accent;
+			background-color: @color--accent;
 		}
 
 		.style--accent & {
-		    background-color: @contrast--accent;
+			background-color: @contrast--accent;
 		}
 
 		.style--dark & {
-		    background-color: @contrast--dark;
+			background-color: @contrast--dark;
 		}
 	}
 	
@@ -228,17 +221,23 @@ p, .paragraph, ul, ol, li, .contentgroup__body {
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
+
+p, a {
+	padding: 0;
+	hyphens: auto;
+}
+
 p, ul, ol, li, .contentgroup__body {
 	.style--light & {
-	    color: fade(@contrast--light, 80%);
+		color: fade(@contrast--light, 80%);
 	}
 
 	.style--accent & {
-	    color: fade(@contrast--accent, 80%);
+		color: fade(@contrast--accent, 80%);
 	}
 
 	.style--dark & {
-	    color: fade(@contrast--dark, 80%);
+		color: fade(@contrast--dark, 80%);
 	}
 }
 
@@ -261,15 +260,15 @@ label:not(.clicktocall__label), .label-text {
 	word-break: break-word;
 
 	.style--light & {
-	    color: fade(@contrast--light, 80%);
+		color: fade(@contrast--light, 80%);
 	}
 
 	.style--accent & {
-	    color: fade(@contrast--accent, 80%);
+		color: fade(@contrast--accent, 80%);
 	}
 
 	.style--dark & {
-	    color: fade(@contrast--dark, 80%);
+		color: fade(@contrast--dark, 80%);
 	}
 }
 
@@ -302,84 +301,66 @@ a.vglnk {
 
 	.style--light & {
 		border-color: @color--accent;
-        color: @contrast--light;
-    }
+		color: @contrast--light;
+	}
 
-    .style--accent & {
-    	border-color: @contrast--accent;
-        color: @contrast--accent;
-    }
+	.style--accent & {
+		border-color: @contrast--accent;
+		color: @contrast--accent;
+	}
 
-    .style--dark & {
-    	border-color: @color--dark;
-        color: @contrast--dark;
-    }
+	.style--dark & {
+		border-color: @color--dark;
+		color: @contrast--dark;
+	}
 
-    &:hover, &:active, &:visited {
+	&:hover, &:active, &:visited {
 		text-decoration: none;
 		border-bottom: 6px solid @color-highlight-darker;
 		background-color: @color-highlight-darker;
 
 		.style--light & {
 			border-color: @color--accent;
-	        background-color: @color--accent;
-	        color: @contrast--accent;
-	    }
+			background-color: @color--accent;
+			color: @contrast--accent;
+		}
 
-	    .style--accent & {
-	    	border-color: @color--dark;
-	        background-color: @color--dark;
-	        color: @contrast--dark;
-	    }
+		.style--accent & {
+			border-color: @color--dark;
+			background-color: @color--dark;
+			color: @contrast--dark;
+		}
 
-	    .style--dark & {
-	    	border-color: @color--accent;
-	        background-color: @color--accent;
-	        color: @contrast--accent;
-	    }
+		.style--dark & {
+			border-color: @color--accent;
+			background-color: @color--accent;
+			color: @contrast--accent;
+		}
 
 		@media @mobile {
 			border-bottom-width: 4px;
 		}
-    }
-}
+	}
 
-a[class] {
-	margin: 0;
-	padding: 0;
-	position: static;
-	color: inherit;
-	
-    &, &:hover {
-		border-bottom: none;
-		background-color: transparent;
-    }
-	
-	&:after {
-		content: none;
+	&[class] {
+		margin: 0;
+		padding: 0;
+		position: static;
+		color: inherit;
+		
+		&, &:hover {
+			border-bottom: none;
+			background-color: transparent;
+		}
+		
+		&:after {
+			content: none;
+		}
 	}
 }
 
 [data-name="row"] [data-name^="content"] a:not(.contentgroup__link) {
 	text-decoration: none;
-}
-
-// Small
-
-small {
-	color: @color__p--text;
-
-	.style--light & {
-	    color: fade(@contrast--light, 80%);
-	}
-
-	.style--accent & {
-	    color: fade(@contrast--accent, 80%);
-	}
-
-	.style--dark & {
-	    color: fade(@contrast--dark, 80%);
-	}
 }
 
 // Preformatted Text and Code
@@ -482,21 +463,21 @@ ol {
 			color: @color__h1--text;
 
 			.style--light & {
-			    color: @contrast--light;
+				color: @contrast--light;
 			}
 
 			.style--accent & {
-			    color: @contrast--accent;
+				color: @contrast--accent;
 			}
 
 			.style--dark & {
-			    color: @contrast--dark;
+				color: @contrast--dark;
 			}
 		}
 	}
 }
 
-// Block Quote
+// Blockquote
 
 blockquote {
 	position: relative;
@@ -511,15 +492,15 @@ blockquote {
 	word-break: break-word;
 
 	.style--light & {
-	    color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @contrast--dark;
+		color: @contrast--dark;
 	}
 	
 	@media @tablet-horizontal {
@@ -547,15 +528,15 @@ blockquote {
 		.make-font-a-lot-smaller(@font__h4--font-size*8);
 
 		.style--light & {
-		    color: fade(@contrast--light, 50%);
+			color: fade(@contrast--light, 50%);
 		}
 
 		.style--accent & {
-		    color: fade(@contrast--accent, 50%);
+			color: fade(@contrast--accent, 50%);
 		}
 
 		.style--dark & {
-		    color: fade(@contrast--dark, 50%);
+			color: fade(@contrast--dark, 50%);
 		}
 	}
 	
@@ -569,7 +550,7 @@ blockquote {
 	.columns-four-third &,
 	.columns-four-fourth & {
 		padding-right: 0;
-    	padding-left: 0;
+		padding-left: 0;
 		
 		&:before {
 			left: -0.2em;
@@ -584,9 +565,9 @@ blockquote {
 // Highlighted Text
 
 ::-moz-selection {
-    background: @color-highlight--light;
+	background: @color-highlight--light;
 }
 
 ::selection {
-    background: @color-highlight--light;
+	background: @color-highlight--light;
 }

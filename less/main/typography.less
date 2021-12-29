@@ -221,13 +221,34 @@ p, .paragraph, ul, ol, li, .contentgroup__body {
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
+// Normal Text
 
-p, a {
+.widget {
+	p, .paragraph, span, small, pre, code,
+	table, th, td,
+	&.content {
+		color: @font-swatch5-color;
+	
+		.style--light & {
+			color: @contrast--light;
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
+		}
+	}
+}
+
+p, .paragraph, a {
 	padding: 0;
 	hyphens: auto;
 }
 
-p, ul, ol, li, .contentgroup__body {
+p, .paragraph, ul, ol, li, .contentgroup__body {
 	.style--light & {
 		color: fade(@contrast--light, 80%);
 	}
@@ -281,7 +302,8 @@ span {
 // Link
 
 a,
-a.vglnk {
+a.vglnk
+.links {
 	z-index: 0;
 	position: relative;
 	display: inline;
@@ -363,7 +385,7 @@ a.vglnk {
 	text-decoration: none;
 }
 
-// Preformatted Text and Code
+// Preformatted and Code Text
 
 pre, code {
 	.paragraph;

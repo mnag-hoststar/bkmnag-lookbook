@@ -189,7 +189,8 @@
         },
         "form": {
             "color__form--border": "@color-swatch2",
-            "color__form-legend--text": "@color-swatch1"
+            "color__form-legend--text": "@color-swatch1",
+            "color__form--background": "@color-swatch1"
         },
         "button": {
             "font__button--font-family": "@font-swatch7-font-family",

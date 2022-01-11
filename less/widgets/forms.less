@@ -549,10 +549,15 @@ input:focus {
 			border-color: @contrast--dark;
 		}
 	}
-}
 
-.select::-ms-expand {
-	display: none;
+	&::-ms-expand {
+		display: none;
+	}
+
+	option {
+		background-color: @color__container--background;
+		color: @color__p--text;
+	}
 }
 
 // Error Messages

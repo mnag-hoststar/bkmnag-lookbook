@@ -303,7 +303,7 @@
 	}
 }
 
-// Button
+// Buttons
 
 .summary-form {
 	text-align: right;
@@ -313,9 +313,15 @@
 	}
 }
 
-.ecombasketsummary{
-	.continue-shopping {
+.ecombasketsummary {
+	&__continue-shopping,
+	&_button {
 		.button;
 		line-height: 46px;
+
+		@media @mobile {
+			width: 100%;
+			text-align: center;
+		}
 	}
 }

@@ -24,6 +24,23 @@ table {
 			border-top-color: @contrast--dark;
 		}
 	}
+		
+	.responsivecolumns & {
+		display: block;
+		border-top: 2px solid @color-text--light;
+
+		.style--light & {
+			border-top-color: @contrast--light;
+		}
+	
+		.style--accent & {
+			border-top-color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			border-top-color: @contrast--dark;
+		}
+	}
 }
 
 tbody,
@@ -31,7 +48,13 @@ tr {
 	@media @mobile {
 		display: block;
 	}
+
+	.responsivecolumns & {
+		display: block;
+	}
 }
+
+// Table Cell
 
 td, th {
 	border: none;
@@ -70,6 +93,10 @@ td, th {
 	@media @mobile {
 		display: block;
 	}
+	
+	.responsivecolumns & {
+		display: none;
+	}
 }
 
 th {
@@ -92,6 +119,10 @@ th {
 	@media @mobile {
 		display: none;
 	}
+		
+	.responsivecolumns & {
+		display: none;
+	}
 }
 
 td {
@@ -112,6 +143,33 @@ td {
 	}
 		
 	@media @mobile {
+		display: block;
+		border-bottom: 1px solid transparent;
+		padding: 0;
+		
+		&:first-child {
+			padding-top: 1em;
+		}
+		
+		&:last-child {
+			border-bottom: 1px solid @color-text--light;
+			padding-bottom: 1em;
+
+			.style--light & {
+				border-bottom-color: @contrast--light;
+			}
+		
+			.style--accent & {
+				border-bottom-color: @contrast--accent;
+			}
+		
+			.style--dark & {
+				border-bottom-color: @contrast--dark;
+			}
+		}
+	}
+		
+	.responsivecolumns & {
 		display: block;
 		border-bottom: 1px solid transparent;
 		padding: 0;

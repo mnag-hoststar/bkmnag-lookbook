@@ -7,6 +7,19 @@ table {
 	border-collapse: separate;
 	border-spacing: 0;
 	margin: 0 0 1em;
+	color: @color__p--text;
+
+	.style--light & {
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
+	}
 		
 	@media @mobile {
 		display: block;

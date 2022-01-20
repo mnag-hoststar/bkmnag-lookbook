@@ -510,6 +510,7 @@ blockquote {
 	font-family: @font__p--font-family;
 	font-size: 1.5em;
 	line-height: 1.5em;
+	color: @color__p--text;
 	word-break: break-word;
 
 	.style--light & {
@@ -549,7 +550,7 @@ blockquote {
 		.make-font-a-lot-smaller(@font__h4--font-size*8);
 
 		.style--light & {
-			color: fade(@contrast--light, 50%);
+			color: fade(@color--accent, 50%);
 		}
 
 		.style--accent & {
@@ -557,7 +558,7 @@ blockquote {
 		}
 
 		.style--dark & {
-			color: fade(@contrast--dark, 50%);
+			color: fade(@color--accent, 50%);
 		}
 	}
 	

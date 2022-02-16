@@ -7,18 +7,18 @@
 	overflow: hidden;
 
 	.style--light & {
-		background: @color--light;
-		border-color: @color--light;
+		border-color: @color__container--background;
+		background: @color__body--background;
 	}
 
 	.style--accent & {
-		background: @color--accent;
 		border-color: @color--accent;
+		background: @color--accent;
 	}
 
 	.style--dark & {
-		background: @color--dark;
 		border-color: @color--dark;
+		background: @color--dark;
 	}
 		
 	@media @mobile {
@@ -41,7 +41,7 @@
 	background-color: @color__slideshow--background;
 
 	.style--light & {
-		background: @color--light;
+		background: @color__slideshow--background;
 	}
 
 	.style--accent & {

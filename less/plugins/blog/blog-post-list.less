@@ -26,8 +26,8 @@
 	.clearfix();
 
 	.style--light & {
-		background-color: darken(@color--light, 5%);
-		border-color: fade(@contrast--light, .5);
+		background-color: lighten(@color__blogpostlist-article--background, 95%);
+		border-color: @color__blogpostlist--background;
 	}
 
 	.style--accent & {
@@ -133,7 +133,7 @@ a.blogpostlist__title-link {
 	color: @color__blogpostlist-title--text;
 
 	.style--light & {
-		color: @contrast--light;
+		color: @color__blogpostlist-title--text;
 	}
 
 	.style--accent & {
@@ -213,9 +213,10 @@ a.blogpostlist__read-more {
 		display: block;
 		margin: 0.5em 0 0;
 		.timestamp-styles;
+		color: @font-swatch5-color;
 
 		.style--light & {
-			color: @contrast--light;
+			color: @font-swatch5-color;
 		}
 
 		.style--accent & {

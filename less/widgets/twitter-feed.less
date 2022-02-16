@@ -27,8 +27,8 @@
 	.clearfix();
 
 	.style--light & {
-		background-color: @color--light;
-		border-color: @color--accent;
+		background-color: @color-text--lightest;
+		border-color: @color__button--border;
 	}
 
 	.style--accent & {
@@ -124,7 +124,7 @@ a.twitter__account-link {
 		color: fade(@color__p--text, 50%);
 
 		.style--light & {
-			color: fade(@contrast--light, 50%);
+			color: fade(@color__p--text, 50%);
 		}
 
 		.style--accent & {
@@ -137,7 +137,7 @@ a.twitter__account-link {
 
 		&:hover {
 			.style--light & {
-				background-color: darken(@color--light, 8%);
+				background-color: darken(@color__p--text, 8%);
 			}
 
 			.style--accent & {

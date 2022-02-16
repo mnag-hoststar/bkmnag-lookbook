@@ -16,10 +16,6 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
 	word-break: break-word;
 
-	.style--light & {
-		color: @contrast--light;
-	}
-
 	.style--accent & {
 		color: @contrast--accent;
 	}
@@ -52,7 +48,7 @@ h1, .heading--1, .contentgroup__h1 {
 	.make-line-height-a-lot-smaller(@font__h1--line-height);
 
 	.style--light & {
-		text-shadow: 0.05em 0 fade(@contrast--light, 18%);
+		text-shadow: 0.05em 0 @color__h1--background;
 	}
 
 	.style--accent & {
@@ -86,7 +82,7 @@ h1, .heading--1 {
 		margin-right: auto;
 
 		.style--light & {
-			background-color: @color--accent;
+			background-color: @color__h1--text;
 		}
 
 		.style--accent & {
@@ -221,7 +217,7 @@ p, .paragraph, ul, ol, li, .contentgroup__body, a, .link {
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 
 	.style--light & {
-		color: fade(@contrast--light, 80%);
+		color: @color__p--text;
 	}
 
 	.style--accent & {
@@ -255,7 +251,7 @@ p, .paragraph, ul, ol, li, .contentgroup__body, a, .link {
 			color: @color__p--text;
 		
 			.style--light & {
-				color: @contrast--light;
+				color: @color__p--text;
 			}
 		
 			.style--accent & {
@@ -293,7 +289,7 @@ label:not(.clicktocall__label), .label-text {
 	word-break: break-word;
 
 	.style--light & {
-		color: fade(@contrast--light, 80%);
+		color: @color-text--faded;
 	}
 
 	.style--accent & {
@@ -322,20 +318,16 @@ a.vglnk
 	margin: -0.2em -0.1em -0.4em;
 	padding: 0.2em 0.1em 0;
 	line-height: 0.8em;
-	color: @color__p--text;
 	overflow: visible;
 	height: auto;
 	text-decoration: none;
 	border-bottom: 6px solid @color-highlight;
+	color: @color__p--text;
 	.transition();
-	
-	@media @mobile {
-		border-bottom-width: 4px;
-	}
 
 	.style--light & {
-		border-color: @color--accent;
-		color: @contrast--light;
+		border-color: @color-highlight;
+		color: @color__p--text;
 	}
 
 	.style--accent & {
@@ -347,6 +339,10 @@ a.vglnk
 		border-color: @color--dark;
 		color: @contrast--dark;
 	}
+	
+	@media @mobile {
+		border-bottom-width: 4px;
+	}
 
 	&:hover, &:active, &:visited {
 		text-decoration: none;
@@ -354,21 +350,18 @@ a.vglnk
 		background-color: @color-highlight-darker;
 
 		.style--light & {
-			border-color: @color--accent;
-			background-color: @color--accent;
-			color: @contrast--accent;
+			border-color: @color-highlight-darker;
+			background-color: @color-highlight-darker;
 		}
 
 		.style--accent & {
 			border-color: @color--dark;
 			background-color: @color--dark;
-			color: @contrast--dark;
 		}
 
 		.style--dark & {
 			border-color: @color--accent;
 			background-color: @color--accent;
-			color: @contrast--accent;
 		}
 
 		@media @mobile {
@@ -411,7 +404,7 @@ pre, code {
 	font-family: monospace;
 
 	.style--light & {
-		background-color: fade(@contrast--light, 10%);
+		background-color: @color-text--lightest;
 	}
 
 	.style--accent & {
@@ -427,7 +420,7 @@ code {
 	border-left: 10px solid @color__button--border;
 
 	.style--light & {
-		border-color: @contrast--light;
+		border-color: @color__button--border;
 	}
 
 	.style--accent & {
@@ -484,7 +477,7 @@ ol {
 			color: @color__h1--text;
 
 			.style--light & {
-				color: @contrast--light;
+				color: @color__h1--text;
 			}
 
 			.style--accent & {
@@ -514,7 +507,7 @@ blockquote {
 	word-break: break-word;
 
 	.style--light & {
-		color: @contrast--light;
+		color: @color__p--text;
 	}
 
 	.style--accent & {
@@ -550,7 +543,7 @@ blockquote {
 		.make-font-a-lot-smaller(@font__h4--font-size*8);
 
 		.style--light & {
-			color: fade(@color--accent, 50%);
+			color: fade(@color__h1--text, 50%);
 		}
 
 		.style--accent & {

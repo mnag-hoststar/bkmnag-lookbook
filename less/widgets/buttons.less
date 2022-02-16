@@ -39,9 +39,9 @@ a.contentgroup__link,
 	}
 
 	.style--light & {
-		background-color: @color--accent;
-		border-color: @color--accent;
-		color: @contrast--accent;
+		background-color: @color__button--background;
+		border-color: @color__button--border;
+		color: @color__button--text;
 	}
 
 	.style--accent & {
@@ -64,9 +64,9 @@ a.contentgroup__link,
 		color: @color__button--text--hover;
 
 		.style--light & {
-			background-color: @color--dark;
-			border-color: @color--dark;
-			color: @contrast--dark;
+			background-color: @color__button--background--hover;
+			border-color: darken(@color__button--border, 5%);
+			color: @color__button--text--hover;
 		}
 
 		.style--accent & {
@@ -78,20 +78,6 @@ a.contentgroup__link,
 		.style--dark & {
 			background-color: @color--light;
 			border-color: @color--light;
-			color: @contrast--light;
-		}
-	}
-
-	.clicktocall__label {
-		.style--light & {
-			color: @contrast--accent;
-		}
-
-		.style--accent & {
-			color: @contrast--light;
-		}
-
-		.style--dark & {
 			color: @contrast--light;
 		}
 	}
@@ -205,25 +191,25 @@ a.button,
 	line-height: 36px;
 	border: 2px solid @color__button--border !important;
 	color: @color__button--border !important;
-	background-color: @color-text--lightest;
+	background-color: @color-text--lightest !important;
 	.transition (all, 0.5s, ease);
 
 	.style--light & {
-		background-color: @color--light !important;
-		border-color: @contast--light;
-		color: @contrast--light !important;
+		border-color: @color__button--border !important;
+		color: @color__button--border !important;
+		background-color:@color-text--lightest !important;
 	}
 
 	.style--accent & {
-		background-color: @color--accent !important;
 		border-color: @contrast--accent !important;
 		color: @contrast--accent !important;
+		background-color: @color--accent !important;
 	}
 
 	.style--dark & {
-		background-color: @color--dark !important;
 		border-color: @contrast--dark !important;
 		color: @contrast--dark !important;
+		background-color: @color--dark !important;
 	}
 
 	&:hover {
@@ -233,19 +219,16 @@ a.button,
 		.transition (all, 0.5s, ease);
 
 		.style--light & {
-			background-color: @color--light;
-			border-color: @contast--light !important;
-			color: @contrast--light !important;
+			border-color: @color__button--background--hover !important;
+			color: @color__button--background--hover !important;
 		}
 
 		.style--accent & {
-			background-color: @color--accent;
 			border-color: @contrast--accent !important;
 			color: @contrast--accent !important;
 		}
 
 		.style--dark & {
-			background-color: @color--dark;
 			border-color: @contrast--dark !important;
 			color: @contrast--dark !important;
 		}
@@ -263,7 +246,7 @@ a.button,
 	color: @font-swatch7-color;
 
 	.style--light & {
-		color: @contrast--accent;
+		color: @font-swatch7-color;
 	}
 
 	.style--accent & {

@@ -40,29 +40,16 @@
 		max-height: 100vw;
 		max-width: @layout-max-width;
 		.box-sizing(content-box);
-		background-color: @color__ecomproduct-images--background;
-		
-		&:hover, &:active {
-			background-color: @color__ecomproduct-images--background;
-		}
-
-		@media @tablet-horizontal {
-			margin: 5%;
-			max-height: 700px;
-			height: 700px;
-			height: 100vw;
-		}
 		
 		@media @tablet {
 			max-height: 600px;
 			height: 600px;
-			height: 100vw;
+			height: 200px;
 		}
 		
 		@media @mobile {
 			max-height: 500px;
 			height: 500px;
-			height: 100vw;
 		}
 	}
 	
@@ -89,10 +76,22 @@
 	.gallery-item {
 		position: relative;
 		display: inline-block;
-		background-color: @color__ecomproduct-images--background;
 		width: 80px;
 		height: 80px;
 		margin: 1%;
+		background-color: @color-text--lightest;
+
+		.style--light & {
+			background-color: @color-text--lightest;
+		}
+	
+		.style--accent & {
+			background-color: fade(@contrast--accent, 10%);
+		}
+	
+		.style--dark & {
+			background-color: fade(@contrast--dark, 20%);
+		}
 
 		@media @tablet-horizontal {
 			width: 60px;
@@ -134,7 +133,6 @@
 
 .product-title {
 	color: @color__ecomproduct-title--text;
-	text-shadow: 0.05em 0 @color__ecomproduct-title--background;
 }
 
 .ecomproduct__product-price {
@@ -163,6 +161,12 @@
 		margin-bottom: 2em;
 	}
 
+	form.ecomproduct__form,
+	div.ecomproduct__view-basket-wrap {
+		display: inline-block;
+		width: 100%;
+	}
+
 	.form-group {
 		min-width: 100px;
 		margin: 0 0.6em 0 0;
@@ -175,24 +179,7 @@
 
 		button.ecomproduct__button,
 		a.ecomproduct__button {
-			.link-button;
-			
-			@media @tablet {
-				float: none;
-				display: block;
-				margin-top: 1em;
-				width: 100%;
-				line-height: 46px;
-				text-align: center;
-			}
-        
-			@media @mobile {
-				width: 100%;
-			}
-		
-			@media @mobile-small {
-				padding: 0;
-			}
+			margin-bottom: 1em;
 			
 			&.icon:before {
 				margin: 0 0.5em 0 0;

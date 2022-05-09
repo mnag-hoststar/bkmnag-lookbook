@@ -7,7 +7,9 @@ a.button,
 .clicktocall .phone-number-link,
 a.ecomproduct__button,
 a.contentgroup__link,
-.userregistration fieldset .userregistrationbtn {
+.userregistration fieldset .userregistrationbtn,
+.product-actions .form-group button.ecomproduct__button,
+.product-actions .form-group a.ecomproduct__button {
 	cursor: pointer;
 	position: relative;
 	display: inline-block;
@@ -21,20 +23,17 @@ a.contentgroup__link,
 	font-size: @font__button--font-size;
 	font-weight: @font__button--font-weight;
 	line-height: @font__button--line-height;
-	letter-spacing: @font__button--letter-spacing;
+	letter-spacing: unit(@font__button--letter-spacing*0.05, em);
 	color: @color__button--text;
 	text-transform: uppercase;
 	vertical-align: middle;
+	text-align: center;
 	
 	.make-font-a-little-smaller(@font__button--font-size);
 	.make-font-smaller(@font__button--font-size);
 	.make-font-a-lot-smaller(@font__button--font-size);
 
 	@media @mobile {
-		width: 100%;
-	}
-
-	.responsivecolumns & {
 		width: 100%;
 	}
 
@@ -45,22 +44,22 @@ a.contentgroup__link,
 	}
 
 	.style--accent & {
-		background-color: @color--light;
-		border-color: @color--light;
-		color: @contrast--light;
+		background-color: @color-highlight;
+		border-color: transparent;
+		color: @color__p--text;
 	}
 
 	.style--dark & {
-		background-color: @color--light;
-		border-color: @color--light;
-		color: @contrast--light;
+		background-color: @color-highlight;
+		border-color: transparent;
+		color: @color__p--text;
 	}
 	
 	&:hover,
 	&:focus,
 	&:active {
 		background-color: @color__button--background--hover;
-		border-color: darken(@color__button--border, 5%);
+		border: 2px solid darken(@color__button--border, 5%);
 		color: @color__button--text--hover;
 
 		.style--light & {
@@ -70,15 +69,15 @@ a.contentgroup__link,
 		}
 
 		.style--accent & {
-			background-color: @color--light;
-			border-color: @color--light;
-			color: @contrast--light;
+			background-color: darken(@color-highlight, 5%);
+			border-color: transparent;
+			color: @color__p--text;
 		}
 
 		.style--dark & {
-			background-color: @color--light;
-			border-color: @color--light;
-			color: @contrast--light;
+			background-color: darken(@color-highlight, 5%);
+			border-color: transparent;
+			color: @color__p--text;
 		}
 	}
 }
@@ -93,7 +92,7 @@ a.button,
 	&:before,
 	&:after {
 		margin: 0;
-		font-size: 1.5em;
+		font-size: 1em;
 		font-weight: 400;
 	}
 	

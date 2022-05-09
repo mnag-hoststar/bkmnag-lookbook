@@ -9,6 +9,23 @@
 	.template__content {
 		padding-bottom: 0;
 	}
+
+	.widget[data-widget-type="feature"] + section .template__content .widget:first-of-type {
+		border-top: 0;
+		padding: 0;
+	}
+
+	section .widget[data-widget-type="pagetitle"] .pagetitle {
+		padding: 0 5%;
+	
+		@media @tablet {
+			margin: 0 2.5%;
+		}
+			
+		@media @mobile {
+			padding: 0 5%;
+		}
+	}
 	
 	[class*="row--gallery"] {
 		.gallery-list {
@@ -58,10 +75,10 @@
 
 [data-name="row"] .row:not(.row--width-no-padding) .row__container {
 	margin: 0 auto;
-	max-width: 1400px;
-	width: ~"calc(100% - 240px)";
+	max-width: @layout-max-width;
+	width: 90%;
 
 	@media @desktop-wide {
-		width: 80%;
+		width: 90%;
 	}
 }

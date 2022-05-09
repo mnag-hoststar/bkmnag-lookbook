@@ -33,10 +33,17 @@
 				padding-right: 10px;
 				padding-left: 10px;
 				width: 60px;
+			}
+			
+			a {
+				display: block;
+				border: none;
 
 				img {
-					max-height: 80px;
-					width: auto !important;
+					@media @tablet {
+						max-height: 80px;
+						width: auto !important;
+					}
 				}
 			}
 		}
@@ -45,6 +52,20 @@
 			@media @tablet {
 				min-width: 50px;
 				padding-right: 60px;
+			}
+
+			.companyname__company-link,
+			.companyname__company-link span {
+				border: 0;
+				margin-bottom: 0;
+			}
+
+			.companyname__company-link span {
+				margin-bottom: 0.5em;
+
+				@media @tablet {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
@@ -59,7 +80,7 @@
 		font-size: @font__companyname--font-size;
 		font-weight: @font__companyname--font-weight;
 		line-height: @font__companyname--line-height;
-		letter-spacing: @font__companyname--letter-spacing;
+		letter-spacing: unit(@font__companyname--letter-spacing*0.05, em);
 		word-wrap: anywhere;
 
 		.make-font-a-little-smaller(@font__companyname--font-size);
@@ -105,9 +126,14 @@ html.nav-open {
 		position: absolute;
 		top: 0;
 		right: 0;
-		left: 0;
 		bottom: 0;
 		z-index: 2;
+		width: 50px;
+		margin-right: 2.5%;
+	}
+
+	@media @mobile {
+		margin-right: 5%;
 	}
 }
 
@@ -137,6 +163,14 @@ html.nav-open {
 		border: none;
 		padding: 0;
 		min-height: 0;
+		
+		@media @tablet {
+			right: 2.5%;
+		}
+		
+		@media @mobile {
+			right: 5%;
+		}
 
 		.make-font-a-little-smaller(@font__companyname--font-size);
 		.make-font-smaller(@font__companyname--font-size);
@@ -270,7 +304,7 @@ html.nav-open {
 	@media @tablet {
 		display: block;
 		height: auto;
-		margin: 2em 0;
+		margin: 80px 0 40px;
 	}
 }
 
@@ -282,9 +316,13 @@ html.nav-open {
 	
 	@media @tablet {
 		display: block;
-		margin: 0 10%;
+		margin: 0 2.5%;
 		padding: 0 1em;
 		text-align: center;
+	}
+		
+	@media @mobile {
+		padding: 0 5%;
 	}
 	
 	.item-name {
@@ -300,22 +338,22 @@ html.nav-open {
 		font-size: @font__navigation--font-size;
 		font-weight: @font__navigation--font-weight;
 		line-height: @font__navigation--line-height;
-		letter-spacing: @font__navigation--letter-spacing;
+		letter-spacing: unit(@font__navigation--letter-spacing*0.05, em);
 		color: @color__navigation--text;
 		.transition (all, 0.2s, ease-in-out);
         word-break: break-word;
+		overflow: inherit;
 		
 		@media @tablet {
-			display: inline-block;
-			margin: 0.5em 0;
+			margin: 0.5em 0 0;
 			font-size: @font__navigation--font-size * 1.2;
 			line-height: @font__navigation--line-height * 1.2;
 		}
 		
 		&:hover {
 			text-decoration: none;
-			background-color: @color-highlight;
-			border-bottom: 0.4em solid @color-highlight;
+			background-color: darken(@color-highlight, 5%);
+			border-bottom: 0.4em solid transparent;
 			color: @color__navigation--text--hover;
 		}
 	}
@@ -324,10 +362,14 @@ html.nav-open {
 		border-bottom: 0.4em solid @color-highlight;
 		color: @color__navigation--text--selected;
 		
+		@media @tablet {
+			background: @color-highlight;
+		}
+		
 		&:hover {
 			text-decoration: none;
-			background-color: @color-highlight;
-			border-bottom: 0.4em solid @color-highlight;
+			background-color: darken(@color-highlight, 5%);
+			border-bottom: 0.4em solid darken(@color-highlight, 5%);
 			color: @color__navigation--text--selected;
 		}
 	}
@@ -375,6 +417,8 @@ html.nav-open {
 		margin: 0.5em 0 0;
 		padding: 0;
 		height: 0;
+		min-width: 300px;
+		max-width: 500px;
 		width: auto;
 		background-color: @color__navigation-item--background;
 		overflow: visible;
@@ -385,6 +429,8 @@ html.nav-open {
 			position: static;
 			margin: 0 0 0.5em;
 			padding: 0;
+			min-width: auto;
+			max-width: none;
 			.box-shadow(none);
 		}
 	}
@@ -392,6 +438,7 @@ html.nav-open {
 	.navigation-item.folder.folder-open & {
 		overflow: visible;
 		display: block;
+		margin: 0.5em 0.8em;
 		opacity: 1;
 		height: auto;
 		.transition(opacity);
@@ -405,11 +452,8 @@ html.nav-open {
 }
 
 .navigation-item--child {
-	white-space: nowrap;
-
 	@media @tablet {
 		display: block;
-		white-space: normal;
 		margin: 0;
 		padding: 0;
 	}
@@ -420,16 +464,14 @@ html.nav-open {
 		margin: 0;
 		padding: 1em;
 		color: @color__navigation--text;
+		
+		&:hover {
+			border-bottom: 0;
+		}
 
 		@media @tablet {
 			display: block;
 			padding: 0.5em;
-		}
-		
-		&:hover {
-			border-bottom: 0;
-			background-color: @color__navigation-item--background--selected;
-			color: @color__navigation--text--hover;
 		}
 		
 		&:after {
@@ -437,17 +479,6 @@ html.nav-open {
 			right: 0;
 			bottom: 0;
 		}
-		
-		&:hover:after {
-			bottom: 0;
-			height: 100%;
-			background-color: @color__navigation-item--background--selected;
-		}
-	}
-
-	&.selected .item-name {
-		background-color: @color__navigation-item--background--selected;
-		color: @color__navigation--text--selected;
 	}
 }
 

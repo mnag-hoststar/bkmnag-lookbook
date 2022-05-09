@@ -1,7 +1,7 @@
 {
     "name": "LookBook",
     "widgetVersion": 2,
-    "thumbnail": "thumbnail.png",
+    "thumbnail": "images/thumbnail.png",
     "templateType": "standard",
     "pageTypes": ["home", "404"],
     "screenshot": "images/screenshot.jpg",
@@ -25,7 +25,7 @@
             "color3":"#e1afb8",
             "color4":"#e5cbc2",
             "color5":"#bce0ed",
-            "color6":"#c2c8d6",
+            "color6":"#8d8aa7",
             "color7":"#ffffff"
         }
     },
@@ -164,7 +164,8 @@
             "font__p--font-weight": "@font-swatch5-font-weight",
             "font__p--line-height": "@font-swatch5-line-height",
             "font__p--letter-spacing": "@font-swatch5-letter-spacing",
-            "color__p--text": "@font-swatch5-color"
+            "color__p--text": "@font-swatch5-color",
+            "color__p--background": "fade(@color__h4--text, 80%)"
         },
         "header": {
             "color__header--background": "@color__container--background",
@@ -180,7 +181,7 @@
             "font__navigation--font-weight": "@font-swatch6-font-weight",
             "font__navigation--line-height": "@font-swatch6-line-height",
             "font__navigation--letter-spacing": "@font-swatch6-letter-spacing",
-			"color__navigation--border": "fade(@color-swatch2, 50%)",
+			"color__navigation--border": "@color-swatch6",
             "color__navigation--text": "@font-swatch6-color",
             "color__navigation--text--hover": "@font-swatch6-color",
             "color__navigation--text--selected": "@font-swatch6-color",
@@ -190,7 +191,7 @@
         "form": {
             "color__form--border": "@color-swatch2",
             "color__form-legend--text": "@color-swatch1",
-            "color__form--background": "@color-swatch1"
+            "color__form--background": "@color-swatch7"
         },
         "button": {
             "font__button--font-family": "@font-swatch7-font-family",
@@ -238,20 +239,15 @@
             "color__feature-button--background--hover": "@color__button--background--hover"
         },
         "blog": {
-			"color__blogpostlist--background": "fade(@color__button--border, 50%)",
-			"color__blogpostlist-article--background": "@color__p--text",
             "color__blogpostlist-title--text": "@color__h3--text",
-            "color__blogpostlist-title--background": "@color__link--text",
             "color__blogpost--background": "@color__navigation--border",
             "color__blogpost-article--background": "@color__container--background",
             "color__blogpost-title--text": "@color__h3--text",
             "color__blogpost-title--background": "@color__link--text"
         },
         "ecommerce": {
-			"color__ecomproductslist--background": "fade(@color__button--border, 50%)",
-			"color__ecomproductslist-product-item--background": "@color__p--text",
             "color__ecomproductslist-product-title--text": "@color__p--text",
-			"color__ecomproduct-images--background": "@color-swatch7",
+            "color__ecomproductslist-product-item--background": "@color-swatch7",
             "color__ecomproduct-title--text": "@color__h2--text",
             "color__ecomproduct-price--text": "@color__p--text",
 			"color__ecomproduct-price--background": "@color__link--text",

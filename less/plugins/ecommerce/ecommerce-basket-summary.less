@@ -17,7 +17,7 @@
 	}
 	
 	&, .table-row, .cell, .summary-body {
-		@media @mobile {
+		@media @tablet {
 			display: block;
 		}
 	}
@@ -25,7 +25,7 @@
 	.table-row {
 		border-bottom: none;
 				
-		@media @mobile {
+		@media @tablet {
 			border-top: 2px solid @color__navigation--border;
 
 			&:last-child {
@@ -49,9 +49,11 @@
 			&:nth-last-child(2),
 			.cell--price {
 				text-align: right;
+				min-width: 160px;
 				
-				@media @mobile {
+				@media @tablet {
 					text-align: left;
+					min-width: 50%;
 				}
 			}
 
@@ -59,10 +61,17 @@
 			.cell--total {
 				padding-right: 0;
 				text-align: right;
+				min-width: 160px;
 				
-				@media @mobile {
+				@media @tablet {
 					padding-right: 0.5em;
 					text-align: left;
+				}
+			}
+			
+			.cell--total {
+				@media @mobile {
+					padding: 1em;
 				}
 			}
 			
@@ -74,12 +83,12 @@
 		// Row Heading
 
 		&--heading {
-			@media @mobile {
+			@media @tablet {
 				display: none;
 			}
 			
 			.cell {
-				border-bottom: 2px solid @color__ecomproductslist--background;
+				border-bottom: 2px solid @color__button--border;
 				font-family: @font__h1--font-family;
 				color: @color__p--text;
 			}
@@ -94,7 +103,7 @@
 		&:before {
 			display: none;
 			
-			@media @mobile {
+			@media @tablet {
 				position: static;
 				content: attr(data-title);
 				display: block;
@@ -119,7 +128,7 @@
 		.cell--image {
 			width: 100px;
 
-			@media @mobile {
+			@media @tablet {
 				float: left;
 			}
 
@@ -131,7 +140,7 @@
 				background-size: contain;
 				background-repeat: no-repeat;
 
-				@media @mobile {
+				@media @tablet {
 					background-position: top;
 				}
 
@@ -154,7 +163,7 @@
 			padding-left: 0;
 			padding-right: 0;
 
-			@media @mobile {
+			@media @tablet {
 				margin-left: 110px;
 				padding: 0.5em;
 				width: auto;
@@ -177,7 +186,7 @@
 			width: 10%;
 			min-width: 100px;
 
-			@media @mobile {
+			@media @tablet {
 				.clearfix();
 				width: auto;
 				margin-left: 110px;
@@ -186,43 +195,30 @@
 		}
 
 		.quantity-wrap {
-			width: 100%;
-			height: 30px;
-			line-height: 30px;
+			width: 150px;
+			height: 40px;
+			line-height: 40px;
 			font-size: 16px;
 			background-color: transparent;
 			min-width: 100px;
 
-			@media @mobile {
+			@media @tablet {
 				margin: 0 auto;
 				float: left;
 			}
 
-			@media @mobile-small {
-				height: 25px;
-				line-height: 25px;
-				max-width: 75px;
-				min-width: 75px;
+			@media @mobile {
+				width: 150px;
 			}
 
 			// Button Quantity
 
 			.button--quantity {
-				width: 30px;
-				height: 30px;
-				min-height: 30px;
-				line-height: 26px;
+				width: 40px;
+				height: 40px;
+				min-height: 40px;
+				line-height: 20px;
 				text-align: center;
-
-				@media @mobile {
-					line-height: 20px;
-				}
-
-				@media @mobile-small {
-					width: 25px;
-					height: 25px;
-					min-height: 25px;
-				}
 			}
 
 			// Quantity Field
@@ -242,7 +238,7 @@
 			padding: 1em;
 			text-align: right;
 
-			@media @mobile {
+			@media @tablet {
 				text-align: left;
 				margin-left: 110px;
 				padding: 0.5em;
@@ -251,7 +247,7 @@
 				width: 30%;
 			}
 
-			@media @mobile-small {
+			@media @mobile {
 				margin-left: 0;
 				width: 110px;
 			}
@@ -266,14 +262,14 @@
 		.cell--total {
 			text-align: right;
 
-			@media @mobile {
+			@media @tablet {
 				text-align: left;
 				margin-left: 60%;
 				padding: 0.5em;
 				width: auto;
 			}
 
-			@media @mobile-small {
+			@media @mobile {
 				margin-left: 110px;
 			}
 		}
@@ -289,14 +285,14 @@
 	
 	.cell--order-total {
 		text-align: right;
-		border-top: 2px solid @color__ecomproductslist--background;
+		border-top: 2px solid @color__button--border;
 	}
 	
 	.order-total {
 		.heading--3;
 		color: @color__ecomproduct-price--text;
 
-		 @media @mobile {
+		 @media @tablet {
 		 	padding-top: 0;
 			text-align: center;
 		}
@@ -308,7 +304,7 @@
 .summary-form {
 	text-align: right;
 
-	@media @mobile {
+	@media @tablet {
 		text-align: center;
 	}
 }
@@ -321,7 +317,17 @@
 
 		@media @mobile {
 			width: 100%;
-			text-align: center;
+			margin-bottom: 1em;
 		}
+	}
+}
+
+a.ecombasketsummary__continue-shopping + .ecombasketsummary__button,
+a.ecombasketsummary__continue-shopping {
+	margin-left: 10px;
+    margin-top: 0;
+
+	@media @mobile {
+		margin-left: 0;
 	}
 }

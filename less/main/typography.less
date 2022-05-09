@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
+h1, h2, h3, h5, h6, [class*="contentgroup__h"] {
 	word-break: break-word;
 
 	.style--accent & {
@@ -34,7 +34,7 @@ h1, .heading--1, .contentgroup__h1 {
 	font-weight: @font__h1--font-weight;
 	font-size: @font__h1--font-size;
 	line-height: @font__h1--line-height;
-	letter-spacing: @font__h1--letter-spacing;
+	letter-spacing: unit(@font__h1--letter-spacing*0.05*0.5, em);
 	color: @color__h1--text;
 	text-shadow: 0.05em 0 @color__h1--background;
 	margin: 0;
@@ -46,18 +46,6 @@ h1, .heading--1, .contentgroup__h1 {
 	.make-line-height-a-little-smaller(@font__h1--line-height);
 	.make-line-height-smaller(@font__h1--line-height);
 	.make-line-height-a-lot-smaller(@font__h1--line-height);
-
-	.style--light & {
-		text-shadow: 0.05em 0 @color__h1--background;
-	}
-
-	.style--accent & {
-		text-shadow: 0.05em 0 fade(@contrast--accent, 25%);
-	}
-
-	.style--dark & {
-		text-shadow: 0.05em 0 fade(@contrast--dark, 25%);
-	}
 	
 	.responsivecolumns & {
 		margin: 0;
@@ -65,12 +53,6 @@ h1, .heading--1, .contentgroup__h1 {
 }
 
 h1, .heading--1 {
-	margin: 0 -5%;
-
-	@media @mobile {
-		margin: 0;
-	}
-
 	&:after {
 		content: '';
 		height: 0.075em;
@@ -116,7 +98,7 @@ h2, .heading--2, .contentgroup__h2 {
 	font-weight: @font__h2--font-weight;
 	font-size: @font__h2--font-size;
 	line-height: @font__h2--line-height;
-	letter-spacing: @font__h2--letter-spacing;
+	letter-spacing: unit(@font__h2--letter-spacing*0.05, em);
 	color: @color__h2--text;
 	
 	.make-font-a-little-smaller(@font__h2--font-size);
@@ -133,7 +115,7 @@ h3, .heading--3, .contentgroup__h3 {
 	font-size: @font__h3--font-size;
 	font-weight: @font__h3--font-weight;
 	line-height: @font__h3--line-height;
-	letter-spacing: @font__h3--letter-spacing;
+	letter-spacing: unit(@font__h3--letter-spacing*0.05, em);
 	color: @color__h3--text;
 	
 	.make-font-a-little-smaller(@font__h3--font-size);
@@ -150,7 +132,7 @@ h4, .heading--4, .contentgroup__h4 {
 	font-weight: @font__h4--font-weight;
 	font-size: @font__h4--font-size;
 	line-height: @font__h4--line-height;
-	letter-spacing: @font__h4--letter-spacing;
+	letter-spacing: unit(@font__h4--letter-spacing*0.05, em);
 	color: @color__h4--text;
 	
 	.make-font-a-little-smaller(@font__h4--font-size);
@@ -166,8 +148,7 @@ h5, .heading--5, .contentgroup__h5 {
 	font-family: @font__h3--font-family;
 	font-weight: @font__h3--font-weight;
 	font-size: @font__h3--font-size*0.75;
-	line-height: @font__h3--line-height*0.75;
-	letter-spacing: @font__h3--letter-spacing*0.75;
+	letter-spacing: unit(@font__h3--letter-spacing*0.05, em);
 	color: @color__h3--text;
 	
 	.make-font-a-little-smaller(@font__h3--font-size, 0.6);
@@ -185,7 +166,7 @@ h6, .heading--6, .contentgroup__h6 {
 	font-weight: @font__h3--font-weight;
 	font-size: @font__p--font-size;
 	line-height: @font__p--line-height;
-	letter-spacing: @font__p--letter-spacing;
+	letter-spacing: unit(@font__p--letter-spacing*0.05, em);
 	color: @color__p--text;
 	
 	.make-font-a-little-smaller(@font__p--font-size);
@@ -202,7 +183,7 @@ p, .paragraph, ul, ol, li, .contentgroup__body, a, .link {
 	font-weight: @font__p--font-weight;
 	font-size: @font__p--font-size;
 	line-height: @font__p--line-height;
-	letter-spacing: @font__p--letter-spacing;
+	letter-spacing: unit(@font__p--letter-spacing*0.05, em);
 	color: @color__p--text;
 	padding: 0 0 1em;
 	word-break: break-word;
@@ -329,12 +310,12 @@ a.vglnk
 	}
 
 	.style--accent & {
-		border-color: @contrast--accent;
+		border-color: @color__p--background;
 		color: @contrast--accent;
 	}
 
 	.style--dark & {
-		border-color: @color--dark;
+		border-color: @color__p--background;
 		color: @contrast--dark;
 	}
 	
@@ -353,13 +334,13 @@ a.vglnk
 		}
 
 		.style--accent & {
-			border-color: @color--dark;
-			background-color: @color--dark;
+			border-color: @color__p--background;
+			background-color: @color__p--background;
 		}
 
 		.style--dark & {
-			border-color: @color--accent;
-			background-color: @color--accent;
+			border-color: @color__p--background;
+			background-color: @color__p--background;
 		}
 
 		@media @mobile {
@@ -368,9 +349,10 @@ a.vglnk
 	}
 
 	&[class] {
+		position: static;
 		margin: 0;
 		padding: 0;
-		position: static;
+		border-bottom: none;
 		color: inherit;
 		
 		&, &:hover {
@@ -391,7 +373,6 @@ a.vglnk
 // Preformatted and Code Text
 
 pre, code {
-	.paragraph;
 	display: block;
 	margin: 1em 0;
 	padding: 1em 1.5em;
@@ -399,7 +380,9 @@ pre, code {
 	.border-radius(0);
 	background-color: @color-text--lightest;
 	overflow: auto;
+	letter-spacing: 0;
 	font-family: monospace;
+	font-size: 0.9em;
 
 	.style--light & {
 		background-color: @color-text--lightest;
@@ -410,31 +393,23 @@ pre, code {
 	}
 
 	.style--dark & {
-		background-color: fade(@contrast--dark, 10%);
+		background-color: fade(@contrast--dark, 20%);
 	}
 }
 
 code {
-	border-left: 10px solid @color__button--border;
+	border-left: 3px solid @color__navigation--border;
 
 	.style--light & {
-		border-color: @color__button--border;
+		border-color: @color__navigation--border;
 	}
 
 	.style--accent & {
-		border-color: @contrast--accent;
+		border-color: fade(@contrast--accent, 60%);
 	}
 
 	.style--dark & {
-		border-color: @contrast--dark;
-	}
-		
-	@media @mobile {
-		border-left-width: 6px;
-	}
-		
-	.responsivecolumns & {
-		border-left-width: 6px;
+		border-color: fade(@contrast--dark, 60%);
 	}
 }
 
@@ -470,7 +445,7 @@ ol {
 			content: counter(section) ".";
 			counter-increment: section;
 			float: left;
-			margin-left: -2em;
+			margin-left: 0;
 			padding: 0 0.4em 0 0;
 			color: @color__h1--text;
 
@@ -495,7 +470,7 @@ blockquote {
 	position: relative;
 	margin: 0 auto;
 	text-align: center;
-	padding: 3em 1.5em 0.5em;
+	padding: 2em 1.5em 0.5em;
 	width: 70%;
 	font-style: italic;
 	font-family: @font__p--font-family;
@@ -503,6 +478,7 @@ blockquote {
 	line-height: 1.5em;
 	color: @color__p--text;
 	word-break: break-word;
+	overflow: hidden;
 
 	.style--light & {
 		color: @color__p--text;
@@ -529,11 +505,8 @@ blockquote {
 		content: '\0201c';
 		top: 0;
 		left: 0;
-		font-family: @font__h4--font-family;
-		font-weight: @font__p--font-weight;
-		font-size: @font__p--font-size*10;
+		font-size: 6em;
 		line-height: 1em;
-		letter-spacing: @font__p--letter-spacing;
 		color: fade(@color__h1--text, 50%);
 
 		.make-font-a-little-smaller(@font__h4--font-size*8);
@@ -545,11 +518,11 @@ blockquote {
 		}
 
 		.style--accent & {
-			color: fade(@contrast--accent, 50%);
+			color: @color__h1--background;
 		}
-
+	
 		.style--dark & {
-			color: fade(@color--accent, 50%);
+			color: @color__h1--background;
 		}
 	}
 	

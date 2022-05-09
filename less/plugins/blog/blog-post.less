@@ -20,40 +20,17 @@
 
 .blogpost {
 	.post-image {
-		.paragraph;
 		position: relative;
-		border: 10px solid @color__container--background;
 		background-color: @color__body--background;
-		margin: 4em auto -3px;
-		padding: 0;
+		margin: 0 auto -3px;
+		border: 0;
 
 		@media @mobile {
-			border: 6px solid @color__container--background;
+			border-width: 0;
 		}
 
 		.responsivecolumns & {
 			border: none;
-		}
-		
-		&:after {
-			content: '';
-			z-index: 2;
-			position: absolute;
-			top: -10px;
-			left: 0;
-			right: 0;
-			display: block;
-			margin: -2em auto 0;
-			width: 90%;
-			max-width: @layout-max-width;
-			height: 2em;
-			border: solid @color__navigation--border;
-			border-width: 3px 3px 0;
-			background-color: @color__container--background;
-
-			@media @mobile {
-				top: -6px;
-			}
 		}
 	}
 	
@@ -82,6 +59,14 @@
 	width: 90%;
 	max-width: @layout-max-width;
 	margin: 0 auto;
+		
+	@media @tablet {
+		width: 95%;
+	}
+	
+	@media @mobile {
+		width: auto;
+	}
 }
 
 .blogpost__post-content {
@@ -94,11 +79,11 @@
 	}
 	
 	@media @tablet {
-		padding: 1em 10% 5em;
+		padding: 1em 2.5% 5em;
 	}
 	
 	@media @mobile {
-		padding: 1em 10% 8em;
+		padding: 1em 5% 8em;
 	}
 }
 
@@ -149,7 +134,7 @@
 	padding: 0 0.1em;
 	background-color: @color__container--background;
 	line-height: 1.2em;
-	letter-spacing: @font__h4--letter-spacing;
+	letter-spacing: unit(@font__h4--letter-spacing*0.05, em);
 	font-family: @font__h4--font-family;
 	font-weight: @font__h4--font-weight;
 	text-align: center;
@@ -236,6 +221,7 @@ a.blogpost__tag-link {
 // Sharing Links
 
 .blogpost__sharing-links {
+	margin: 0 0 6em;
 	.clearfix();
 }
 
@@ -256,8 +242,10 @@ a.blogpost__tag-link {
 		font-size: @font__p--font-size * 0.85;
 		font-weight: @font__p--font-weight;
 	}
+
 	&:before {
 		display: inline-block;
+		margin: 0 0.5em 0 0;
 		vertical-align: middle;
 		font-size: 22px;
 	}

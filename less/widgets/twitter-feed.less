@@ -32,13 +32,13 @@
 	}
 
 	.style--accent & {
-		background-color: @color--accent;
-		border-color: @color--accent;
+		background-color: fade(@contrast--accent, 10%);
+		border-color: @contrast--accent;
 	}
 
 	.style--dark & {
-		background-color: @color--dark;
-		border-color: @color--accent;
+		background-color: fade(@contrast--dark, 20%);
+		border-color: @contrast--accent;
 	}
 	
 	.responsivecolumns & {
@@ -90,6 +90,10 @@ a.twitter__account-link {
 	.make-line-height-a-lot-smaller(@font__p--line-height);
 }
 
+span.twitter__retweeted-by {
+	display: block;
+}
+
 // Content
 
 .tweet-content {
@@ -118,7 +122,7 @@ a.twitter__account-link {
 	
 	.via, a {
 		font-family: @font__h4--font-family;
-		letter-spacing: 1px;
+		letter-spacing: 0.05px;
 		text-transform: uppercase;
 		font-size: 0.7em;
 		color: fade(@color__p--text, 50%);
@@ -128,25 +132,11 @@ a.twitter__account-link {
 		}
 
 		.style--accent & {
-			color: fade(@contrast--accent, 50%);
+			color: @contrast--accent;
 		}
 
 		.style--dark & {
-			color: fade(@contrast--dark, 50%);
-		}
-
-		&:hover {
-			.style--light & {
-				background-color: darken(@color__p--text, 8%);
-			}
-
-			.style--accent & {
-				background-color: darken(@color--accent, 8%);
-			}
-
-			.style--dark & {
-				background-color: lighten(@color--dark, 8%);
-			}
+			color: @contrast--dark;
 		}
 	}
 }

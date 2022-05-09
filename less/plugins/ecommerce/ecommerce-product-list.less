@@ -37,7 +37,7 @@
 	}
 	
 	form {
-		max-width: @layout-width-desktop;
+		max-width: @layout-max-width;
 		margin: 0 auto;
 
 		@media @tablet-horizontal {
@@ -101,24 +101,24 @@
 
 			@media @mobile {
 				padding-right: 0;
-				padding-bottom: 0.5em;
+				width: 100%;
 			}
 
 			.responsivecolumns & {
 				padding-right: 0;
-				padding-bottom: 0.5em;
+				width: 100%;
 			}
 		}
 		
 		&:last-of-type {
 			@media @mobile {
 				width: 100%;
-				padding: 0.5em 0 0;
+				padding: 0;
 			}
 
 			.responsivecolumns & {
 				width: 100%;
-				padding: 0.5em 0 0;
+				padding: 0;
 			}
 		}
 		
@@ -128,12 +128,6 @@
 			
 			@media @mobile {
 				width: 100%;
-				text-align: center;
-			}
-
-			.responsivecolumns & {
-				width: 100%;
-				text-align: center;
 			}
 		}
 	}
@@ -144,30 +138,6 @@
 
 	.button--submit {
 		.button;
-		
-		@media @tablet-horizontal {
-			width: 50px;
-			text-indent: -9999px;
-			display: block;
-			position: relative;
-			padding: 0;
-
-			&:after {
-				content: '\f002';
-				font-family: 'FontAwesome', sans-serif;
-				position: absolute;
-				text-align: center;
-				line-height: 44px;
-				color: @color__button--text;
-				font-size: 18px;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				right: 0;
-				text-indent: 0;
-				margin-left: 0;
-			}
-		}
 	}
 }
 
@@ -327,23 +297,23 @@
 }
 
 .product-item-article {
-	border: 1px solid @color__ecomproductslist--background;
-	background-color: lighten(@color__ecomproductslist-product-item--background, 95%);
 	height: 100%;
+	background-color: @color-text--lightest;
+	border: 1px solid @color__button--border;
 
 	.style--light & {
-		background-color: @color__ecomproductslist--background;
-		border-color: lighten(@color__ecomproductslist-product-item--background, 95%);
+		background-color: @color-text--lightest;
+		border-color: @color__button--border;
 	}
 
 	.style--accent & {
-		background-color: darken(@color--accent, 5%);
-		border-color: fade(@contrast--accent, .5);
+		background-color: fade(@contrast--accent, 10%);
+		border-color: @contrast--accent;
 	}
 
 	.style--dark & {
-		background-color: darken(@color--dark, 5%);
-		border-color: fade(@contrast--dark, .5);
+		background-color: fade(@contrast--dark, 20%);
+		border-color: @contrast--accent;
 	}
 	
 	.responsivecolumns & {
@@ -352,21 +322,9 @@
 }
 
 .product-item-image  {
-	background-color: @color__ecomproduct-images--background;
+	background-color: @color__ecomproductslist-product-item--background;
 	width: auto;
 	font-size: 0;
-
-	.style--light & {
-		background-color: @color__ecomproduct-images--background;
-	}
-
-	.style--accent & {
-		background-color: @color--accent;
-	}
-
-	.style--dark & {
-		background-color: @color--dark;
-	}
 	
 	@media @mobile-small {
 		line-height: 1;

@@ -86,7 +86,8 @@ select,
 	letter-spacing: unit(@font__p--letter-spacing*0.05, em);
 	font-size: @font__p--font-size;
 	color: @color__p--text;
-	height: 50px;
+	min-height: 50px;
+    height: auto !important;
 	.transition();
 	.border-radius(0);
 	.appearance(none);
@@ -98,6 +99,9 @@ select,
 	}
 }
 
+textarea {
+	min-height: 150px;
+}
 
 input[type="search"],
 input[type="email"] {

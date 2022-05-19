@@ -415,50 +415,54 @@ code {
 
 // Unordered and Ordered List
 
-ul, ol {
-	padding: 0;
-	
-	li {
-		margin: 0 0 0.5em 0;
+.widget.content,
+.blog-post-content,
+.ecom-product-long-description {
+	ul, ol {
 		padding: 0;
-	}
-}
-
-ul {
-	margin: 0.5em 0 0.5em 1.2em;
-	
-	li {
-		padding-left: 1em;
-	}
-}
-
-ol {
-	margin: 0.5em 0 0.5em 2.2em;
-	counter-reset: section;
-
-	li {
-		list-style: none;
 		
-		// Custom Numbers
-		
-		&:before {
-			content: counter(section) ".";
-			counter-increment: section;
-			float: left;
-			margin-left: 0;
-			padding: 0 0.4em 0 0;
-			color: @color__h1--text;
+		li {
+			margin: 0 0 0.5em 0;
+			padding: 0;
+		}
+	}
 
-			.style--light & {
+	ul {
+		margin: 0.5em 0 0.5em 1.2em;
+		
+		li {
+			padding-left: 1em;
+		}
+	}
+
+	ol {
+		margin: 0.5em 0 0.5em 2.2em;
+		counter-reset: section;
+
+		li {
+			list-style: none;
+			
+			// Custom Numbers
+			
+			&:before {
+				content: counter(section) ".";
+				counter-increment: section;
+				float: left;
+				margin-left: 0;
+				padding: 0 0.4em 0 0;
 				color: @color__h1--text;
-			}
 
-			.style--accent & {
-				color: @contrast--accent;
-			}
+				.style--light & {
+					color: @color__h1--text;
+				}
 
-			.style--dark & {
-				color: @contrast--dark;
+				.style--accent & {
+					color: @contrast--accent;
+				}
+
+				.style--dark & {
+					color: @contrast--dark;
+				}
 			}
 		}
 	}
@@ -525,6 +529,10 @@ blockquote {
 			color: @color__h1--background;
 		}
 	}
+
+	&:after {
+		display: none;
+	}
 	
 	.responsivecolumns & {
 		width: auto;
@@ -578,7 +586,7 @@ blockquote {
 	
 		li {
 			position: relative;
-			padding-left: 2em;
+			padding: 0 0 0 2em;
 			margin: 0 0 0.25em 0;
 			list-style-type: none;
 	

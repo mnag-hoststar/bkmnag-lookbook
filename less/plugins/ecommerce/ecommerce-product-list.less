@@ -78,6 +78,7 @@
 		.align-content(stretch, stretch);
 		.align-items(stretch, stretch);
 		margin-bottom: 1em;
+		gap: 0.5em;
 	}
 
 	.form-group {
@@ -97,7 +98,6 @@
 			-webkit-flex: 1 1 auto;
 			-ms-flex: 1 1 auto;
 			flex: 1 1 auto;
-			padding-right: 0.5em;
 
 			@media @mobile {
 				padding-right: 0;
@@ -127,7 +127,7 @@
 			.transition(none);
 			
 			@media @mobile {
-				width: 100%;
+				width: auto;
 			}
 		}
 	}

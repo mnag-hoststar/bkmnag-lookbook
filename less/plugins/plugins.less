@@ -40,16 +40,18 @@
 }
 
 .tag-list,
-.tag-item,
-.dietary-list {
-	margin: 0 -0.4em;
-	line-height: 1em;
+.tag-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -0.4em;
+    line-height: 1em;
 }
 
 a.category-link,
-a.tag-link,
-.dietary-item {
+a.tag-link {
 	display: inline-block;
+	word-break: break-word;
 	background: @color-highlight;
 	margin: 0.4em;
 	padding: 0.4em 0.6em;
